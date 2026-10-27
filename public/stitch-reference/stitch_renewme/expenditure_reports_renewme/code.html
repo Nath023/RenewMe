@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#a1d1b8","on-secondary":"#ffffff","secondary-container":"#fe7860","on-primary-fixed-variant":"#214f3c","primary-container":"#1f4d3a","background":"#fdf9f3","on-secondary-container":"#701004","surface-container":"#f2ede8","tertiary-fixed":"#ffdad8","error":"#ba1a1a","inverse-primary":"#a1d1b8","surface-variant":"#e6e2dd","surface":"#fdf9f3","surface-container-highest":"#e6e2dd","on-tertiary-container":"#e3a29f","on-error":"#ffffff","inverse-on-surface":"#f5f0eb","on-secondary-fixed":"#3f0300","secondary":"#a73826","tertiary-fixed-dim":"#fab5b3","surface-container-low":"#f8f3ed","surface-tint":"#3a6753","on-tertiary-fixed-variant":"#693938","primary":"#023625","tertiary-container":"#673736","on-primary-container":"#8dbda4","on-tertiary-fixed":"#350f0f","tertiary":"#4c2121","secondary-fixed":"#ffdad4","secondary-fixed-dim":"#ffb4a6","surface-container-high":"#ece7e2","on-surface-variant":"#414944","on-secondary-fixed-variant":"#862112","outline-variant":"#c0c9c2","on-error-container":"#93000a","on-surface":"#1c1b18","on-primary":"#ffffff","on-background":"#1c1b18","surface-bright":"#fdf9f3","surface-container-lowest":"#ffffff","primary-fixed":"#bceed3","on-tertiary":"#ffffff","outline":"#717973","error-container":"#ffdad6","inverse-surface":"#32302d","on-primary-fixed":"#002114","surface-dim":"#ded9d4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.25rem","space-sm":"0.5rem","space-md":"0.875rem","gutter":"1rem","margin":"1rem","margin-desktop":"2.5rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-xl":"2rem"},"fontFamily":{"caption":["Inter"],"body-sm":["Inter"],"display-md":["Newsreader"],"ledger-amount-sm":["Newsreader"],"display-lg-mobile":["Newsreader"],"display-lg":["Newsreader"],"display-sm":["Newsreader"],"ledger-amount-lg":["Newsreader"],"body-md":["Inter"],"label-ledger":["JetBrains Mono"],"body-lg":["Inter"]},"fontSize":{"caption":["11px",{"lineHeight":"14px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-md":["30px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"400"}],"ledger-amount-sm":["17px",{"lineHeight":"22px","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-lg":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"400"}],"display-sm":["22px",{"lineHeight":"28px","fontWeight":"500"}],"ledger-amount-lg":["28px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-ledger":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between border-r border-outline-variant/30"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 rounded bg-primary-container flex items-center justify-center text-on-primary font-display-sm text-display-sm leading-none">R</div><span class="font-display-sm text-display-sm text-primary tracking-tight font-medium">RenewMe</span></div><span class="font-label-ledger text-label-ledger text-on-surface-variant uppercase px-space-xs py-0.5 bg-surface-container rounded">Ledger</span></div><div class="p-space-md border-b border-outline-variant/30"><button class="w-full flex items-center justify-between p-space-sm bg-surface rounded hover:bg-surface-container-high transition-colors text-left" type="button"><div class="flex flex-col truncate"><span class="font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">Active Entity</span><span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Studio Lagos Ltd</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></button></div><nav class="flex flex-col gap-1 p-space-sm" data-active-classes="bg-primary-container text-on-primary font-medium"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-sm text-body-sm">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-body-sm text-body-sm">Subscriptions</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="renewal-calendar" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-body-sm text-body-sm">Calendar</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-body-sm text-body-sm">Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reminders" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="font-body-sm text-body-sm">Reminders</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-sm text-body-sm">Settings</span></a></nav></div><div class="p-space-md border-t border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-body-sm text-body-sm font-medium text-on-surface">Lagos Admin</span><span class="font-caption text-caption text-on-surface-variant">ledger@studiolagos.com</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">logout</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-md z-40 border-b border-outline-variant/30 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-ledger text-caption uppercase text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Studio Lagos</span><span>/</span><span class="hover:text-on-surface cursor-pointer">Ledger</span><span>/</span><span class="text-primary font-medium">Calendar</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-low border border-outline-variant/40 rounded py-1 pl-8 pr-space-md font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-on-surface w-64 transition-all" placeholder="Search commitments, vendors, ref..." type="search"/></div><div class="h-6 w-px bg-outline-variant/40"></div><button class="flex items-center gap-space-xs px-space-md py-1.5 bg-primary text-on-primary rounded font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>Record Commitment</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Archival Ledger Master Container -->
+<div class="px-margin-desktop py-space-xl flex flex-col gap-space-xl max-w-[1540px] mx-auto w-full">
+<!-- 01. HEADER & FOLIO CONTROLS -->
+<header class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg pb-space-lg border-b border-outline-variant/40">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">
+<span class="inline-block w-2 h-2 rounded-none bg-primary"></span>
+<span>Folio Workspace</span>
+<span>/</span>
+<span>Financial Audit &amp; Analytics</span>
+<span>/</span>
+<span class="text-primary font-medium">Fiscal Year 2025</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Expenditure Reports &amp; Forecasting</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Double-entry expenditure analysis, currency exposure benchmarks, and 90-day forward cash commitments calibrated for Studio Lagos Ltd.
+        </p>
+</div>
+<!-- Controls & Filter Deck -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Currency Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-ledger text-caption uppercase text-on-surface-variant">Denomination Ledger</label>
+<div class="relative inline-flex items-center bg-surface-container-low border border-outline-variant/50 rounded px-2.5 py-1.5 focus-within:border-primary">
+<span class="font-label-ledger text-caption text-primary mr-1.5 font-semibold">₦</span>
+<select class="bg-transparent font-body-sm text-body-sm text-on-surface font-medium focus:outline-none cursor-pointer pr-4 appearance-none">
+<option selected="">NGN (₦) — Sovereign Ledger</option>
+<option>USD ($) — Consolidated Benchmark</option>
+<option>EUR (€) — Eurozone Operations</option>
+<option>GBP (£) — London Clearing</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant pointer-events-none -ml-3">arrow_drop_down</span>
+</div>
+</div>
+<!-- Date Range Filter -->
+<div class="flex flex-col gap-1">
+<label class="font-label-ledger text-caption uppercase text-on-surface-variant">Reporting Horizon</label>
+<div class="inline-flex bg-surface-container-high/60 p-0.5 rounded border border-outline-variant/40">
+<button class="px-2.5 py-1 bg-surface-container-lowest font-body-sm text-body-sm font-medium text-primary rounded shadow-none" type="button">Trailing 12M</button>
+<button class="px-2.5 py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">Q4 2025</button>
+<button class="px-2.5 py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">FY25 YTD</button>
+<button class="px-2.5 py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">Custom</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-end gap-space-xs self-end">
+<button class="h-[34px] px-3 bg-surface border border-outline-variant/60 hover:bg-surface-container font-body-sm text-body-sm text-on-surface flex items-center gap-1.5 rounded transition-colors" title="Export Ledger Records" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>CSV Audit</span>
+</button>
+<button class="h-[34px] px-3 bg-primary text-on-primary hover:bg-primary-container font-body-sm text-body-sm flex items-center gap-1.5 rounded transition-colors" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Print Folio</span>
+</button>
+</div>
+</div>
+</header>
+<!-- 02. TOP SUMMARY METRICS (PHYSICAL FOLIO SCORECARD) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-0 border border-outline-variant/50 bg-surface-container-lowest rounded overflow-hidden">
+<!-- Metric 1 -->
+<div class="p-space-lg border-b md:border-b-0 border-r border-outline-variant/40 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">01. Total Annual Outflow</span>
+<span class="font-label-ledger text-[10px] uppercase text-primary font-semibold px-1 py-0.5 bg-primary-fixed/30 rounded">Confirmed</span>
+</div>
+<div class="my-space-md">
+<div class="font-display-md text-display-md text-primary font-medium tracking-tight leading-none">₦15,408,000</div>
+<div class="font-label-ledger text-body-sm text-on-surface-variant mt-1.5 tabular-nums">$9,940.65 USD equiv.</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 font-caption text-caption text-on-surface-variant/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">sync_alt</span>
+<span>CBN I&amp;E rate: ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-lg border-b md:border-b-0 xl:border-r border-outline-variant/40 flex flex-col justify-between bg-surface-container-low/30">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">02. 30-Day Forward Demand</span>
+<span class="font-label-ledger text-[10px] uppercase text-secondary font-semibold px-1 py-0.5 bg-secondary-fixed/40 rounded">Net Imminent</span>
+</div>
+<div class="my-space-md">
+<div class="font-display-md text-display-md text-on-surface font-medium tracking-tight leading-none">₦1,284,000</div>
+<div class="font-label-ledger text-body-sm text-on-surface-variant mt-1.5 tabular-nums">$828.38 USD equiv.</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 font-caption text-caption text-on-surface-variant/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">schedule</span>
+<span>Converted at ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-lg border-b xl:border-b-0 border-r border-outline-variant/40 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">03. Active Commitments</span>
+<span class="font-label-ledger text-[10px] uppercase text-on-surface-variant px-1 py-0.5 bg-surface-container rounded">6 Cost Centers</span>
+</div>
+<div class="my-space-md">
+<div class="font-display-md text-display-md text-on-surface font-medium tracking-tight leading-none">14 Subscriptions</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Across 4 business divisions</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 font-caption text-caption text-on-surface-variant/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">verified_user</span>
+<span>All vendors authorized under FY25 budget</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-lg flex flex-col justify-between bg-surface-container-low/20">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption uppercase text-secondary tracking-wider">04. FX Exposure Risk</span>
+<span class="font-label-ledger text-[10px] uppercase text-on-secondary bg-secondary px-1 py-0.5 rounded font-semibold">Elevated</span>
+</div>
+<div class="my-space-md">
+<div class="font-display-md text-display-md text-secondary font-medium tracking-tight leading-none">62% USD Ratio</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 tabular-nums">₦9,552,960 annualized off-shore</div>
+</div>
+<div class="pt-2 border-t border-outline-variant/20 font-caption text-caption text-on-surface-variant/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">trending_up</span>
+<span>Requires active FX hedge &amp; USD card pool</span>
+</div>
+</div>
+</section>
+<!-- 03. ANALYTICS GRID: CATEGORY SPEND & CURRENCY EXPOSURE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Spend by Category (7 Cols) -->
+<div class="lg:col-span-7 border border-outline-variant/50 bg-surface-container-lowest rounded flex flex-col">
+<div class="p-space-md border-b border-outline-variant/40 flex items-center justify-between bg-surface-container-low/50">
+<div>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant block">Register A</span>
+<h2 class="font-display-sm text-display-sm text-on-surface">01. Spend by Category (Annualized)</h2>
+</div>
+<span class="font-label-ledger text-caption text-on-surface-variant uppercase">Benchmark FY25</span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md">
+<!-- Category 1 -->
+<div class="flex flex-col gap-1 pb-space-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-baseline text-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 bg-primary"></span> Infrastructure &amp; DevOps
+              </span>
+<div class="text-right tabular-nums">
+<span class="font-medium text-on-surface">₦5,855,040</span>
+<span class="text-on-surface-variant font-label-ledger text-caption ml-1.5">($3,777.45 USD)</span>
+<span class="ml-2 font-label-ledger font-semibold text-primary">38%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-none overflow-hidden">
+<div class="bg-primary h-full" style="width: 38%;"></div>
+</div>
+<span class="font-caption text-[10px] text-on-surface-variant/70 tabular-nums">Converted at ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+<!-- Category 2 -->
+<div class="flex flex-col gap-1 pb-space-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-baseline text-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 bg-primary-container"></span> Productivity &amp; Comms
+              </span>
+<div class="text-right tabular-nums">
+<span class="font-medium text-on-surface">₦4,314,240</span>
+<span class="text-on-surface-variant font-label-ledger text-caption ml-1.5">($2,783.38 USD)</span>
+<span class="ml-2 font-label-ledger font-semibold text-primary">28%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-none overflow-hidden">
+<div class="bg-primary-container h-full" style="width: 28%;"></div>
+</div>
+<span class="font-caption text-[10px] text-on-surface-variant/70 tabular-nums">Converted at ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+<!-- Category 3 -->
+<div class="flex flex-col gap-1 pb-space-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-baseline text-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 bg-surface-tint"></span> Design &amp; Creative
+              </span>
+<div class="text-right tabular-nums">
+<span class="font-medium text-on-surface">₦2,773,440</span>
+<span class="text-on-surface-variant font-label-ledger text-caption ml-1.5">($1,789.32 USD)</span>
+<span class="ml-2 font-label-ledger font-semibold text-primary">18%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-none overflow-hidden">
+<div class="bg-surface-tint h-full" style="width: 18%;"></div>
+</div>
+<span class="font-caption text-[10px] text-on-surface-variant/70 tabular-nums">Converted at ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+<!-- Category 4 -->
+<div class="flex flex-col gap-1 pb-space-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-baseline text-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 bg-on-primary-container"></span> Engineering &amp; Hosting
+              </span>
+<div class="text-right tabular-nums">
+<span class="font-medium text-on-surface">₦1,694,880</span>
+<span class="text-on-surface-variant font-label-ledger text-caption ml-1.5">($1,093.47 USD)</span>
+<span class="ml-2 font-label-ledger font-semibold text-primary">11%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-none overflow-hidden">
+<div class="bg-on-primary-container h-full" style="width: 11%;"></div>
+</div>
+<span class="font-caption text-[10px] text-on-surface-variant/70 tabular-nums">Converted at ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+<!-- Category 5 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-baseline text-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 bg-outline"></span> Marketing &amp; Sales
+              </span>
+<div class="text-right tabular-nums">
+<span class="font-medium text-on-surface">₦770,400</span>
+<span class="text-on-surface-variant font-label-ledger text-caption ml-1.5">($497.03 USD)</span>
+<span class="ml-2 font-label-ledger font-semibold text-primary">5%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-none overflow-hidden">
+<div class="bg-outline h-full" style="width: 5%;"></div>
+</div>
+<span class="font-caption text-[10px] text-on-surface-variant/70 tabular-nums">Converted at ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+</div>
+<div class="px-space-lg py-space-sm bg-surface-container-low/40 border-t border-outline-variant/30 flex items-center justify-between text-caption font-label-ledger text-on-surface-variant">
+<span>Total Categorized Outflow: 100.0%</span>
+<span class="font-semibold text-on-surface">₦15,408,000.00</span>
+</div>
+</div>
+<!-- Right Column: Monthly Trend & FX Exposure (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Monthly Invoiced Outflow Bar Chart -->
+<div class="border border-outline-variant/50 bg-surface-container-lowest rounded flex flex-col">
+<div class="p-space-md border-b border-outline-variant/40 flex items-center justify-between bg-surface-container-low/50">
+<div>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant block">Register B</span>
+<h2 class="font-display-sm text-display-sm text-on-surface">02. Monthly Invoiced Outflow</h2>
+</div>
+<span class="font-label-ledger text-caption text-on-surface-variant">Past 6 Mos</span>
+</div>
+<div class="p-space-lg">
+<div class="h-44 w-full flex items-end justify-between gap-2 pt-6 pb-2 border-b border-outline-variant/40">
+<!-- Jun -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<span class="font-label-ledger text-[9px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">₦1.18M</span>
+<div class="w-full bg-surface-container-high rounded-none hover:bg-primary/80 transition-colors" style="height: 68%;"></div>
+<span class="font-label-ledger text-caption text-on-surface-variant">JUN</span>
+</div>
+<!-- Jul -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<span class="font-label-ledger text-[9px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">₦1.22M</span>
+<div class="w-full bg-surface-container-high rounded-none hover:bg-primary/80 transition-colors" style="height: 72%;"></div>
+<span class="font-label-ledger text-caption text-on-surface-variant">JUL</span>
+</div>
+<!-- Aug -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<span class="font-label-ledger text-[9px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">₦1.20M</span>
+<div class="w-full bg-surface-container-high rounded-none hover:bg-primary/80 transition-colors" style="height: 70%;"></div>
+<span class="font-label-ledger text-caption text-on-surface-variant">AUG</span>
+</div>
+<!-- Sep -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<span class="font-label-ledger text-[9px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">₦1.35M</span>
+<div class="w-full bg-surface-container-high rounded-none hover:bg-primary/80 transition-colors" style="height: 82%;"></div>
+<span class="font-label-ledger text-caption text-on-surface-variant">SEP</span>
+</div>
+<!-- Oct -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<span class="font-label-ledger text-[9px] text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity tabular-nums">₦1.26M</span>
+<div class="w-full bg-surface-container-high rounded-none hover:bg-primary/80 transition-colors" style="height: 76%;"></div>
+<span class="font-label-ledger text-caption text-on-surface-variant">OCT</span>
+</div>
+<!-- Nov (Current) -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<span class="font-label-ledger text-[10px] text-primary font-bold opacity-100 tabular-nums">₦1.28M</span>
+<div class="w-full bg-primary rounded-none" style="height: 79%;"></div>
+<span class="font-label-ledger text-caption font-bold text-primary">NOV</span>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between text-caption font-caption text-on-surface-variant">
+<span>Nov Settlement: ₦1,284,000 ($828.50 USD)</span>
+<span class="font-label-ledger text-[10px]">FX: ₦1,550/$</span>
+</div>
+</div>
+</div>
+<!-- Currency Exposure Breakdown -->
+<div class="border border-outline-variant/50 bg-surface-container-lowest rounded flex flex-col">
+<div class="p-space-md border-b border-outline-variant/40 flex items-center justify-between bg-surface-container-low/50">
+<div>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant block">Register C</span>
+<h2 class="font-display-sm text-display-sm text-on-surface">03. Currency Exposure Ratio</h2>
+</div>
+<span class="font-label-ledger text-caption text-secondary font-medium">Risk Factor: 1.62x</span>
+</div>
+<div class="p-space-lg flex flex-col gap-3">
+<!-- Segmented Meter Bar -->
+<div class="w-full h-7 rounded-none bg-surface-container flex overflow-hidden border border-outline-variant/30">
+<div class="bg-secondary flex items-center justify-center text-on-secondary font-label-ledger text-[11px] font-medium" style="width: 62%;">
+                USD 62%
+              </div>
+<div class="bg-primary flex items-center justify-center text-on-primary font-label-ledger text-[11px] font-medium" style="width: 38%;">
+                NGN 38%
+              </div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-1">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption text-secondary uppercase font-semibold">USD Foreign Denominated</span>
+<span class="font-medium text-on-surface tabular-nums">₦9,552,960.00</span>
+<span class="font-label-ledger text-[10px] text-on-surface-variant tabular-nums">($6,163.20 USD total)</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-ledger text-caption text-primary uppercase font-semibold">NGN Local Sovereign</span>
+<span class="font-medium text-on-surface tabular-nums">₦5,855,040.00</span>
+<span class="font-label-ledger text-[10px] text-on-surface-variant">Domestic Invoices</span>
+</div>
+</div>
+<div class="p-2.5 bg-surface-container-low border border-outline-variant/30 rounded mt-1 font-caption text-caption text-on-surface-variant leading-relaxed">
+              Underlying contracts billed in foreign currency settled via Stanbic IBTC Visa ••4091 and FirstBank Master ••8820. Converted at ₦1,550.00/$ on 12 Nov 2025.
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- 04. 90-DAY FORWARD COMMITMENT LIQUIDITY FORECAST -->
+<section class="border border-outline-variant/50 bg-surface-container-lowest rounded flex flex-col">
+<div class="p-space-md border-b border-outline-variant/40 flex items-center justify-between bg-surface-container-low/50">
+<div>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant block">Schedule D · Forward Horizon</span>
+<h2 class="font-display-sm text-display-sm text-on-surface">04. 90-Day Liquidity Forecast (Dec 2025 – Feb 2026)</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">event_available</span>
+<span class="font-label-ledger text-caption text-on-surface-variant uppercase">Rolling 3-Quarter Ledger</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/40">
+<!-- Horizon Month 1: Dec 2025 -->
+<div class="p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-ledger text-caption uppercase text-on-surface font-semibold tracking-wider">Month 1 · Dec 2025</span>
+<span class="font-label-ledger text-[10px] text-secondary font-medium px-1.5 py-0.5 bg-secondary-fixed/40 rounded">1 Action Req.</span>
+</div>
+<div class="font-display-md text-display-md text-primary font-medium tracking-tight">₦1,342,500</div>
+<div class="font-label-ledger text-body-sm text-on-surface-variant mt-1 tabular-nums">$866.13 USD equiv.</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Scheduled Renewals:</span>
+<span class="font-medium text-on-surface font-label-ledger">8 services</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Contract Review:</span>
+<span class="font-medium text-secondary">Adobe Creative Cloud</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Largest Bill:</span>
+<span class="font-medium text-on-surface font-label-ledger">Datadog ($180.00)</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-2 border-t border-outline-variant/20 font-caption text-[11px] text-on-surface-variant/80">
+            Converted at ₦1,550.00/$ on 12 Nov 2025.
+          </div>
+</div>
+<!-- Horizon Month 2: Jan 2026 -->
+<div class="p-space-lg flex flex-col justify-between bg-surface-container-low/20">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-ledger text-caption uppercase text-on-surface font-semibold tracking-wider">Month 2 · Jan 2026</span>
+<span class="font-label-ledger text-[10px] text-primary font-medium px-1.5 py-0.5 bg-primary-fixed/40 rounded">Normal Baseline</span>
+</div>
+<div class="font-display-md text-display-md text-on-surface font-medium tracking-tight">₦1,180,000</div>
+<div class="font-label-ledger text-body-sm text-on-surface-variant mt-1 tabular-nums">$761.29 USD equiv.</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Scheduled Renewals:</span>
+<span class="font-medium text-on-surface font-label-ledger">6 services</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Contract Review:</span>
+<span class="font-medium text-on-surface-variant">None scheduled</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Largest Bill:</span>
+<span class="font-medium text-on-surface font-label-ledger">Datadog ($180.00)</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-2 border-t border-outline-variant/20 font-caption text-[11px] text-on-surface-variant/80">
+            Converted at ₦1,550.00/$ on 12 Nov 2025.
+          </div>
+</div>
+<!-- Horizon Month 3: Feb 2026 -->
+<div class="p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-ledger text-caption uppercase text-on-surface font-semibold tracking-wider">Month 3 · Feb 2026</span>
+<span class="font-label-ledger text-[10px] text-on-surface-variant font-medium px-1.5 py-0.5 bg-surface-container rounded">Annual Rollover</span>
+</div>
+<div class="font-display-md text-display-md text-primary font-medium tracking-tight">₦1,495,200</div>
+<div class="font-label-ledger text-body-sm text-on-surface-variant mt-1 tabular-nums">$964.65 USD equiv.</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Scheduled Renewals:</span>
+<span class="font-medium text-on-surface font-label-ledger">9 services</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Annual Inclusions:</span>
+<span class="font-medium text-primary">Zoom Workplace ($149.90)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Liquidity Cushion:</span>
+<span class="font-medium text-on-surface font-label-ledger">+₦315,200 reserve</span>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-2 border-t border-outline-variant/20 font-caption text-[11px] text-on-surface-variant/80">
+            Converted at ₦1,550.00/$ on 12 Nov 2025.
+          </div>
+</div>
+</div>
+</section>
+<!-- 05. TOP 10 MOST EXPENSIVE SUBSCRIPTIONS (PHYSICAL ACCOUNTING REGISTER) -->
+<section class="border border-outline-variant/50 bg-surface-container-lowest rounded flex flex-col overflow-hidden">
+<div class="p-space-md border-b border-outline-variant/40 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-surface-container-low/50">
+<div>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant block">Register E · Ranked Commitments</span>
+<h2 class="font-display-sm text-display-sm text-on-surface">05. Top 10 Most Expensive Subscriptions</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-ledger text-caption text-on-surface-variant uppercase">Sorted by Annual Outflow</span>
+<span class="px-2 py-0.5 border border-outline-variant/60 rounded font-label-ledger text-caption text-primary">10 Entries Listed</span>
+</div>
+</div>
+<!-- Tabular Ledger Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant/40 font-label-ledger text-caption text-on-surface-variant uppercase">
+<th class="py-2.5 px-3 w-12 text-center">Rank</th>
+<th class="py-2.5 px-4">Entity / Service &amp; Category</th>
+<th class="py-2.5 px-3">Cadence</th>
+<th class="py-2.5 px-4 text-right">Contract Amt</th>
+<th class="py-2.5 px-5 text-right">Converted Annual Outflow</th>
+<th class="py-2.5 px-3 text-right">% Folio</th>
+<th class="py-2.5 px-4">Settlement Instrument &amp; Cost Center</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30 font-body-sm text-body-sm">
+<!-- Row #1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#1</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Datadog Cloud Monitoring</div>
+<div class="font-caption text-caption text-on-surface-variant">Infrastructure &amp; Systems</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$180.00 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦3,348,000 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">21.7%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Cloud Core Infra</div>
+</td>
+</tr>
+<!-- Row #2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#2</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Zoom Workplace</div>
+<div class="font-caption text-caption text-on-surface-variant">Productivity &amp; Communications</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Annual</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$149.90 /yr</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦232,345 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">1.5%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Internal Comms</div>
+</td>
+</tr>
+<!-- Row #3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#3</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Mailchimp Standard</div>
+<div class="font-caption text-caption text-on-surface-variant">Marketing &amp; Sales</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$75.00 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦1,395,000 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">9.1%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">account_balance</span>
+<span>GTBank Corp Direct</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Growth &amp; Comms</div>
+</td>
+</tr>
+<!-- Row #4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#4</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Adobe Creative Cloud</div>
+<div class="font-caption text-caption text-on-surface-variant">Design &amp; Creative</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$59.99 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦1,115,814 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">7.2%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Studio Assets</div>
+</td>
+</tr>
+<!-- Row #5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#5</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Figma Professional</div>
+<div class="font-caption text-caption text-on-surface-variant">Design &amp; Creative</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$45.00 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦837,000 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">5.4%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">UI/UX Team</div>
+</td>
+</tr>
+<!-- Row #6 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#6</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Google Workspace</div>
+<div class="font-caption text-caption text-on-surface-variant">Productivity &amp; Comms</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$36.00 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦669,600 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">4.3%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Operations &amp; Mail</div>
+</td>
+</tr>
+<!-- Row #7 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#7</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Cursor AI Pro</div>
+<div class="font-caption text-caption text-on-surface-variant">Engineering &amp; Tooling</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$20.00 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦372,000 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">2.4%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>FirstBank Master ••8820</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Software Dev</div>
+</td>
+</tr>
+<!-- Row #8 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#8</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Vercel Pro</div>
+<div class="font-caption text-caption text-on-surface-variant">Engineering &amp; Hosting</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$20.00 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦372,000 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">2.4%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Production Deploys</div>
+</td>
+</tr>
+<!-- Row #9 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#9</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Namecheap DNS</div>
+<div class="font-caption text-caption text-on-surface-variant">Infrastructure &amp; Network</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Annual</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$14.50 /yr</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦22,475 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">0.1%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>FirstBank Master ••8820</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Domain Registrar</div>
+</td>
+</tr>
+<!-- Row #10 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3 font-label-ledger text-caption font-bold text-primary text-center">#10</td>
+<td class="py-2.5 px-4">
+<div class="font-medium text-on-surface">Canva Teams</div>
+<div class="font-caption text-caption text-on-surface-variant">Design &amp; Creative</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-ledger text-[10px] text-on-surface-variant uppercase px-1.5 py-0.5 border border-outline-variant/40 rounded">Monthly</span>
+</td>
+<td class="py-2.5 px-4 text-right font-label-ledger tabular-nums text-on-surface font-medium">$12.99 /mo</td>
+<td class="py-2.5 px-5 text-right tabular-nums">
+<div class="font-semibold text-primary">₦241,614 /yr</div>
+<div class="font-caption text-[10px] text-on-surface-variant/80">Converted at ₦1,550.00/$ on 12 Nov 2025</div>
+</td>
+<td class="py-2.5 px-3 text-right font-label-ledger tabular-nums font-medium text-on-surface">1.6%</td>
+<td class="py-2.5 px-4 font-caption text-on-surface-variant">
+<div class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>FirstBank Master ••8820</span>
+</div>
+<div class="text-[10px] font-label-ledger uppercase text-on-surface-variant">Brand Assets</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Ledger Footer Stamp & Cryptographic Seal -->
+<div class="px-space-lg py-space-md bg-surface-container-low/60 border-t border-outline-variant/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm text-caption font-label-ledger text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">lock_clock</span>
+<span>FOLIO VERIFIED: SHA256:7f49c...91bc · CBN I&amp;E Benchmark Rate Fixed ₦1,550.00/$ on 12 Nov 2025</span>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="text-primary hover:text-primary-container font-medium uppercase transition-colors" type="button">Export Registry (CSV)</button>
+<span>·</span>
+<span class="uppercase">Reconciliation Status: Balanced</span>
+</div>
+</div>
+</section>
+</div>
+</div></main></div></body></html>

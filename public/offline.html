@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1f4d3a">
+  <title>Offline folio · RenewMe</title>
+  <style>
+    :root{color-scheme:light;--paper:#f6f3ec;--card:#fbf9f4;--ink:#1c1b18;--muted:#6b675e;--rule:#ded9d4;--green:#1f4d3a;--red:#a73826}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 Inter,Arial,sans-serif}.shell{width:min(920px,calc(100% - 32px));margin:0 auto;padding:24px 0 48px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding:8px 0 16px}.brand{color:var(--green);font:500 25px Georgia,serif;text-decoration:none}.state{font:11px monospace;color:var(--red);text-transform:uppercase}.banner{margin:18px 0;border:1px solid #d6b6a8;background:#fbf3ea;padding:13px 15px;color:#5d3529}.banner strong{display:block}.panel{margin-top:16px;border:1px solid var(--rule);background:var(--card)}.panel h1,.panel h2{margin:0;color:var(--green);font:400 24px Georgia,serif}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--rule);padding:14px 16px}.panel-head p{margin:4px 0 0;color:var(--muted);font-size:11px}.list{display:grid}.item{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #eee8de;padding:11px 16px}.item:last-child{border-bottom:0}.item span{display:block;color:var(--muted);font-size:11px}.item strong{font-weight:500}.pill{flex:none;border:1px solid var(--red);padding:2px 6px;color:var(--red);font:9px monospace;text-transform:uppercase}.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px}.form label{display:grid;gap:5px;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.04em}.form input,.form select{width:100%;height:36px;border:1px solid #c8c2b7;border-radius:3px;background:white;padding:0 9px;color:var(--ink);font:13px Arial,sans-serif}.wide{grid-column:1/-1}.button{min-height:36px;border:1px solid var(--green);background:var(--green);padding:0 13px;color:white;font-weight:600;cursor:pointer}.button:disabled{opacity:.55;cursor:wait}.muted{margin:0;padding:14px 16px;color:var(--muted);font-size:11px}.message{padding:0 16px;color:var(--green);font-size:12px}.message.error{color:var(--red)}.back{display:inline-block;margin-top:18px;color:var(--green);font-size:12px}.foot{margin-top:20px;color:var(--muted);font:10px monospace}@media(max-width:600px){.form{grid-template-columns:1fr}.wide{grid-column:auto}.panel-head{align-items:flex-start}.item{align-items:flex-start}.item .pill{margin-top:2px}}
+    .item-actions{display:flex;align-items:center;gap:8px}.item-actions button{border:1px solid #ded9d4;background:#fff;padding:5px 8px;color:#1f4d3a;font:10px monospace;cursor:pointer}.item-actions button[data-archive]{color:#a73826}@media(max-width:600px){.item-actions{flex-direction:column;align-items:stretch}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><a class="brand" href="/">RenewMe</a><span class="state" id="connection">Offline</span></header>
+    <div class="banner"><strong>You’re offline</strong>Your saved ledger is stored on this device. Add, edit, or archive records here; queued changes sync to your account when you reconnect.</div>
+    <section class="panel"><header class="panel-head"><div><h1>Your offline folio</h1><p id="snapshot-info">Loading this device’s saved ledger…</p></div></header><div aria-live="polite" class="list" id="records"></div><p class="muted" id="empty" hidden></p></section>
+    <section class="panel"><header class="panel-head"><div><h2 id="form-title">Queue a subscription</h2><p id="form-hint">This entry stays on this device until it syncs.</p></div></header>
+      <form class="form" id="new-record">
+        <label>Vendor / service<input autocomplete="organization" maxlength="250" name="vendor" required></label>
+        <label>Amount<input min="0" name="amount" required step="0.01" type="number"></label>
+        <label>Currency<select name="currency"><option value="NGN">NGN</option><option value="USD">USD</option></select></label>
+        <label>Billing cycle<select name="billing_cycle"><option value="monthly">Monthly</option><option value="quarterly">Quarterly</option><option value="annual">Annual</option></select></label>
+        <label>Next renewal<input name="renewal_date" required type="date"></label>
+        <label>Category<input maxlength="100" name="category" value="Other"></label><label>Status<select name="status"><option value="active">Active</option><option value="trial">Trial</option><option value="needs_review">Needs review</option></select></label>
+        <label class="wide">Service details<input maxlength="500" name="service_details"></label>
+        <label class="wide">Cancel by<input name="cancel_by" type="date"></label>
+        <button class="button wide" id="save" type="submit">Queue subscription</button>
+      </form><p aria-live="polite" class="message" id="message"></p>
+    </section>
+    <a class="back" href="/subscriptions">Return to RenewMe</a>
+    <footer class="foot">PRIVATE LOCAL COPY · LAST UPDATED <span id="updated">—</span></footer>
+  </main>
+<script>
+(() => {
+  const databaseName = "renewme-offline";
+  const storeName = "ledgers";
+  const $ = (id) => document.getElementById(id);
+  let ledger = null;
+  let userId = "";
+  let session = null;
+  let editingId = "";
+  function openDb() { return new Promise((resolve, reject) => { const request = indexedDB.open(databaseName, 1); request.onupgradeneeded = () => request.result.createObjectStore(storeName, { keyPath: "userId" }); request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error); }); }
+  async function readLedger(id) { const db = await openDb(); return new Promise((resolve, reject) => { const request = db.transaction(storeName, "readonly").objectStore(storeName).get(id); request.onsuccess = () => resolve(request.result || null); request.onerror = () => reject(request.error); request.addEventListener("loadend", () => db.close(), { once: true }); }); }
+  async function saveLedger() { ledger.updatedAt = new Date().toISOString(); const db = await openDb(); return new Promise((resolve, reject) => { const request = db.transaction(storeName, "readwrite").objectStore(storeName).put(ledger); request.onsuccess = () => resolve(); request.onerror = () => reject(request.error); request.addEventListener("loadend", () => db.close(), { once: true }); }); }
+  function getSession() {
+    for (let i=0;i<localStorage.length;i++) { const key=localStorage.key(i); if (!key || !/^sb-.+-auth-token$/.test(key)) continue; try { const value=JSON.parse(localStorage.getItem(key)); if(value.access_token && value.user?.id) return {key,value}; } catch {} }
+    return null;
+  }
+  function render() {
+    const list=$("records"); list.replaceChildren();
+    const pendingIds=new Set((ledger.pendingWrites||[]).map(row=>row.id));
+    const rows=[...(ledger.rows||[])].sort((a,b)=>String(a.renewal_date).localeCompare(String(b.renewal_date)));
+    rows.forEach(row=>{ const item=document.createElement("article"); item.className="item"; const copy=document.createElement("div"); const title=document.createElement("strong"); title.textContent=row.vendor; const detail=document.createElement("span"); detail.textContent=[row.currency,Number(row.amount).toFixed(2),row.billing_cycle,"Renews",row.renewal_date].join(" "); copy.append(title,detail); item.append(copy); const actions=document.createElement("div");actions.className="item-actions";if(pendingIds.has(row.id)){const badge=document.createElement("span");badge.className="pill";badge.textContent="Queued";actions.append(badge);}const edit=document.createElement("button");edit.type="button";edit.dataset.edit=row.id;edit.textContent="Edit";actions.append(edit);if(row.status!=="archived"){const archive=document.createElement("button");archive.type="button";archive.dataset.archive=row.id;archive.textContent="Archive";actions.append(archive);}item.append(actions);list.append(item); });
+    $("empty").hidden=rows.length>0; $("empty").textContent=rows.length?"":"No saved subscription records are available on this device yet.";
+    const pending=(ledger.pendingWrites||[]).length; $("snapshot-info").textContent=`${rows.length} saved record${rows.length===1?"":"s"} · ${pending} waiting to sync`;
+    $("updated").textContent=ledger.updatedAt?new Date(ledger.updatedAt).toLocaleString():"—";
+  }
+  function setForm(row) {
+    const form=$("new-record"); editingId=row?.id??"";
+    for(const name of ["vendor","amount","currency","billing_cycle","renewal_date","category","status","service_details","cancel_by"]) form.elements.namedItem(name).value=row?.[name]??(name==="category"?"Other":name==="currency"?"NGN":name==="billing_cycle"?"monthly":name==="status"?"active":"");
+    $("form-title").textContent=row?"Edit subscription":"Queue a subscription";
+    $("form-hint").textContent=row?"Changes stay on this device until they sync.":"This entry stays on this device until it syncs.";
+    $("save").textContent=row?"Queue changes":"Queue subscription";
+  }
+  async function refreshSession() {
+    if(!ledger || !session) throw new Error("Sign in online to sync this offline entry.");
+    const now=Math.floor(Date.now()/1000);
+    if(session.value.expires_at && session.value.expires_at>now+30) return session.value.access_token;
+    const response=await fetch(`${ledger.apiUrl}/auth/v1/token?grant_type=refresh_token`,{method:"POST",headers:{apikey:ledger.anonKey,"content-type":"application/json"},body:JSON.stringify({refresh_token:session.value.refresh_token})});
+    if(!response.ok) throw new Error("Reconnect and sign in again to sync your queued entries.");
+    const fresh=await response.json(); session.value={...session.value,...fresh}; localStorage.setItem(session.key,JSON.stringify(session.value)); return session.value.access_token;
+  }
+  async function syncQueue() {
+    if(!navigator.onLine || !ledger || !session || !(ledger.pendingWrites||[]).length) return;
+    $("connection").textContent="Syncing";
+    try {
+      const token=await refreshSession();
+      while(ledger.pendingWrites.length) {
+        const row=ledger.pendingWrites[0];
+        const response=await fetch(`${ledger.apiUrl}/rest/v1/subscriptions?on_conflict=id`,{method:"POST",headers:{apikey:ledger.anonKey,authorization:`Bearer ${token}`,"content-type":"application/json",prefer:"resolution=merge-duplicates,return=minimal"},body:JSON.stringify(row)});
+        if(!response.ok) throw new Error(response.status===401||response.status===403?"RenewMe could not verify this account. Sign in online to sync safely.":"Could not sync yet. Your queued entry is still saved on this device.");
+        ledger.pendingWrites.shift(); await saveLedger(); render();
+      }
+      $("message").textContent="All queued entries are synced to your account.";
+      $("connection").textContent="Online";
+    } catch(error) { $("message").className="message error"; $("message").textContent=error instanceof Error?error.message:"Sync failed. The local queue is kept."; $("connection").textContent="Sync pending"; }
+  }
+  async function start() {
+    session=getSession();
+    if(!session){$("snapshot-info").textContent="Sign in on this device while online to open your private offline folio.";$("empty").hidden=false;$("empty").textContent="No active account session was found.";$("new-record").hidden=true;return;}
+    userId=session.value.user.id;
+    try { ledger=await readLedger(userId); } catch { ledger=null; }
+    if(!ledger){$("snapshot-info").textContent="Open your subscriptions online once to save a private copy on this device.";$("empty").hidden=false;$("empty").textContent="No offline snapshot is available yet.";$("new-record").hidden=true;return;}
+    ledger.rows=ledger.rows||[];ledger.pendingWrites=ledger.pendingWrites||ledger.pendingCreates||[];delete ledger.pendingCreates;render(); $("connection").textContent=navigator.onLine?"Online":"Offline";
+    if(navigator.onLine) void syncQueue();
+  }
+  $("new-record").addEventListener("submit",async event=>{
+    event.preventDefault(); if(!ledger || !session) return;
+    const formElement=event.currentTarget; const form=new FormData(formElement); const vendor=String(form.get("vendor")||"").trim();const amount=Number(form.get("amount"));const renewalDate=String(form.get("renewal_date")||"");const cancelBy=String(form.get("cancel_by")||"")||null;
+    if(!vendor||!Number.isFinite(amount)||amount<0||!renewalDate||(cancelBy&&cancelBy>renewalDate)){ $("message").className="message error";$("message").textContent="Check the vendor, amount, renewal date, and cancel-by date.";return; }
+    const oldRow=editingId?ledger.rows.find(item=>item.id===editingId):null;
+    const now=new Date().toISOString(); const row={...(oldRow||{}),id:oldRow?.id||crypto.randomUUID(),user_id:userId,vendor,amount,currency:String(form.get("currency")),billing_cycle:String(form.get("billing_cycle")),renewal_date:renewalDate,cancel_by:cancelBy,category:String(form.get("category")||"Other").trim()||"Other",service_details:String(form.get("service_details")||"").trim()||null,payment_instrument:oldRow?.payment_instrument??null,status:String(form.get("status")||"active"),created_at:oldRow?.created_at||now,updated_at:now};
+    const oldRows=[...ledger.rows],oldWrites=[...(ledger.pendingWrites||[])];
+    if(oldRow) ledger.rows=ledger.rows.map(item=>item.id===row.id?row:item); else ledger.rows.unshift(row);
+    ledger.pendingWrites=[...oldWrites.filter(item=>item.id!==row.id),row];
+    try { await saveLedger(); render(); formElement.reset(); setForm(null); $("message").className="message";$("message").textContent=navigator.onLine?"Changes queued. Syncing now�":"Changes queued on this device and will sync when you reconnect."; if(navigator.onLine) void syncQueue(); }
+    catch { ledger.rows=oldRows;ledger.pendingWrites=oldWrites;render();$("message").className="message error";$("message").textContent="This browser could not save offline data. Check storage permissions."; }
+  });
+  $("records").addEventListener("click",async event=>{
+    const button=event.target.closest("button");if(!button)return;
+    const row=ledger?.rows.find(item=>item.id===button.dataset.edit||item.id===button.dataset.archive);if(!row)return;
+    if(button.dataset.edit){setForm(row);$("new-record").scrollIntoView({behavior:"smooth",block:"center"});return;}
+    if(button.dataset.archive){if(!confirm(`Archive ${row.vendor}? This change will sync when you reconnect.`))return;const oldRows=[...ledger.rows],oldWrites=[...(ledger.pendingWrites||[])];const archived={...row,status:"archived",updated_at:new Date().toISOString()};ledger.rows=ledger.rows.map(item=>item.id===row.id?archived:item);ledger.pendingWrites=[...oldWrites.filter(item=>item.id!==row.id),archived];try{await saveLedger();render();$("message").className="message";$("message").textContent="Archive queued on this device.";if(navigator.onLine)void syncQueue();}catch{ledger.rows=oldRows;ledger.pendingWrites=oldWrites;render();$("message").className="message error";$("message").textContent="Could not save this archive locally.";}}
+  });  addEventListener("online",()=>{ $("connection").textContent="Online";void syncQueue(); });
+  addEventListener("offline",()=>{ $("connection").textContent="Offline"; });
+  void start();
+})();
+</script>
+<script src="/offline-actions.js"></script></body>
+</html>

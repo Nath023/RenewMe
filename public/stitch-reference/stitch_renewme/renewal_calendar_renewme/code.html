@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#a1d1b8","on-secondary":"#ffffff","secondary-container":"#fe7860","on-primary-fixed-variant":"#214f3c","primary-container":"#1f4d3a","background":"#fdf9f3","on-secondary-container":"#701004","surface-container":"#f2ede8","tertiary-fixed":"#ffdad8","error":"#ba1a1a","inverse-primary":"#a1d1b8","surface-variant":"#e6e2dd","surface":"#fdf9f3","surface-container-highest":"#e6e2dd","on-tertiary-container":"#e3a29f","on-error":"#ffffff","inverse-on-surface":"#f5f0eb","on-secondary-fixed":"#3f0300","secondary":"#a73826","tertiary-fixed-dim":"#fab5b3","surface-container-low":"#f8f3ed","surface-tint":"#3a6753","on-tertiary-fixed-variant":"#693938","primary":"#023625","tertiary-container":"#673736","on-primary-container":"#8dbda4","on-tertiary-fixed":"#350f0f","tertiary":"#4c2121","secondary-fixed":"#ffdad4","secondary-fixed-dim":"#ffb4a6","surface-container-high":"#ece7e2","on-surface-variant":"#414944","on-secondary-fixed-variant":"#862112","outline-variant":"#c0c9c2","on-error-container":"#93000a","on-surface":"#1c1b18","on-primary":"#ffffff","on-background":"#1c1b18","surface-bright":"#fdf9f3","surface-container-lowest":"#ffffff","primary-fixed":"#bceed3","on-tertiary":"#ffffff","outline":"#717973","error-container":"#ffdad6","inverse-surface":"#32302d","on-primary-fixed":"#002114","surface-dim":"#ded9d4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.25rem","space-sm":"0.5rem","space-md":"0.875rem","gutter":"1rem","margin":"1rem","margin-desktop":"2.5rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-xl":"2rem"},"fontFamily":{"caption":["Inter"],"body-sm":["Inter"],"display-md":["Newsreader"],"ledger-amount-sm":["Newsreader"],"display-lg-mobile":["Newsreader"],"display-lg":["Newsreader"],"display-sm":["Newsreader"],"ledger-amount-lg":["Newsreader"],"body-md":["Inter"],"label-ledger":["JetBrains Mono"],"body-lg":["Inter"]},"fontSize":{"caption":["11px",{"lineHeight":"14px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-md":["30px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"400"}],"ledger-amount-sm":["17px",{"lineHeight":"22px","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-lg":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"400"}],"display-sm":["22px",{"lineHeight":"28px","fontWeight":"500"}],"ledger-amount-lg":["28px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-ledger":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between border-r border-outline-variant/30"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 rounded bg-primary-container flex items-center justify-center text-on-primary font-display-sm text-display-sm leading-none">R</div><span class="font-display-sm text-display-sm text-primary tracking-tight font-medium">RenewMe</span></div><span class="font-label-ledger text-label-ledger text-on-surface-variant uppercase px-space-xs py-0.5 bg-surface-container rounded">Ledger</span></div><div class="p-space-md border-b border-outline-variant/30"><button class="w-full flex items-center justify-between p-space-sm bg-surface rounded hover:bg-surface-container-high transition-colors text-left" type="button"><div class="flex flex-col truncate"><span class="font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">Active Entity</span><span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Studio Lagos Ltd</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></button></div><nav class="flex flex-col gap-1 p-space-sm" data-active-classes="bg-primary-container text-on-primary font-medium"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-body-sm text-body-sm">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-body-sm text-body-sm">Subscriptions</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded transition-colors bg-primary-container text-on-primary font-medium" data-path="renewal-calendar" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-body-sm text-body-sm">Calendar</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">monitoring</span><span class="font-body-sm text-body-sm">Reports</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reminders" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="font-body-sm text-body-sm">Reminders</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-sm text-body-sm">Settings</span></a></nav></div><div class="p-space-md border-t border-outline-variant/30 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col"><span class="font-body-sm text-body-sm font-medium text-on-surface">Lagos Admin</span><span class="font-caption text-caption text-on-surface-variant">ledger@studiolagos.com</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">logout</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-md z-40 border-b border-outline-variant/30 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-ledger text-caption uppercase text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Studio Lagos</span><span>/</span><span class="hover:text-on-surface cursor-pointer">Ledger</span><span>/</span><span class="text-primary font-medium">Calendar</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[18px]">search</span><input class="bg-surface-container-low border border-outline-variant/40 rounded py-1 pl-8 pr-space-md font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-on-surface w-64 transition-all" placeholder="Search commitments, vendors, ref..." type="search"/></div><div class="h-6 w-px bg-outline-variant/40"></div><button class="flex items-center gap-space-xs px-space-md py-1.5 bg-primary text-on-primary rounded font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>Record Commitment</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Folio Header Banner & Breadcrumb Layer -->
+<div class="px-margin-desktop py-space-md border-b border-outline-variant/40 bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">
+<span>Folio Workspace</span>
+<span>/</span>
+<span>Calendar &amp; Schedule</span>
+<span>/</span>
+<span class="text-primary font-medium">November 2025</span>
+</div>
+<h1 class="font-display-md text-display-md text-primary tracking-tight">Renewal &amp; Cut-off Calendar</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Visual accounting schedule of upcoming auto-renewal charges, trial expirations, and statutory cancellation deadlines.</p>
+</div>
+<!-- Right Controls: View Switcher & Action -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<div class="inline-flex p-0.5 bg-surface-container border border-outline-variant/40 rounded">
+<button class="px-space-md py-1 bg-surface font-body-sm text-body-sm font-medium text-primary shadow-sm rounded flex items-center gap-1.5 border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_view_month</span>
+<span>Month Grid</span>
+</button>
+<button class="px-space-md py-1 font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface rounded flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+<span>Agenda View</span>
+</button>
+</div>
+<button class="flex items-center gap-1 px-space-md py-1.5 bg-surface border border-outline-variant/50 text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Filter Grid</span>
+</button>
+</div>
+</div>
+<!-- Calendar Navigator & Fiscal Barometer Strip -->
+<div class="px-margin-desktop py-space-sm bg-surface border-b border-outline-variant/40 flex flex-wrap items-center justify-between gap-y-3">
+<!-- Month Navigation -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 flex items-center justify-center border border-outline-variant/50 rounded bg-surface hover:bg-surface-container text-on-surface transition-colors" title="Previous Month" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="px-space-sm h-7 text-caption font-label-ledger uppercase tracking-wider border border-outline-variant/50 rounded bg-surface hover:bg-surface-container text-on-surface transition-colors" type="button">
+          Today
+        </button>
+<button class="w-7 h-7 flex items-center justify-center border border-outline-variant/50 rounded bg-surface hover:bg-surface-container text-on-surface transition-colors" title="Next Month" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-sm text-display-sm text-on-surface font-medium">November 2025</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded border border-outline-variant/30">FY25 · Q4 Ledger</span>
+</div>
+</div>
+<!-- Fiscal Metrics Barometer -->
+<div class="flex items-center gap-space-lg font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span>
+<span class="text-on-surface-variant font-caption">Monthly Commitments:</span>
+<span class="font-label-ledger font-medium text-on-surface">$348.50 <span class="text-on-surface-variant font-normal text-caption">(≈ ₦540,175)</span></span>
+</div>
+<div class="h-4 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface-variant font-caption">Actionable Cutoffs:</span>
+<span class="font-label-ledger font-medium text-secondary">2 Pending</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#c2842e]"></span>
+<span class="text-on-surface-variant font-caption">Trial Expiries:</span>
+<span class="font-label-ledger font-medium text-on-surface">1 Folio</span>
+</div>
+</div>
+</div>
+<!-- Legend & Micro-Filter Palette Bar -->
+<div class="px-margin-desktop py-1.5 bg-surface-container-low border-b border-outline-variant/40 flex items-center justify-between text-caption font-label-ledger uppercase text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface font-medium">Folio Key:</span>
+<span class="inline-flex items-center gap-1.5 cursor-pointer hover:text-on-surface text-primary">
+<span class="w-2 h-2 bg-primary-container rounded-[1px]"></span>
+<span>All Commitments (14)</span>
+</span>
+<span class="inline-flex items-center gap-1.5 cursor-pointer hover:text-on-surface">
+<span class="w-2 h-2 bg-primary rounded-[1px]"></span>
+<span>Auto-Renewals ($ Outflow)</span>
+</span>
+<span class="inline-flex items-center gap-1.5 cursor-pointer hover:text-on-surface">
+<span class="w-3 border-b-2 border-secondary inline-block"></span>
+<span class="text-secondary font-medium">Statutory Cut-offs (Cancel-by)</span>
+</span>
+<span class="inline-flex items-center gap-1.5 cursor-pointer hover:text-on-surface">
+<span class="w-2 h-2 bg-[#d79737] rounded-[1px]"></span>
+<span>Trial Periods (0-Cost End)</span>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span class="font-body-sm normal-case text-on-surface-variant text-[11px]">Click any date cell to examine statutory audit records</span>
+</div>
+</div>
+<!-- Primary Workspace: Split Layout (Calendar 68% + Docket 32%) -->
+<div class="flex-1 flex flex-col lg:flex-row divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/40 bg-surface min-h-[calc(100vh-164px)]">
+<!-- LEFT PANE: ARCHIVAL CALENDAR GRID (7 Columns x 5 Weeks) -->
+<div class="w-full lg:w-[68%] p-space-lg flex flex-col overflow-x-auto">
+<!-- Weekday Headers -->
+<div class="grid grid-cols-7 border border-outline-variant/60 bg-surface-container-high rounded-t">
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium border-r border-outline-variant/40">Mon</div>
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium border-r border-outline-variant/40">Tue</div>
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium border-r border-outline-variant/40">Wed</div>
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium border-r border-outline-variant/40 bg-surface-container-highest/60 text-primary">Thu</div>
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium border-r border-outline-variant/40">Fri</div>
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium border-r border-outline-variant/40">Sat</div>
+<div class="py-2 text-center font-label-ledger text-caption uppercase text-on-surface-variant font-medium">Sun</div>
+</div>
+<!-- Days Grid (Hairline Ruled Paper Sheet) -->
+<div class="grid grid-cols-7 border-x border-b border-outline-variant/60 bg-[#FBF9F4] select-none text-left">
+<!-- ROW 1: Oct 27 to Nov 2 -->
+<!-- Oct 27 (Muted Prev Month) -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">27</span>
+</div>
+<!-- Oct 28 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">28</span>
+</div>
+<!-- Oct 29 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">29</span>
+</div>
+<!-- Oct 30 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">30</span>
+</div>
+<!-- Oct 31 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">31</span>
+</div>
+<!-- Nov 1 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 relative group hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ledger text-caption font-medium text-on-surface">01</span>
+<span class="font-label-ledger text-[9px] uppercase text-on-surface-variant/60">Nov</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate" title="Github Copilot Org">
+              Github Copilot $19.00
+            </div>
+</div>
+</div>
+<!-- Nov 2 -->
+<div class="h-28 border-b border-outline-variant/40 p-1.5 relative group hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">02</span>
+</div>
+<!-- ROW 2: Nov 3 to Nov 9 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">03</span>
+</div>
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">04</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary truncate">
+              Apple iCloud $2.99
+            </div>
+</div>
+</div>
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">05</span>
+</div>
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">06</span>
+</div>
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">07</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary truncate">
+              Adobe CC $54.99
+            </div>
+</div>
+</div>
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">08</span>
+</div>
+<div class="h-28 border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">09</span>
+</div>
+<!-- ROW 3: Nov 10 to Nov 16 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">10</span>
+</div>
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">11</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-on-surface-variant truncate">
+              OpenAI API Ledger
+            </div>
+</div>
+</div>
+<!-- Thu Nov 12: ACTIVE SELECTED DAY IN INSPECTION -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 bg-[#f4ece1] relative cursor-pointer ring-2 ring-primary ring-inset">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ledger text-caption font-bold text-primary flex items-center gap-1">
+              12
+              <span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+</span>
+<span class="font-label-ledger text-[9px] uppercase px-1 py-0.2 bg-primary text-on-primary rounded font-semibold">Active</span>
+</div>
+<div class="flex flex-col gap-1">
+<!-- Cut-off with red underline -->
+<div class="text-[10px] leading-tight font-label-ledger font-semibold text-secondary border-b border-secondary inline-block truncate" title="Namecheap Cancel Cut-off">
+              Namecheap Cut-off
+            </div>
+<!-- Green auto renewal -->
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate" title="Google Workspace $36.00">
+              Google Wksp $36.00
+            </div>
+</div>
+</div>
+<!-- Fri Nov 13 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">13</span>
+<div class="mt-1 text-[9px] font-label-ledger text-on-surface-variant italic">Reconciled</div>
+</div>
+<!-- Sat Nov 14 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ledger text-caption font-medium text-on-surface">14</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate" title="Namecheap Auto-Renew">
+              Namecheap $14.50
+            </div>
+</div>
+</div>
+<!-- Sun Nov 15 -->
+<div class="h-28 border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-ledger text-caption font-medium text-on-surface">15</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger font-semibold text-secondary border-b border-secondary truncate" title="Cursor AI Cancel Free By">
+              Cursor AI Cancel By
+            </div>
+<div class="text-[10px] leading-tight font-label-ledger font-semibold text-secondary border-b border-secondary truncate" title="Vercel Cutoff">
+              Vercel Cutoff
+            </div>
+</div>
+</div>
+<!-- ROW 4: Nov 16 to Nov 22 -->
+<!-- Mon Nov 16 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">16</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-[#9e6211] font-medium truncate" title="Cursor AI Pro Trial End">
+              Cursor Trial End
+            </div>
+</div>
+</div>
+<!-- Tue Nov 17 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">17</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate">
+              Vercel Pro $20.00
+            </div>
+</div>
+</div>
+<!-- Wed Nov 18 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">18</span>
+</div>
+<!-- Thu Nov 19 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">19</span>
+</div>
+<!-- Fri Nov 20 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">20</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate">
+              Canva Teams $12.99
+            </div>
+<div class="text-[10px] leading-tight font-label-ledger font-semibold text-secondary border-b border-secondary truncate">
+              Figma Cancel By
+            </div>
+</div>
+</div>
+<!-- Sat Nov 21 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">21</span>
+</div>
+<!-- Sun Nov 22 -->
+<div class="h-28 border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">22</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate">
+              Figma Pro $45.00
+            </div>
+</div>
+</div>
+<!-- ROW 5: Nov 23 to Nov 29 -->
+<!-- Mon Nov 23 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">23</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger font-semibold text-secondary border-b border-secondary truncate">
+              Zoom Cancel Window
+            </div>
+</div>
+</div>
+<!-- Tue Nov 24 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">24</span>
+</div>
+<!-- Wed Nov 25 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">25</span>
+</div>
+<!-- Thu Nov 26 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">26</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate">
+              Cursor Pro $20.00
+            </div>
+</div>
+</div>
+<!-- Fri Nov 27 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">27</span>
+</div>
+<!-- Sat Nov 28 -->
+<div class="h-28 border-r border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">28</span>
+</div>
+<!-- Sun Nov 29 -->
+<div class="h-28 border-b border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">29</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate">
+              Zoom Work $149.90
+            </div>
+</div>
+</div>
+<!-- ROW 6: Nov 30 & Dec Overflows -->
+<!-- Mon Nov 30 -->
+<div class="h-24 border-r border-outline-variant/40 p-1.5 hover:bg-surface-container-low cursor-pointer transition-colors">
+<span class="font-label-ledger text-caption font-medium text-on-surface">30</span>
+<div class="mt-1 flex flex-col gap-1">
+<div class="text-[10px] leading-tight font-label-ledger text-primary font-medium truncate">
+              Postmark $10.00
+            </div>
+</div>
+</div>
+<!-- Dec 1 (Muted Next Month) -->
+<div class="h-24 border-r border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">01</span>
+<div class="mt-0.5 text-[9px] font-label-ledger text-on-surface-variant">Dec</div>
+</div>
+<!-- Dec 2 -->
+<div class="h-24 border-r border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">02</span>
+</div>
+<!-- Dec 3 -->
+<div class="h-24 border-r border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">03</span>
+</div>
+<!-- Dec 4 -->
+<div class="h-24 border-r border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">04</span>
+</div>
+<!-- Dec 5 -->
+<div class="h-24 border-r border-outline-variant/40 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">05</span>
+</div>
+<!-- Dec 6 -->
+<div class="h-24 p-1.5 bg-surface-container-low/40 opacity-40">
+<span class="font-label-ledger text-caption text-on-surface-variant">06</span>
+</div>
+</div>
+<!-- Lower Folio Summary Footer -->
+<div class="mt-space-md p-space-sm bg-surface-container-low border border-outline-variant/40 rounded flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-ledger text-caption">
+<div class="flex items-center gap-space-md">
+<span class="text-on-surface-variant">Audited Transactions: <strong class="text-on-surface font-semibold">14 Registered</strong></span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">Total Debit Scheduled: <strong class="text-primary font-semibold">$348.50</strong></span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant">Local Projection: <strong class="text-on-surface font-semibold">₦540,175.00</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<button class="underline text-on-surface-variant hover:text-on-surface" type="button">Download CSV Folio</button>
+<span>·</span>
+<button class="underline text-on-surface-variant hover:text-on-surface" type="button">Sync iCal/Outlook</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: DAY INSPECTION DOCKET (Active Day Focus) -->
+<div class="w-full lg:w-[32%] bg-[#FBF9F4] flex flex-col divide-y divide-outline-variant/40">
+<!-- Docket Header -->
+<div class="p-space-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+            Day Inspection Docket
+          </span>
+<span class="font-label-ledger text-caption bg-surface border border-outline-variant/40 px-2 py-0.5 rounded text-on-surface">
+            2 Commitments
+          </span>
+</div>
+<div class="flex items-baseline justify-between">
+<div>
+<h2 class="font-display-sm text-display-sm text-on-surface font-medium">Thu, 12 Nov 2025</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fiscal Week 46 · Day 316 of 2025</p>
+</div>
+<span class="font-label-ledger text-caption text-secondary border border-secondary px-1.5 py-0.5 rounded uppercase font-semibold">Action Required</span>
+</div>
+<!-- Day Financial Impact Recap -->
+<div class="mt-space-xs p-space-sm bg-surface border border-outline-variant/40 rounded flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant">Total Day Outflow:</span>
+<span class="font-label-ledger font-semibold text-primary">$36.00 <span class="text-on-surface-variant text-caption font-normal">(≈ ₦55,800)</span></span>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<div class="flex justify-between items-center text-caption font-label-ledger">
+<span class="text-secondary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+              Immediate Cut-off Action:
+            </span>
+<span class="text-secondary font-semibold">1 Critical Deadline</span>
+</div>
+</div>
+</div>
+<!-- Scrollable Docket Entries -->
+<div class="p-space-lg flex-1 flex flex-col gap-space-lg overflow-y-auto">
+<!-- CARD 1: CRITICAL CANCEL-BY DEADLINE (Namecheap) -->
+<div class="border border-secondary bg-surface rounded p-space-md flex flex-col gap-space-sm relative">
+<!-- Top Accent Header -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-label-ledger text-caption uppercase text-secondary font-semibold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">event_busy</span>
+              Critical Cancel-by Deadline
+            </span>
+<span class="font-label-ledger text-caption text-secondary font-bold bg-[#feebe8] px-1.5 py-0.5 rounded">
+              48h Left
+            </span>
+</div>
+<!-- Entity & Details -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-display-sm text-[18px] text-on-surface font-medium">Namecheap</h3>
+<span class="font-label-ledger text-caption text-on-surface-variant font-medium">Ref: #NC-7729-DM</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium">
+              Domain: <span class="font-label-ledger text-primary underline">studiolagos-client.com</span>
+</div>
+</div>
+<!-- Strict Warning Box -->
+<div class="p-2.5 bg-[#fdf2f0] border-l-2 border-secondary text-body-sm text-on-surface flex flex-col gap-1">
+<div class="flex items-center gap-1 font-label-ledger text-caption text-secondary font-semibold uppercase">
+<span>Cutoff Window: 23:59 GMT+1</span>
+</div>
+<p class="text-[12px] leading-tight text-on-surface-variant">
+              Mandatory cancellation window closes tonight before <strong class="text-on-surface">Sat 14 Nov</strong> auto-debit of <strong class="text-on-surface font-label-ledger">$14.50</strong> (≈ ₦22,475). Non-refundable once billed.
+            </p>
+</div>
+<!-- Payment Card Meta -->
+<div class="flex items-center justify-between font-label-ledger text-caption text-on-surface-variant py-1 border-t border-b border-outline-variant/30">
+<span>Settlement Ledger:</span>
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+              FirstBank Master ••8820
+            </span>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<a class="px-2.5 py-1.5 bg-secondary text-on-secondary rounded font-body-sm text-body-sm font-medium hover:bg-on-secondary-container transition-colors text-center flex items-center justify-center gap-1" href="#">
+<span>Registrar Portal</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<button class="px-2.5 py-1.5 bg-surface border border-outline-variant/50 text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-container transition-colors text-center" type="button">
+              Disarm / Note
+            </button>
+</div>
+</div>
+<!-- CARD 2: SCHEDULED AUTO-RENEWAL (Google Workspace) -->
+<div class="border border-outline-variant/50 bg-surface rounded p-space-md flex flex-col gap-space-sm">
+<!-- Top Accent Header -->
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-label-ledger text-caption uppercase text-primary font-semibold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">autorenew</span>
+              Scheduled Auto-Renewal
+            </span>
+<span class="font-label-ledger text-caption text-primary bg-[#e6f4ed] px-1.5 py-0.5 rounded font-medium">
+              Confirmed
+            </span>
+</div>
+<!-- Entity & Details -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="font-display-sm text-[18px] text-on-surface font-medium">Google Workspace</h3>
+<span class="font-label-ledger text-caption text-on-surface-variant font-medium">Folio: #GWS-0091</span>
+</div>
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Business Plus Tier (6 Seats)</span>
+<span class="font-display-sm text-[19px] font-medium text-primary">$36.00 <span class="text-caption font-normal text-on-surface-variant">/ mo</span></span>
+</div>
+</div>
+<!-- Breakdown Ledger Table Minimal -->
+<div class="p-2 bg-surface-container-low rounded border border-outline-variant/30 text-caption font-label-ledger flex flex-col gap-1">
+<div class="flex justify-between text-on-surface-variant">
+<span>Base Seat Rate (6 x $6.00):</span>
+<span class="text-on-surface">$36.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Fx Estimated (CBN 1,550):</span>
+<span class="text-on-surface">₦55,800.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Next Renewal Cycle:</span>
+<span class="text-on-surface">12 Dec 2025</span>
+</div>
+</div>
+<!-- Payment Card Meta -->
+<div class="flex items-center justify-between font-label-ledger text-caption text-on-surface-variant py-1 border-t border-b border-outline-variant/30">
+<span>Settlement Ledger:</span>
+<span class="text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+              Stanbic IBTC Visa ••4091
+            </span>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="px-2.5 py-1.5 bg-primary text-on-primary rounded font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors text-center" type="button">
+              View Folio
+            </button>
+<button class="px-2.5 py-1.5 bg-surface border border-outline-variant/50 text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-container transition-colors text-center" type="button">
+              Adjust Seats
+            </button>
+</div>
+</div>
+<!-- Upcoming Context Note for adjacent days -->
+<div class="p-space-sm bg-surface-container-high rounded border border-outline-variant/30 flex items-start gap-2 text-caption">
+<span class="material-symbols-outlined text-primary text-[16px] mt-0.5">history_toggle_off</span>
+<div class="flex flex-col gap-0.5 text-on-surface-variant">
+<span class="font-label-ledger text-on-surface uppercase font-medium">Adjacent Window Context</span>
+<span>Sat 14 Nov will execute 1 renewal ($14.50), followed by 2 trial cutoffs on Sun 15 Nov. Ensure ledger funding prior to 14:00 Fri.</span>
+</div>
+</div>
+</div>
+<!-- Docket Quick Actions Footer -->
+<div class="p-space-md bg-surface border-t border-outline-variant/40 flex flex-col gap-2">
+<button class="w-full flex items-center justify-center gap-1.5 px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium border border-outline-variant/50 rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Schedule Entry on This Day</span>
+</button>
+<button class="w-full flex items-center justify-center gap-1.5 px-space-md py-1.5 bg-surface hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-ledger text-caption uppercase rounded transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">print</span>
+<span>Export Day Ledger Docket</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

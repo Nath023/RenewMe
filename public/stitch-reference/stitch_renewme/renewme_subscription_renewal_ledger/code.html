@@ -1,0 +1,601 @@
+<!DOCTYPE html><html class="bg-surface" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "on-primary-fixed": "#002114", "on-secondary": "#ffffff", "secondary-fixed-dim": "#ffb4a6", "on-secondary-fixed": "#3f0300", "on-error-container": "#93000a", "tertiary-container": "#673736", "outline": "#717973", "background": "#fdf9f3", "on-primary-container": "#8dbda4", "surface-container": "#f2ede8", "surface-container-lowest": "#ffffff", "surface-dim": "#ded9d4", "tertiary-fixed": "#ffdad8", "surface-tint": "#3a6753", "surface-variant": "#e6e2dd", "secondary-fixed": "#ffdad4", "surface-container-low": "#f8f3ed", "on-secondary-container": "#701004", "secondary-container": "#fe7860", "error": "#ba1a1a", "on-primary-fixed-variant": "#214f3c", "primary": "#023625", "inverse-primary": "#a1d1b8", "on-surface-variant": "#414944", "on-tertiary": "#ffffff", "outline-variant": "#c0c9c2", "on-background": "#1c1b18", "on-surface": "#1c1b18", "primary-container": "#1f4d3a", "secondary": "#a73826", "primary-fixed-dim": "#a1d1b8", "surface-container-high": "#ece7e2", "tertiary-fixed-dim": "#fab5b3", "primary-fixed": "#bceed3", "surface-bright": "#fdf9f3", "inverse-surface": "#32302d", "on-tertiary-fixed": "#350f0f", "on-tertiary-fixed-variant": "#693938", "error-container": "#ffdad6", "on-primary": "#ffffff", "surface": "#fdf9f3", "on-secondary-fixed-variant": "#862112", "on-tertiary-container": "#e3a29f", "tertiary": "#4c2121", "inverse-on-surface": "#f5f0eb", "surface-container-highest": "#e6e2dd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-desktop": "1.5rem", "gutter": "1rem", "space-sm": "0.5rem", "space-md": "0.875rem", "margin": "1rem", "space-xl": "2rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "margin-desktop": "2.5rem" }, "fontFamily": { "display-md": [ "Newsreader" ], "label-ledger": [ "JetBrains Mono" ], "body-sm": [ "Inter" ], "display-sm": [ "Newsreader" ], "display-lg": [ "Newsreader" ], "ledger-amount-lg": [ "Newsreader" ], "caption": [ "Inter" ], "body-md": [ "Inter" ], "ledger-amount-sm": [ "Newsreader" ], "display-lg-mobile": [ "Newsreader" ], "body-lg": [ "Inter" ] }, "fontSize": { "display-md": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "label-ledger": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "display-sm": [ "22px", { "lineHeight": "28px", "fontWeight": "500" } ], "display-lg": [ "44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "ledger-amount-lg": [ "28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "caption": [ "11px", { "lineHeight": "14px", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "ledger-amount-sm": [ "17px", { "lineHeight": "22px", "fontWeight": "500" } ], "display-lg-mobile": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-outline-variant/60"><div class="h-16 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-baseline gap-space-xs text-on-surface" data-path="landing" href="#"><span class="font-display-sm text-display-sm tracking-tight text-primary font-normal">RenewMe</span><span class="font-label-ledger text-caption uppercase text-outline tracking-widest pl-space-xs border-l border-outline-variant/60 hidden sm:inline">Folio No. 01</span></a></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-medium"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="how-it-works" href="#">How it works</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing" href="#">Pricing</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="sign-in" href="#">Sign in</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center h-[34px] px-space-md bg-primary-container text-surface border border-primary-container rounded font-body-md text-body-sm font-medium hover:bg-primary transition-colors" data-path="register" href="#">Start tracking</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface flex-1"><div class="flex flex-col w-full text-on-surface">
+<!-- SECTION 1: HERO REGISTER -->
+<section class="w-full max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl lg:py-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Editorial Folio Pitch -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg lg:pr-space-lg">
+<div class="flex items-center gap-space-xs">
+<span class="inline-block w-2 h-2 bg-primary"></span>
+<span class="font-label-ledger text-label-ledger uppercase text-on-surface-variant tracking-wider">
+            SUBSCRIPTION &amp; RENEWAL TRACKER · FOLIO EDITION
+          </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight font-normal">
+          Know what renews before it costs you.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Track every domain, software licence and hosting commitment in one place — with real-time exposure in naira and dollars.
+        </p>
+<div class="pt-space-sm flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<a class="inline-flex items-center justify-center h-[38px] px-space-lg bg-primary-container text-surface border border-primary-container rounded font-body-md text-body-sm font-medium hover:bg-primary transition-colors" data-path="register" href="#">
+            Start tracking free
+          </a>
+<a class="inline-flex items-center gap-space-xs font-body-md text-body-sm font-medium text-on-surface hover:text-primary transition-colors py-space-xs" href="#sample-ledger">
+<span>View sample ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<p class="font-label-ledger text-caption uppercase text-outline tracking-wider">
+          No card required · Set up in 4 minutes · Dual-currency native
+        </p>
+<!-- Quick Proof Metric Bar -->
+<div class="grid grid-cols-3 gap-space-md pt-space-lg border-t border-outline-variant/60">
+<div>
+<div class="font-display-sm text-display-sm text-primary">₦0</div>
+<div class="font-label-ledger text-caption text-outline uppercase">Lapsed Cost</div>
+</div>
+<div>
+<div class="font-display-sm text-display-sm text-primary">48h</div>
+<div class="font-label-ledger text-caption text-outline uppercase">Prior Warning</div>
+</div>
+<div>
+<div class="font-display-sm text-display-sm text-primary">100%</div>
+<div class="font-label-ledger text-caption text-outline uppercase">Data Sovereignty</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Tangible Paper Ledger Excerpt -->
+<div class="lg:col-span-6 w-full bg-surface-container-lowest border border-outline-variant/80 rounded" id="sample-ledger">
+<!-- Archival Ledger Top Bar -->
+<div class="px-space-md py-space-sm bg-surface-container-high border-b border-outline-variant/80 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-ledger text-caption text-on-surface uppercase font-medium">UPCOMING RENEWALS · NOVEMBER 2025</span>
+</div>
+<span class="font-label-ledger text-caption uppercase px-space-xs py-0.5 border border-outline-variant text-outline bg-surface">
+            5 COMMITMENTS
+          </span>
+</div>
+<!-- Column Headers -->
+<div class="grid grid-cols-12 px-space-md py-2 bg-surface-container-low border-b border-outline-variant/60 font-label-ledger text-caption text-outline uppercase">
+<div class="col-span-5">Commitment / Key</div>
+<div class="col-span-2 text-left">Renewal</div>
+<div class="col-span-3 text-right">Cadence &amp; Est.</div>
+<div class="col-span-2 text-right">Status</div>
+</div>
+<!-- Ledger Entries -->
+<div class="divide-y divide-outline-variant/60 text-body-sm font-body-sm">
+<!-- Row 1: Urgent Cancel Cutoff -->
+<div class="grid grid-cols-12 px-space-md py-2.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 truncate pr-2">
+<span class="font-medium text-on-surface block truncate">Namecheap DNS</span>
+<span class="font-label-ledger text-caption text-outline block truncate">studio-lagos.co</span>
+</div>
+<div class="col-span-2 font-label-ledger text-caption text-on-surface">Sat 14 Nov</div>
+<div class="col-span-3 text-right tabular-nums">
+<span class="block text-on-surface font-medium">$14.50 / yr</span>
+<span class="font-label-ledger text-caption text-outline">≈ ₦22,475</span>
+</div>
+<div class="col-span-2 text-right">
+<span class="inline-block px-1.5 py-0.5 border border-secondary text-secondary font-label-ledger text-[10px] uppercase font-medium">
+                Cancel by 14
+              </span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 px-space-md py-2.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 truncate pr-2">
+<span class="font-medium text-on-surface block truncate">Google Workspace</span>
+<span class="font-label-ledger text-caption text-outline block truncate">Business Standard (3)</span>
+</div>
+<div class="col-span-2 font-label-ledger text-caption text-on-surface">Thu 12 Nov</div>
+<div class="col-span-3 text-right tabular-nums">
+<span class="block text-on-surface font-medium">$36.00 / mo</span>
+<span class="font-label-ledger text-caption text-outline">≈ ₦55,800</span>
+</div>
+<div class="col-span-2 text-right">
+<span class="inline-block px-1.5 py-0.5 border border-outline-variant text-primary font-label-ledger text-[10px] uppercase">
+                Scheduled
+              </span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 px-space-md py-2.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 truncate pr-2">
+<span class="font-medium text-on-surface block truncate">Vercel Pro Tier</span>
+<span class="font-label-ledger text-caption text-outline block truncate">Hosting &amp; Edge API</span>
+</div>
+<div class="col-span-2 font-label-ledger text-caption text-on-surface">Tue 17 Nov</div>
+<div class="col-span-3 text-right tabular-nums">
+<span class="block text-on-surface font-medium">$20.00 / mo</span>
+<span class="font-label-ledger text-caption text-outline">≈ ₦31,000</span>
+</div>
+<div class="col-span-2 text-right">
+<span class="inline-block px-1.5 py-0.5 border border-outline-variant text-outline font-label-ledger text-[10px] uppercase">
+                Active
+              </span>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 px-space-md py-2.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 truncate pr-2">
+<span class="font-medium text-on-surface block truncate">Canva Pro Teams</span>
+<span class="font-label-ledger text-caption text-outline block truncate">Design seat pool</span>
+</div>
+<div class="col-span-2 font-label-ledger text-caption text-on-surface">Fri 20 Nov</div>
+<div class="col-span-3 text-right tabular-nums">
+<span class="block text-on-surface font-medium">$12.99 / mo</span>
+<span class="font-label-ledger text-caption text-outline">≈ ₦20,135</span>
+</div>
+<div class="col-span-2 text-right">
+<span class="inline-block px-1.5 py-0.5 border border-outline-variant text-outline font-label-ledger text-[10px] uppercase">
+                Active
+              </span>
+</div>
+</div>
+<!-- Row 5: Retainer Alert -->
+<div class="grid grid-cols-12 px-space-md py-2.5 items-center hover:bg-surface-container-low transition-colors">
+<div class="col-span-5 truncate pr-2">
+<span class="font-medium text-on-surface block truncate">Zoom Pro Annual</span>
+<span class="font-label-ledger text-caption text-outline block truncate">Client room archive</span>
+</div>
+<div class="col-span-2 font-label-ledger text-caption text-on-surface">Sun 29 Nov</div>
+<div class="col-span-3 text-right tabular-nums">
+<span class="block text-on-surface font-medium">$149.90 / yr</span>
+<span class="font-label-ledger text-caption text-outline">≈ ₦232,345</span>
+</div>
+<div class="col-span-2 text-right">
+<span class="inline-block px-1.5 py-0.5 border border-outline-variant text-secondary font-label-ledger text-[10px] uppercase">
+                Notice 22
+              </span>
+</div>
+</div>
+</div>
+<!-- Ledger Ruled Summary Footer -->
+<div class="px-space-md py-3 bg-surface-container border-t border-outline-variant/80 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+<div class="font-label-ledger text-caption uppercase text-on-surface-variant">
+            TOTAL COMMITTED THIS CYCLE:
+          </div>
+<div class="text-right">
+<span class="font-ledger-amount-sm text-ledger-amount-sm font-semibold text-primary tabular-nums">$233.39</span>
+<span class="font-body-sm text-on-surface-variant ml-1">≈ ₦361,755</span>
+<span class="font-label-ledger text-caption text-outline block sm:inline sm:ml-2">[Peg: ₦1,550/$]</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THE PROBLEM (EVERYDAY SITUATIONS) -->
+<section class="w-full bg-surface-container-low border-y border-outline-variant/60 py-space-xl lg:py-20">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
+<div class="flex flex-col gap-space-xs max-w-2xl mb-space-xl">
+<span class="font-label-ledger text-label-ledger text-outline uppercase tracking-wider">
+          THE COST OF FORGOTTEN COMMODITIES
+        </span>
+<h2 class="font-display-md text-display-md text-primary font-normal">
+          Subscriptions don't announce themselves until the receipt hits.
+        </h2>
+</div>
+<!-- Ruled Narrative Ledger List (Hairline separated) -->
+<div class="border-t border-outline-variant/80 divide-y divide-outline-variant/80">
+<!-- Story 01 -->
+<div class="py-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-md items-baseline">
+<div class="md:col-span-1 font-label-ledger text-display-sm text-outline font-normal">
+            01.
+          </div>
+<div class="md:col-span-4 font-display-sm text-display-sm text-on-surface">
+            The domain renewal that lapsed silently.
+          </div>
+<div class="md:col-span-7 font-body-md text-body-md text-on-surface-variant">
+            You missed a registrar warning sent to an old technical inbox. DNS records went completely dark for 18 hours during a client launch before anyone realized the registration expired at 02:00 UTC.
+          </div>
+</div>
+<!-- Story 02 -->
+<div class="py-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-md items-baseline">
+<div class="md:col-span-1 font-label-ledger text-display-sm text-outline font-normal">
+            02.
+          </div>
+<div class="md:col-span-4 font-display-sm text-display-sm text-on-surface">
+            The annual seat fee nobody uses.
+          </div>
+<div class="md:col-span-7 font-body-md text-body-md text-on-surface-variant">
+            A freelance designer finished their contract in March. Seven months later, their $30/month creative cloud license quietly locked into another 12-month non-refundable commitment simply because no one had a cancellation date marked down.
+          </div>
+</div>
+<!-- Story 03 -->
+<div class="py-space-lg grid grid-cols-1 md:grid-cols-12 gap-space-md items-baseline">
+<div class="md:col-span-1 font-label-ledger text-display-sm text-outline font-normal">
+            03.
+          </div>
+<div class="md:col-span-4 font-display-sm text-display-sm text-on-surface">
+            The surprise FX jump on foreign SaaS.
+          </div>
+<div class="md:col-span-7 font-body-md text-body-md text-on-surface-variant">
+            A modest $150 USD marketing automation suite struck your corporate card at ₦1,550/$ instead of your forecasted budget rate of ₦1,100/$. What was meant to be a minor tooling line item ballooned past your quarterly buffer without warning.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: HOW IT WORKS (Ruled Horizontal Layout) -->
+<section class="w-full py-space-xl lg:py-20">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
+<div class="flex flex-col gap-space-xs max-w-xl mb-space-xl">
+<span class="font-label-ledger text-label-ledger text-outline uppercase tracking-wider">
+          OPERATING DISCIPLINE
+        </span>
+<h2 class="font-display-md text-display-md text-primary font-normal">
+          Three ledger entries to full clarity.
+        </h2>
+</div>
+<!-- 3-Column Ruled Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 border border-outline-variant/80 divide-y md:divide-y-0 md:divide-x divide-outline-variant/80 bg-surface-container-lowest">
+<!-- Step 1 -->
+<div class="p-space-lg flex flex-col justify-between">
+<div>
+<span class="font-label-ledger text-caption text-outline uppercase block mb-space-sm">STAGE · 01</span>
+<h3 class="font-display-sm text-display-sm text-on-surface mb-space-sm">
+              Enter your commitments
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Log vendor names, recurring cadences, corporate card associations, and contractually binding notice cutoffs in under 30 seconds per service.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/40 font-label-ledger text-caption text-outline uppercase">
+            [REC: SPEC ENTRY · ZERO BLOAT]
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="p-space-lg flex flex-col justify-between">
+<div>
+<span class="font-label-ledger text-caption text-outline uppercase block mb-space-sm">STAGE · 02</span>
+<h3 class="font-display-sm text-display-sm text-on-surface mb-space-sm">
+              Track dual-currency exposure
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              View individual and cumulative USD tooling liabilities side-by-side with real-time NGN equivalents so rate volatility never disrupts your payroll.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/40 font-label-ledger text-caption text-outline uppercase">
+            [DYNAMIC BENCHMARK PEG · USD / NGN]
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="p-space-lg flex flex-col justify-between">
+<div>
+<span class="font-label-ledger text-caption text-outline uppercase block mb-space-sm">STAGE · 03</span>
+<h3 class="font-display-sm text-display-sm text-on-surface mb-space-sm">
+              Receive cancellation alarms
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Direct, unadorned email dispatches and clean calendar events arrive 7 days and 48 hours before mandatory cancellation windows shut.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/40 font-label-ledger text-caption text-outline uppercase">
+            [ICAL DISPATCH · NON-IGNORABLE]
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: EDITORIAL FEATURES (Alternating Text & Authentic UI Artifacts) -->
+<section class="w-full bg-surface-container-low border-t border-outline-variant/60 py-space-xl lg:py-24">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop flex flex-col gap-space-xl lg:gap-24">
+<!-- Feature 1: Reminders with Teeth (Text Left, UI Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<span class="font-label-ledger text-label-ledger text-outline uppercase">NOTICE GOVERNANCE</span>
+<h3 class="font-display-md text-display-md text-primary font-normal">
+            Cancel-by reminders with teeth.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Most software simply informs you when your credit card is charged. RenewMe anchors to your legal cancellation cutoff — the exact date after which auto-renewal becomes irrevocable.
+          </p>
+</div>
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/80 rounded p-space-md">
+<div class="border-b border-outline-variant/60 pb-space-sm mb-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 bg-secondary"></span>
+<span class="font-label-ledger text-caption uppercase text-secondary font-medium">EXPIRATION WARNING FOLIO · CRITICAL CUTOFF</span>
+</div>
+<span class="font-label-ledger text-caption text-outline">REF: NMCH-882</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/60 p-space-md rounded">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-sm">
+<div>
+<h4 class="font-display-sm text-display-sm text-on-surface">Namecheap Domain Registry</h4>
+<p class="font-label-ledger text-caption text-outline uppercase">Renewal charge date: 17 November 2025</p>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-ledger-amount-sm text-ledger-amount-sm text-secondary font-semibold tabular-nums">$14.50</span>
+<span class="font-label-ledger text-caption text-outline block">≈ ₦22,475</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-lowest border border-secondary text-secondary mb-space-md">
+<div class="font-label-ledger text-caption font-medium uppercase tracking-wide">
+                MANDATORY NOTICE CUTOFF: FRIDAY, 14 NOVEMBER 2025 (23:59 WAT)
+              </div>
+<div class="font-body-sm text-body-sm mt-0.5">
+                Failure to cancel will incur a full 12-month lock-in through November 2026.
+              </div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="px-space-md py-1.5 bg-secondary text-on-secondary rounded font-body-md text-body-sm hover:opacity-90 transition-opacity" type="button">
+                Mark as Cancelled
+              </button>
+<button class="px-space-md py-1.5 bg-surface border border-outline-variant text-on-surface rounded font-body-md text-body-sm hover:bg-surface-container transition-colors" type="button">
+                Adjust Alert Buffer (Current: 72h)
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 2: Dual Currency Exposure (UI Left, Text Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<!-- UI Artifact Left -->
+<div class="lg:col-span-7 order-2 lg:order-1 bg-surface-container-lowest border border-outline-variant/80 rounded p-space-md">
+<div class="border-b border-outline-variant/60 pb-space-sm mb-space-md flex items-center justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase">CURRENCY SENSITIVITY AUDIT · 30-DAY OUTLOOK</span>
+<span class="font-label-ledger text-caption text-primary uppercase font-medium">LIVE PARITY TRACKER</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md mb-space-md">
+<div class="p-space-md border border-outline-variant/60 bg-surface">
+<span class="font-label-ledger text-caption text-outline uppercase block">Current Fixed Benchmark</span>
+<div class="font-ledger-amount-lg text-ledger-amount-lg text-primary tabular-nums mt-1">₦1,550.00 / $1</div>
+<span class="font-label-ledger text-caption text-on-surface-variant block mt-1">Bank settlement benchmark</span>
+</div>
+<div class="p-space-md border border-outline-variant/60 bg-surface">
+<span class="font-label-ledger text-caption text-outline uppercase block">Aggregate Monthly USD Tools</span>
+<div class="font-ledger-amount-lg text-ledger-amount-lg text-on-surface tabular-nums mt-1">$348.50</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-1">≈ ₦540,175 / month</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container border border-outline-variant/60 font-body-sm text-body-sm flex items-center justify-between">
+<span class="text-on-surface">Simulated +5% FX Naira Shift (₦1,627.50 / $)</span>
+<span class="font-label-ledger text-caption text-secondary font-medium tabular-nums">+₦27,008 impact</span>
+</div>
+</div>
+<!-- Text Right -->
+<div class="lg:col-span-5 order-1 lg:order-2 flex flex-col gap-space-sm">
+<span class="font-label-ledger text-label-ledger text-outline uppercase">EXCHANGE REALISM</span>
+<h3 class="font-display-md text-display-md text-primary font-normal">
+            Naira and dollar balances side by side.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            When revenue is earned in Naira but modern infrastructure is billed in US Dollars, exchange rates dictate your operational margins. RenewMe calculates cumulative FX exposure on every renewal line item.
+          </p>
+</div>
+</div>
+<!-- Feature 3: Month at an Accounting Glance (Text Left, UI Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<span class="font-label-ledger text-label-ledger text-outline uppercase">TEMPORAL OVERVIEW</span>
+<h3 class="font-display-md text-display-md text-primary font-normal">
+            The month at a single accounting glance.
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            A restrained ledger register that maps renewals chronologically against cash flow milestones, corporate card limits, and technical cutoffs.
+          </p>
+</div>
+<!-- Compact Paper Calendar Snippet -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/80 rounded p-space-md">
+<div class="border-b border-outline-variant/60 pb-space-sm mb-space-md flex items-center justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase">FOLIO CALENDAR · MID-MONTH CHRONICLE</span>
+<span class="font-label-ledger text-caption text-outline uppercase">WEEK 46 · 2025</span>
+</div>
+<div class="grid grid-cols-7 border border-outline-variant/60 divide-x divide-outline-variant/60 bg-surface text-center">
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-outline">MON 10</div>
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-outline">TUE 11</div>
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-outline">WED 12</div>
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-outline">THU 13</div>
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-secondary font-medium">FRI 14</div>
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-outline">SAT 15</div>
+<div class="p-2 border-b border-outline-variant/60 font-label-ledger text-caption text-outline">SUN 16</div>
+<!-- Calendar Cells -->
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left bg-surface-container-low/40">
+<span class="font-label-ledger text-[10px] text-outline">--</span>
+</div>
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left">
+<span class="font-label-ledger text-[10px] text-outline">--</span>
+</div>
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left bg-surface-container-low">
+<span class="font-label-ledger text-[9px] text-on-surface uppercase truncate font-medium">G-Workspace</span>
+<span class="font-label-ledger text-[9px] text-primary">$36.00</span>
+</div>
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left">
+<span class="font-label-ledger text-[10px] text-outline">--</span>
+</div>
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left bg-secondary/10 border-l border-secondary">
+<span class="font-label-ledger text-[9px] text-secondary uppercase font-bold truncate">CUTOFF: DNS</span>
+<span class="font-label-ledger text-[9px] text-secondary font-medium">$14.50</span>
+</div>
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left">
+<span class="font-label-ledger text-[10px] text-outline">--</span>
+</div>
+<div class="h-20 p-1 flex flex-col justify-start items-start text-left bg-surface-container-low/40">
+<span class="font-label-ledger text-[10px] text-outline">--</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-ledger text-caption text-outline">
+<span>• Settlement Scheduled</span>
+<span class="text-secondary">• Hard Expiry Window</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: TRANSPARENT PRICING (Ruled Table) -->
+<section class="w-full py-space-xl lg:py-24">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop">
+<div class="flex flex-col gap-space-xs max-w-xl mb-space-xl">
+<span class="font-label-ledger text-label-ledger text-outline uppercase tracking-wider">
+          TRANSPARENT PRICING
+        </span>
+<h2 class="font-display-md text-display-md text-primary font-normal">
+          Simple ledger pricing for lean teams.
+        </h2>
+</div>
+<!-- Ruled Comparison Panel -->
+<div class="border border-outline-variant/80 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/80 grid grid-cols-1 lg:grid-cols-2 bg-surface-container-lowest">
+<!-- Tier 1: Free Forever -->
+<div class="p-space-lg lg:p-space-xl flex flex-col justify-between">
+<div>
+<div class="flex items-baseline justify-between mb-space-sm">
+<h3 class="font-display-sm text-display-sm text-on-surface">Folio Personal</h3>
+<span class="font-label-ledger text-caption text-primary uppercase font-medium">FREE FOREVER</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+              For solo founders, freelancers, and lead engineers who demand orderly software bookkeeping without ongoing fees.
+            </p>
+<ul class="space-y-space-sm border-t border-outline-variant/60 pt-space-md mb-space-xl font-body-md text-body-md">
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+<span>Up to 15 active commitments tracked concurrently</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+<span>Real-time USD / NGN currency conversions</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+<span>Email notice alerts 7 days &amp; 48 hours in advance</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check</span>
+<span>Instant CSV ledger export for audits</span>
+</li>
+</ul>
+</div>
+<a class="w-full inline-flex items-center justify-center h-[40px] px-space-md bg-primary-container text-surface border border-primary-container rounded font-body-md text-body-sm font-medium hover:bg-primary transition-colors text-center" data-path="register" href="#">
+            Get Started Free
+          </a>
+</div>
+<!-- Tier 2: Business Ledger -->
+<div class="p-space-lg lg:p-space-xl flex flex-col justify-between bg-surface-container-low/40">
+<div>
+<div class="flex items-baseline justify-between mb-space-sm">
+<h3 class="font-display-sm text-display-sm text-on-surface">Business Ledger</h3>
+<span class="font-label-ledger text-caption text-outline uppercase">COMING Q1 2026</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+              For boutique studios, agencies, and small finance teams managing multi-seat corporate SaaS commitments.
+            </p>
+<div class="mb-space-md">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-medium text-primary">$9</span>
+<span class="text-body-sm text-on-surface-variant font-body-sm">/ month or ₦12,000 / month</span>
+</div>
+<ul class="space-y-space-sm border-t border-outline-variant/60 pt-space-md mb-space-xl font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">add</span>
+<span>Unlimited commitments &amp; historical archives</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">add</span>
+<span>Multi-seat access with role-based signoff</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">add</span>
+<span>Corporate bank statement matching assistant</span>
+</li>
+<li class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">add</span>
+<span>Custom peg rates &amp; formal accountant PDF folios</span>
+</li>
+</ul>
+</div>
+<button class="w-full inline-flex items-center justify-center h-[40px] px-space-md bg-surface border border-outline-variant text-outline rounded font-body-md text-body-sm font-medium cursor-not-allowed" disabled="" type="button">
+            Join Early Folio Waitlist
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: FAQ ACCORDION -->
+<section class="w-full bg-surface-container-low border-t border-outline-variant/60 py-space-xl lg:py-24">
+<div class="max-w-4xl mx-auto px-margin lg:px-margin-desktop">
+<div class="flex flex-col gap-space-xs mb-space-lg text-center md:text-left">
+<span class="font-label-ledger text-label-ledger text-outline uppercase tracking-wider">
+          CLARITY &amp; PROTOCOL
+        </span>
+<h2 class="font-display-md text-display-md text-primary font-normal">
+          Direct questions, plainly answered.
+        </h2>
+</div>
+<!-- Hairline Divided Accordion Register -->
+<div class="border-t border-outline-variant/80 divide-y divide-outline-variant/80">
+<!-- Item 1 -->
+<div class="py-space-md">
+<button class="w-full flex items-center justify-between text-left group" onclick="this.nextElementSibling.classList.toggle('hidden')" type="button">
+<span class="font-display-sm text-display-sm text-on-surface group-hover:text-primary transition-colors">
+              How does currency conversion work?
+            </span>
+<span class="material-symbols-outlined text-outline text-[20px]">expand_more</span>
+</button>
+<div class="pt-space-sm font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            We benchmark against prevailing official and studio rates with manual peg adjustments so your accounting reflects actual bank statement debits rather than deceptive card interbank estimates.
+          </div>
+</div>
+<!-- Item 2 -->
+<div class="py-space-md">
+<button class="w-full flex items-center justify-between text-left group" onclick="this.nextElementSibling.classList.toggle('hidden')" type="button">
+<span class="font-display-sm text-display-sm text-on-surface group-hover:text-primary transition-colors">
+              Can I connect my bank account directly?
+            </span>
+<span class="material-symbols-outlined text-outline text-[20px]">expand_more</span>
+</button>
+<div class="pt-space-sm font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            RenewMe is deliberately manual-first and export-focused. No bank passwords, credentials, or intrusive read-access tokens are ever requested. You retain total sovereignty over your financial register.
+          </div>
+</div>
+<!-- Item 3 -->
+<div class="py-space-md">
+<button class="w-full flex items-center justify-between text-left group" onclick="this.nextElementSibling.classList.toggle('hidden')" type="button">
+<span class="font-display-sm text-display-sm text-on-surface group-hover:text-primary transition-colors">
+              How do cancellation reminders arrive?
+            </span>
+<span class="material-symbols-outlined text-outline text-[20px]">expand_more</span>
+</button>
+<div class="pt-space-sm font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Reminders arrive directly to your registered work email and can be synced via an unbranded iCal feed that updates seamlessly inside Google Calendar, Apple Calendar, or Outlook.
+          </div>
+</div>
+<!-- Item 4 -->
+<div class="py-space-md">
+<button class="w-full flex items-center justify-between text-left group" onclick="this.nextElementSibling.classList.toggle('hidden')" type="button">
+<span class="font-display-sm text-display-sm text-on-surface group-hover:text-primary transition-colors">
+              Can I export data for my accountant?
+            </span>
+<span class="material-symbols-outlined text-outline text-[20px]">expand_more</span>
+</button>
+<div class="pt-space-sm font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Yes. Export full standard CSV ledger sheets or audit-ready PDF summary sheets with one click at any time, formatted cleanly for double-entry bookkeeping.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: CALL TO RECORD & FINAL COVENANT -->
+<section class="w-full border-t border-outline-variant/60 py-space-xl">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop text-center flex flex-col items-center gap-space-md">
+<span class="font-label-ledger text-label-ledger text-outline uppercase tracking-wider">
+        ORDER · DISCIPLINE · SOLVENCY
+      </span>
+<h2 class="font-display-lg text-display-lg text-primary max-w-2xl font-normal">
+        Bring your recurring commitments to account today.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+        Create your first subscription ledger in under four minutes. No payment method required.
+      </p>
+<div class="pt-space-xs">
+<a class="inline-flex items-center justify-center h-[42px] px-space-xl bg-primary-container text-surface border border-primary-container rounded font-body-md text-body-md font-medium hover:bg-primary transition-colors" data-path="register" href="#">
+          Open Your Ledger Free
+        </a>
+</div>
+<div class="pt-space-lg flex items-center justify-center gap-space-lg font-label-ledger text-caption uppercase text-outline">
+<span>Lagos · London · Global</span>
+<span>•</span>
+<span>Folio Format v2.4</span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/60 py-space-xl"><div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm"><span class="font-display-sm text-display-sm tracking-tight text-on-surface">RenewMe</span><span class="font-label-ledger text-caption text-outline uppercase tracking-wider">[REC. REF: RNW-2024]</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Tactile archival subscription &amp; recurring commitment ledger.</p></div><div class="flex flex-wrap items-center gap-space-lg font-label-ledger text-label-ledger uppercase text-outline"><a class="hover:text-on-surface transition-colors" data-path="ledger-ledger-spec" href="#">Ledger Spec</a><a class="hover:text-on-surface transition-colors" data-path="privacy-audit" href="#">Privacy Audit</a><a class="hover:text-on-surface transition-colors" data-path="terms-covenant" href="#">Terms Covenant</a><span class="text-outline-variant">//</span><span class="text-on-surface-variant">© 2024 RENEWME SYSTEMS</span></div></div></footer></body></html>

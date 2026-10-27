@@ -1,0 +1,13 @@
+{
+  "name": "RenewMe Subscription Folio",
+  "short_name": "RenewMe",
+  "description": "A private ledger of subscriptions and renewal dates.",
+  "start_url": "/subscriptions",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#1f4d3a",
+  "icons": [
+    { "src": "/renewme-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

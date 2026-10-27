@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-on-surface":"#f5f0eb","secondary":"#a73826","inverse-primary":"#a1d1b8","secondary-container":"#fe7860","on-primary":"#ffffff","on-tertiary-fixed":"#350f0f","on-tertiary-fixed-variant":"#693938","outline":"#717973","on-primary-fixed":"#002114","on-error":"#ffffff","surface-container-high":"#ece7e2","inverse-surface":"#32302d","secondary-fixed-dim":"#ffb4a6","error-container":"#ffdad6","on-primary-container":"#8dbda4","tertiary-fixed":"#ffdad8","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-secondary-fixed":"#3f0300","primary-fixed":"#bceed3","error":"#ba1a1a","on-secondary-fixed-variant":"#862112","surface-container-highest":"#e6e2dd","tertiary":"#4c2121","on-surface-variant":"#414944","on-background":"#1c1b18","on-tertiary":"#ffffff","on-tertiary-container":"#e3a29f","surface":"#fdf9f3","tertiary-fixed-dim":"#fab5b3","on-secondary-container":"#701004","background":"#fdf9f3","secondary-fixed":"#ffdad4","surface-dim":"#ded9d4","primary":"#023625","surface-tint":"#3a6753","outline-variant":"#c0c9c2","primary-fixed-dim":"#a1d1b8","surface-container-low":"#f8f3ed","on-primary-fixed-variant":"#214f3c","tertiary-container":"#673736","on-surface":"#1c1b18","surface-variant":"#e6e2dd","primary-container":"#1f4d3a","on-error-container":"#93000a","surface-bright":"#fdf9f3","surface-container":"#f2ede8"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-lg":"1.25rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-md":"0.875rem","margin":"1rem","space-sm":"0.5rem","gutter":"1rem","margin-desktop":"2.5rem","space-xl":"2rem"},fontFamily:{"display-lg":["Newsreader"],"label-ledger":["JetBrains Mono"],"display-sm":["Newsreader"],"body-md":["Inter"],"ledger-amount-sm":["Newsreader"],"display-lg-mobile":["Newsreader"],"body-lg":["Inter"],"display-md":["Newsreader"],"body-sm":["Inter"],"caption":["Inter"],"ledger-amount-lg":["Newsreader"]},fontSize:{"display-lg":["44px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"400"}],"label-ledger":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"display-sm":["22px",{"lineHeight":"28px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"ledger-amount-sm":["17px",{"lineHeight":"22px","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-md":["30px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"caption":["11px",{"lineHeight":"14px","fontWeight":"400"}],"ledger-amount-lg":["28px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-6 h-6 rounded bg-primary flex items-center justify-center text-on-primary font-label-ledger text-label-ledger font-medium">R</div><span class="font-display-sm text-display-sm font-medium tracking-tight text-on-surface">RenewMe</span></div><span class="font-label-ledger text-label-ledger text-on-surface-variant uppercase tracking-widest">Folio</span></div><div class="px-space-lg py-space-sm"><div class="px-space-md py-space-sm rounded bg-surface-container flex items-center justify-between"><div class="flex flex-col"><span class="font-label-ledger text-label-ledger uppercase text-on-surface-variant">Ledger Entity</span><span class="font-body-sm text-body-sm font-medium text-on-surface truncate max-w-[140px]">Studio Lagos Ltd</span></div><span class="material-symbols-outlined text-outline text-[16px]">unfold_more</span></div></div><div class="px-space-lg pt-space-md pb-space-xs"><span class="font-label-ledger text-label-ledger uppercase text-outline tracking-wider">Navigation Index</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-surface-container-high text-on-surface font-medium"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded transition-colors bg-surface-container-high text-on-surface font-medium" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>Subscriptions</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="calendar" href="#"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span>Calendar</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Reports</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="reminders" href="#"><span class="material-symbols-outlined text-[18px]">notifications_active</span><span>Reminders</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-lg flex flex-col gap-space-sm"><div class="p-space-md rounded bg-surface-container flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-ledger text-label-ledger text-outline uppercase">Accounting Cycle</span><span class="font-label-ledger text-label-ledger text-primary font-medium">ACTIVE</span></div><span class="font-ledger-amount-sm text-ledger-amount-sm text-on-surface">Oct 2024</span></div><div class="flex items-center justify-between pt-space-xs"><span class="font-label-ledger text-label-ledger text-outline">VER 2.4 / REV 11</span><span class="material-symbols-outlined text-outline text-[16px]">lock</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-lg flex-1 max-w-lg"><div class="w-full flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="bg-transparent border-0 outline-none w-full font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="Search commitments, journals, vendors..." type="text"/></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button><button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">history</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full bg-[#fbf3ea] px-margin-desktop py-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md border-b border-secondary/40 transition-all duration-300" id="offline-banner">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-label-ledger text-label-ledger text-secondary tracking-widest uppercase bg-secondary-fixed/50 px-space-xs py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>[NETWORK SEVERED / OFFLINE FOLIO]</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Internet connection is unavailable, but your local SQLite folio remains fully operational for reading and drafting entries.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded bg-surface-container-lowest text-secondary border border-secondary hover:bg-secondary hover:text-on-secondary transition-colors font-body-sm text-body-sm font-medium" id="sync-btn" onclick="triggerSyncAttempt()">
+<span class="material-symbols-outlined text-[16px]" id="sync-icon">sync</span>
+<span id="sync-label">Reconnect &amp; Sync Now</span>
+</button>
+</div>
+</div>
+<div class="px-margin-desktop py-space-sm bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs border-b border-outline-variant/60">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-ledger text-label-ledger tracking-normal">
+<span class="material-symbols-outlined text-[14px] text-secondary">wifi_off</span>
+<span>Operating in Offline Mode · Last verified cryptographic sync: Today at 08:14 WAT · All pending changes will queue in browser storage and push when connectivity resumes.</span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-ledger text-label-ledger text-outline uppercase">Queue buffer:</span>
+<span class="font-label-ledger text-label-ledger text-primary px-space-xs bg-surface-container-high rounded font-medium" id="queue-counter">3 Drafts Pending</span>
+</div>
+</div>
+<div class="px-margin-desktop py-space-xl flex flex-col gap-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-space-sm border-b border-outline-variant pb-space-sm">
+<div class="flex items-baseline gap-space-md">
+<h1 class="font-display-md text-display-md text-on-surface tracking-tight">Ledger Summary</h1>
+<span class="font-label-ledger text-label-ledger text-outline uppercase tracking-wider">Folio Register · Q4 2024</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-ledger text-label-ledger text-outline">
+<span>ARCHIVAL REVISION: #8841-LOC</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<div class="bg-surface-container-lowest p-space-lg rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-ledger text-label-ledger text-on-surface-variant uppercase">Total Annual Outflow</span>
+<span class="font-label-ledger text-label-ledger text-outline bg-surface-container px-1.5 py-0.5 rounded tracking-wider">[CACHED LOCALLY]</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface tracking-tight">₦15,408,000</span>
+<span class="font-label-ledger text-label-ledger text-outline">NGN</span>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/60 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Active commitments</span>
+<span class="font-label-ledger text-label-ledger text-on-surface font-medium">14 Subscriptions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-ledger text-label-ledger text-on-surface-variant uppercase">Monthly Projected Burn</span>
+<span class="font-label-ledger text-label-ledger text-outline bg-surface-container px-1.5 py-0.5 rounded tracking-wider">[CACHED LOCALLY]</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-on-surface tracking-tight">₦1,284,000</span>
+<span class="font-label-ledger text-label-ledger text-outline">NGN / MO</span>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/60 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Runway variance</span>
+<span class="font-label-ledger text-label-ledger text-primary font-medium">−2.4% vs Sep</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded border border-outline-variant flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-ledger text-label-ledger text-on-surface-variant uppercase">Offline Mutation Journal</span>
+<span class="font-label-ledger text-label-ledger text-secondary bg-error-container/40 px-1.5 py-0.5 rounded tracking-wider">[LOCAL DRAFTS]</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-lg text-display-lg text-secondary tracking-tight">03</span>
+<span class="font-label-ledger text-label-ledger text-outline">UNCOMMITTED OPS</span>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/60 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Local storage volume</span>
+<span class="font-label-ledger text-label-ledger text-on-surface font-medium">148 KB IndexedDB</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<div class="lg:col-span-8 flex flex-col bg-surface-container-lowest rounded border border-outline-variant">
+<div class="px-space-lg py-space-md border-b border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-low">
+<div>
+<h2 class="font-display-sm text-display-sm text-on-surface">Cached Commitments Register</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Displaying verified state from local SQLite replica at snapshot timestamp #08:14:02.</p>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container transition-colors font-body-sm text-body-sm font-medium self-start sm:self-auto" onclick="openDraftModal()">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Record Local Draft</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-outline-variant text-on-surface-variant font-label-ledger text-label-ledger uppercase tracking-wider">
+<th class="py-space-sm px-space-md font-medium">Identifier</th>
+<th class="py-space-sm px-space-md font-medium">Vendor &amp; Folio Item</th>
+<th class="py-space-sm px-space-md font-medium">Cadence</th>
+<th class="py-space-sm px-space-md font-medium text-right">Commitment (NGN)</th>
+<th class="py-space-sm px-space-md font-medium text-center">Sync Integrity</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/60 font-body-md text-body-md text-on-surface">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-outline">SUB-001</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Amazon Web Services</span>
+<span class="font-caption text-caption text-on-surface-variant">Cloud Infrastructure (af-south-1)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-on-surface-variant">Monthly / 12th</td>
+<td class="py-space-sm px-space-md font-ledger-amount-sm text-ledger-amount-sm text-right tabular-nums">₦6,420,000</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-label-ledger rounded">VERIFIED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-outline">SUB-002</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Figma Enterprise</span>
+<span class="font-caption text-caption text-on-surface-variant">Design &amp; Prototyping (8 Seats)</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-on-surface-variant">Annual / Nov 28</td>
+<td class="py-space-sm px-space-md font-ledger-amount-sm text-ledger-amount-sm text-right tabular-nums">₦2,880,000</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-label-ledger rounded">VERIFIED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-outline">SUB-003</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Google Workspace Folio</span>
+<span class="font-caption text-caption text-on-surface-variant">Identity &amp; Productivity Core</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-on-surface-variant">Monthly / 01st</td>
+<td class="py-space-sm px-space-md font-ledger-amount-sm text-ledger-amount-sm text-right tabular-nums">₦1,650,000</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-label-ledger rounded">VERIFIED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-outline">SUB-004</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">GitHub Team Tier</span>
+<span class="font-caption text-caption text-on-surface-variant">Source Control &amp; Actions CI/CD</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-on-surface-variant">Monthly / 18th</td>
+<td class="py-space-sm px-space-md font-ledger-amount-sm text-ledger-amount-sm text-right tabular-nums">₦840,000</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-label-ledger rounded">VERIFIED</span>
+</td>
+</tr>
+<tr class="bg-surface-container/40 hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-secondary">DFT-012</td>
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Notion Architecture Plan</span>
+<span class="font-caption text-caption text-secondary">Queued Draft: Upgraded from Plus tier</span>
+</div>
+</td>
+<td class="py-space-sm px-space-md font-label-ledger text-label-ledger text-on-surface-variant">Annual / Oct 30</td>
+<td class="py-space-sm px-space-md font-ledger-amount-sm text-ledger-amount-sm text-right tabular-nums text-secondary">₦1,240,000</td>
+<td class="py-space-sm px-space-md text-center">
+<span class="inline-block px-1.5 py-0.5 border border-secondary text-secondary font-label-ledger text-label-ledger rounded">QUEUED DRAFT</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-md bg-surface-container-low border-t border-outline-variant flex items-center justify-between text-on-surface-variant">
+<span class="font-label-ledger text-label-ledger">DISPLAYING 5 OF 14 RECORDS (REPLICA DATA OK)</span>
+<a class="font-body-sm text-body-sm text-primary hover:underline font-medium flex items-center gap-space-xs" href="#">
+<span>Inspect Full Offline Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest p-space-lg rounded border border-outline-variant">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant">
+<span class="font-label-ledger text-label-ledger text-on-surface uppercase tracking-wider">Local SQLite Replica Status</span>
+<span class="material-symbols-outlined text-primary text-[18px]">database</span>
+</div>
+<div class="pt-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Storage Engine</span>
+<span class="font-label-ledger text-label-ledger text-on-surface">OPFS / SQLite 3.42</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Replica State</span>
+<span class="font-label-ledger text-label-ledger text-primary font-medium">PRAGMA INTEGRITY_OK</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Cryptographic Hash</span>
+<span class="font-label-ledger text-label-ledger text-outline">SHA256: 4f1a...99b2</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Journal Mode</span>
+<span class="font-label-ledger text-label-ledger text-on-surface">WAL (Write-Ahead-Log)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm">
+<span class="text-on-surface-variant">Unsynced Wal Logs</span>
+<span class="font-label-ledger text-label-ledger text-secondary font-medium">3 Transactions</span>
+</div>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container rounded border border-outline-variant/60">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Transactions written locally are serialized and cryptographically stamped with zero dependencies on remote handshakes.
+            </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded border border-outline-variant">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant">
+<span class="font-label-ledger text-label-ledger text-on-surface uppercase tracking-wider">Pending Transaction Log</span>
+<span class="font-label-ledger text-label-ledger text-outline">TX-QUEUE</span>
+</div>
+<div class="pt-space-sm divide-y divide-outline-variant/60">
+<div class="py-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">UPDATE SUB-005 (Notion)</span>
+<span class="font-label-ledger text-label-ledger text-secondary">08:32 WAT</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Tier adjustment: Plus → Architecture. Local nonce: #418</span>
+</div>
+<div class="py-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">RECORD INVOICE_ATTACHMENT</span>
+<span class="font-label-ledger text-label-ledger text-secondary">08:44 WAT</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">SHA blob stored locally (324 KB). Local nonce: #419</span>
+</div>
+<div class="py-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">ADD VENDOR NOTE (AWS af-south)</span>
+<span class="font-label-ledger text-label-ledger text-secondary">09:12 WAT</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Audit tag added to ledger item. Local nonce: #420</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<button class="w-full py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm font-medium border border-outline-variant" onclick="triggerSyncAttempt()">
+              Test Connection &amp; Flush Queue
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-on-surface/40 backdrop-blur-none hidden" id="draft-modal">
+<div class="w-full max-w-lg bg-surface-container-lowest border border-on-surface rounded p-space-lg flex flex-col gap-space-md shadow-none">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-ledger text-label-ledger uppercase text-secondary tracking-wider">[OFFLINE DRAFT RECORDING]</span>
+<h3 class="font-display-sm text-display-sm text-on-surface">Draft Commitment Entry</h3>
+</div>
+<button class="w-8 h-8 rounded hover:bg-surface-container flex items-center justify-center text-on-surface" onclick="closeDraftModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-label-ledger uppercase text-on-surface-variant">Vendor / Service Name</label>
+<input class="px-space-md py-1.5 rounded bg-surface border border-outline-variant font-body-md text-body-md text-on-surface outline-none focus:border-on-surface" id="draft-vendor" placeholder="e.g. Supabase Pro, Slack Enterprise" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-label-ledger uppercase text-on-surface-variant">Cadence</label>
+<select class="px-space-md py-1.5 rounded bg-surface border border-outline-variant font-body-md text-body-md text-on-surface outline-none focus:border-on-surface" id="draft-cadence">
+<option>Monthly</option>
+<option>Quarterly</option>
+<option>Annual</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-label-ledger uppercase text-on-surface-variant">Committed Amount (NGN)</label>
+<input class="px-space-md py-1.5 rounded bg-surface border border-outline-variant font-body-md text-body-md text-on-surface outline-none focus:border-on-surface tabular-nums" id="draft-amount" placeholder="450000" type="number"/>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container rounded border border-outline-variant/60 font-body-sm text-body-sm text-on-surface-variant">
+          This entry will commit directly to your browser's persistent SQLite database with an offline draft nonce and will automatically broadcast when network access is verified.
+        </div>
+</div>
+<div class="flex items-center justify-end gap-space-sm border-t border-outline-variant pt-space-md">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm font-medium border border-outline-variant" onclick="closeDraftModal()">
+          Cancel
+        </button>
+<button class="px-space-md py-1.5 rounded bg-primary text-on-primary hover:bg-primary-container transition-colors font-body-sm text-body-sm font-medium" onclick="commitLocalDraft()">
+          Commit to Local Ledger
+        </button>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded font-body-sm text-body-sm shadow-none border border-outline-variant hidden" id="status-toast">
+<span id="toast-message">Testing server handshakes...</span>
+</div>
+</div>
+<script>
+  function triggerSyncAttempt() {
+    const icon = document.getElementById('sync-icon');
+    const label = document.getElementById('sync-label');
+    const toast = document.getElementById('status-toast');
+    const toastMsg = document.getElementById('toast-message');
+
+    if (icon) icon.classList.add('animate-spin');
+    if (label) label.innerText = 'Verifying Handshake...';
+
+    toastMsg.innerText = 'Probing upstream master folio node at api.renewme.folio...';
+    toast.classList.remove('hidden');
+
+    setTimeout(() => {
+      if (icon) icon.classList.remove('animate-spin');
+      if (label) label.innerText = 'Reconnect & Sync Now';
+      toastMsg.innerText = 'Network unreachable (ERR_NAME_NOT_RESOLVED). Staying in local SQLite mode.';
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }, 1800);
+  }
+
+  function openDraftModal() {
+    document.getElementById('draft-modal').classList.remove('hidden');
+  }
+
+  function closeDraftModal() {
+    document.getElementById('draft-modal').classList.add('hidden');
+  }
+
+  function commitLocalDraft() {
+    const vendor = document.getElementById('draft-vendor').value;
+    const amount = document.getElementById('draft-amount').value;
+
+    if (!vendor) {
+      alert('Please state the vendor name for this draft entry.');
+      return;
+    }
+
+    const toast = document.getElementById('status-toast');
+    const toastMsg = document.getElementById('toast-message');
+    toastMsg.innerText = 'Entry serialized and committed to offline SQLite WAL log.';
+    toast.classList.remove('hidden');
+
+    const counter = document.getElementById('queue-counter');
+    if (counter) counter.innerText = '4 Drafts Pending';
+
+    closeDraftModal();
+    document.getElementById('draft-vendor').value = '';
+    document.getElementById('draft-amount').value = '';
+
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3000);
+  }
+</script></main></div></body></html>

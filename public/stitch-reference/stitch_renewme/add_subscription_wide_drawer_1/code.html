@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f8f3ed", "inverse-primary": "#a1d1b8", "on-secondary-container": "#701004", "primary-fixed-dim": "#a1d1b8", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-surface": "#1c1b18", "primary-fixed": "#bceed3", "outline": "#717973", "tertiary": "#4c2121", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "surface-container": "#f2ede8", "surface-container-highest": "#e6e2dd", "secondary-container": "#fe7860", "on-error-container": "#93000a", "inverse-surface": "#32302d", "on-secondary-fixed-variant": "#862112", "on-tertiary-fixed-variant": "#693938", "surface": "#fdf9f3", "tertiary-fixed": "#ffdad8", "on-secondary-fixed": "#3f0300", "secondary": "#a73826", "primary-container": "#1f4d3a", "on-background": "#1c1b18", "surface-dim": "#ded9d4", "on-tertiary-fixed": "#350f0f", "secondary-fixed-dim": "#ffb4a6", "on-primary-container": "#8dbda4", "on-surface-variant": "#414944", "primary": "#023625", "surface-bright": "#fdf9f3", "error-container": "#ffdad6", "inverse-on-surface": "#f5f0eb", "tertiary-container": "#673736", "secondary-fixed": "#ffdad4", "on-error": "#ffffff", "surface-tint": "#3a6753", "on-primary-fixed": "#002114", "outline-variant": "#c0c9c2", "on-tertiary-container": "#e3a29f", "surface-container-high": "#ece7e2", "background": "#fdf9f3", "on-primary": "#ffffff", "on-primary-fixed-variant": "#214f3c", "tertiary-fixed-dim": "#fab5b3", "surface-variant": "#e6e2dd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.25rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "margin-desktop": "2.5rem", "space-md": "0.875rem", "gutter": "1rem", "space-xs": "0.25rem", "margin": "1rem" }, "fontFamily": { "ledger-amount-lg": [ "Newsreader" ], "body-lg": [ "Inter" ], "display-lg": [ "Newsreader" ], "body-sm": [ "Inter" ], "caption": [ "Inter" ], "label-ledger": [ "JetBrains Mono" ], "display-lg-mobile": [ "Newsreader" ], "display-sm": [ "Newsreader" ], "ledger-amount-sm": [ "Newsreader" ], "display-md": [ "Newsreader" ], "body-md": [ "Inter" ] }, "fontSize": { "ledger-amount-lg": [ "28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-lg": [ "44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "caption": [ "11px", { "lineHeight": "14px", "fontWeight": "400" } ], "label-ledger": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "display-lg-mobile": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "display-sm": [ "22px", { "lineHeight": "28px", "fontWeight": "500" } ], "ledger-amount-sm": [ "17px", { "lineHeight": "22px", "fontWeight": "500" } ], "display-md": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low border-r border-outline-variant z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-14 px-margin flex items-center justify-between border-b border-outline-variant bg-surface-container"><div class="flex items-baseline gap-space-xs"><span class="font-display-sm text-display-sm text-primary tracking-tight font-medium">RenewMe</span><span class="font-label-ledger text-caption uppercase text-outline tracking-wider">FOLIO v2.4</span></div><div class="w-2 h-2 rounded-full bg-primary-container" title="System Active"></div></div><div class="px-margin py-space-sm border-b border-outline-variant/60 bg-surface-container-low"><div class="flex items-center justify-between font-label-ledger text-caption text-outline uppercase tracking-wider"><span>Ledger Register</span><span>#04</span></div></div><nav class="flex flex-col py-space-xs" data-active-classes="bg-surface text-primary border-l-2 border-primary font-medium shadow-none"><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="subscriptions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>Subscriptions</span></div><span class="font-label-ledger text-caption px-1.5 py-0.5 rounded border border-outline-variant text-on-surface-variant">24</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="calendar" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span>Calendar</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Reports</span></a><a class="flex items-center justify-between px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reminders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications</span><span>Reminders</span></div><span class="font-label-ledger text-caption px-1.5 py-0.5 rounded border border-secondary text-secondary">3 Due</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings</span></a></nav></div><div class="border-t border-outline-variant bg-surface-container-low"><div class="p-margin flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-body-md text-body-md font-medium text-on-surface truncate">Studio Lagos Ltd</span><div class="flex items-center gap-space-xs mt-0.5"><span class="font-label-ledger text-caption text-outline uppercase tracking-wider">₦ Base Ledger</span><span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span><span class="font-label-ledger text-caption text-primary">Synced</span></div></div><button class="p-space-xs hover:bg-surface rounded text-on-surface-variant hover:text-on-surface transition-colors" title="Account Actions" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-background border-b border-outline-variant z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-ledger text-body-sm text-outline uppercase tracking-wider"><span>Workspace</span><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-medium">Register</span></div><div class="hidden md:flex items-center gap-space-xs bg-surface-container border border-outline-variant px-space-sm py-1 rounded w-64"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="font-body-sm text-body-sm text-outline">Filter ledger records...</span><span class="ml-auto font-label-ledger text-caption text-outline-variant border border-outline-variant px-1 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs border-r border-outline-variant pr-space-md"><span class="font-label-ledger text-caption uppercase text-outline">Fiscal Period:</span><span class="font-label-ledger text-body-sm text-on-surface font-medium">Q2 2024</span></div><div class="flex items-center gap-space-sm"><button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" title="Export Folio" type="button"><span class="material-symbols-outlined text-[20px]">download</span></button><button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors relative" title="Alerts" type="button"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-secondary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 bg-background px-gutter-desktop py-space-xl"><div class="flex flex-col w-full relative">
+<!-- BACKGROUND SIMULATED FOLIO REGISTER (Dimmed & Archival Backdrop) -->
+<div class="w-full pointer-events-none select-none opacity-40 filter blur-[1px] transition-all">
+<!-- Top Register Metrics Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop mb-space-lg">
+<div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Active Folio Outflow</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-display-md text-display-md text-primary">$4,820.50</span>
+<span class="font-label-ledger text-caption text-outline">/ month</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/60 flex justify-between font-label-ledger text-caption text-outline">
+<span>Base FX: ₦1,550</span>
+<span class="text-primary font-medium">₦7,471,775 / mo</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Active Instruments</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-display-md text-display-md text-on-surface">24</span>
+<span class="font-label-ledger text-caption text-primary">All Balanced</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/60 flex justify-between font-label-ledger text-caption text-outline">
+<span>Virtual Cards</span>
+<span>4 Stanbic / 2 GTB</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Imminent Renewals (7D)</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-display-md text-display-md text-secondary">3</span>
+<span class="font-label-ledger text-caption text-secondary">Action Req.</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/60 flex justify-between font-label-ledger text-caption text-outline">
+<span>Earliest: 18 Nov</span>
+<span class="text-secondary font-medium">$450.00</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Monthly VAT Accrual (7.5%)</span>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span class="font-display-md text-display-md text-on-surface">₦560,380</span>
+<span class="font-label-ledger text-caption text-outline">FIRS WHT</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/60 flex justify-between font-label-ledger text-caption text-outline">
+<span>Automated Ledger</span>
+<span class="text-primary font-medium">Reconciled</span>
+</div>
+</div>
+</div>
+<!-- Background Table Mock -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant">
+<div class="grid grid-cols-12 bg-surface-container-high px-space-md py-space-xs border-b border-outline-variant font-label-ledger text-caption text-outline uppercase tracking-wider">
+<span class="col-span-1">Ref #</span>
+<span class="col-span-3">Vendor &amp; Licence</span>
+<span class="col-span-2">Department</span>
+<span class="col-span-2">Billing Cadence</span>
+<span class="col-span-2 text-right">Outflow (USD/NGN)</span>
+<span class="col-span-2 text-center">Status</span>
+</div>
+<div class="divide-y divide-outline-variant font-body-sm text-body-sm text-on-surface">
+<div class="grid grid-cols-12 px-space-md py-space-sm items-center">
+<span class="col-span-1 font-label-ledger text-caption text-outline">#0012</span>
+<span class="col-span-3 font-medium">Amazon Web Services</span>
+<span class="col-span-2 text-on-surface-variant">Engineering</span>
+<span class="col-span-2 font-label-ledger text-caption">Monthly (28th)</span>
+<span class="col-span-2 text-right font-ledger-amount-sm">$1,450.00</span>
+<span class="col-span-2 text-center"><span class="px-1.5 py-0.5 border border-primary text-primary text-caption font-label-ledger uppercase">Active</span></span>
+</div>
+<div class="grid grid-cols-12 px-space-md py-space-sm items-center">
+<span class="col-span-1 font-label-ledger text-caption text-outline">#0013</span>
+<span class="col-span-3 font-medium">Figma Enterprise</span>
+<span class="col-span-2 text-on-surface-variant">Product Design</span>
+<span class="col-span-2 font-label-ledger text-caption">Annual (14 Dec)</span>
+<span class="col-span-2 text-right font-ledger-amount-sm">$960.00</span>
+<span class="col-span-2 text-center"><span class="px-1.5 py-0.5 border border-primary text-primary text-caption font-label-ledger uppercase">Active</span></span>
+</div>
+<div class="grid grid-cols-12 px-space-md py-space-sm items-center">
+<span class="col-span-1 font-label-ledger text-caption text-outline">#0014</span>
+<span class="col-span-3 font-medium">Google Workspace Business</span>
+<span class="col-span-2 text-on-surface-variant">Operations</span>
+<span class="col-span-2 font-label-ledger text-caption">Monthly (1st)</span>
+<span class="col-span-2 text-right font-ledger-amount-sm">$360.00</span>
+<span class="col-span-2 text-center"><span class="px-1.5 py-0.5 border border-secondary text-secondary text-caption font-label-ledger uppercase">Renewal 3D</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL BACKDROP (TACTILE PAPER WASH) -->
+<div class="fixed inset-0 bg-[#f6f3ec]/85 z-50 backdrop-blur-[0.5px] transition-opacity duration-200" id="drawer-backdrop"></div>
+<!-- EXPANSIVE WIDE DRAWER CONTAINER (840px Desktop Archival Leaf) -->
+<div class="fixed top-0 right-0 h-full w-full max-w-[860px] bg-surface z-50 border-l border-outline-variant flex flex-col justify-between transition-transform duration-300 ease-out" id="slide-over-drawer">
+<!-- DRAWER HEADER (Bound Folio Head) -->
+<div class="px-margin-desktop py-space-lg bg-surface-container-low border-b border-outline-variant flex flex-col gap-space-xs relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-ledger text-caption uppercase tracking-widest text-outline">Folio 04 · Entry Docket No. 0015</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-ledger text-caption uppercase text-primary font-medium tracking-wider">Uncommitted Folio Draft</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="hidden sm:inline-block font-label-ledger text-caption text-outline-variant border border-outline-variant px-1.5 py-0.5 rounded">ESC to cancel</span>
+<button class="w-8 h-8 flex items-center justify-center border border-outline-variant text-on-surface-variant hover:text-on-surface hover:bg-surface transition-colors" id="close-drawer-btn" title="Close Docket" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<h2 class="font-display-md text-display-md text-on-surface">Record New Commitment</h2>
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">STANBIC-FX-REF // NGN-USD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
+        Register an active recurring software licence, hosting infrastructure, or vendor service into the sovereign ledger.
+      </p>
+<!-- Ruled double line accent -->
+<div class="absolute bottom-0 left-0 right-0 h-[3px] border-b border-t border-outline-variant"></div>
+</div>
+<!-- DRAWER BODY: TWO-COLUMN ASYMMETRIC SPREAD -->
+<div class="flex-1 overflow-y-auto px-margin-desktop py-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT COLUMN: PRIMARY REGISTRATION DOCKET (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- SECTION 1: BASICS -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">01. Service &amp; Vendor Identity</span>
+<span class="font-label-ledger text-caption text-primary">Mandatory Fields</span>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<label class="font-label-ledger text-caption uppercase text-on-surface tracking-wider">Vendor / Service Name *</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline text-on-surface px-space-sm py-1.5 font-body-md text-body-md focus:border-on-surface focus:outline-none transition-colors" id="vendor-name-input" placeholder="e.g. Datadog, AWS, GitHub" type="text" value="Datadog Infrastructure"/>
+<span class="material-symbols-outlined absolute right-2.5 top-2 text-[18px] text-primary">check_circle</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Service Website / Direct Login URL</label>
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant px-space-sm py-1.5 focus-within:border-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px] text-outline mr-2">link</span>
+<input class="w-full bg-transparent text-on-surface font-body-sm text-body-sm focus:outline-none" placeholder="https://..." type="url" value="https://app.datadoghq.com"/>
+<a class="font-label-ledger text-caption text-primary hover:underline ml-2" href="https://app.datadoghq.com" rel="noreferrer" target="_blank">Open</a>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Ledger Category Code</label>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+<button class="px-2 py-1.5 text-left border border-primary bg-primary-container text-on-primary font-label-ledger text-caption truncate flex items-center justify-between" type="button">
+<span>Infrastructure</span>
+<span class="material-symbols-outlined text-[12px]">done</span>
+</button>
+<button class="px-2 py-1.5 text-left border border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high font-label-ledger text-caption truncate" type="button">
+                  Productivity
+                </button>
+<button class="px-2 py-1.5 text-left border border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high font-label-ledger text-caption truncate" type="button">
+                  Engineering Tools
+                </button>
+<button class="px-2 py-1.5 text-left border border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high font-label-ledger text-caption truncate" type="button">
+                  Design &amp; UX
+                </button>
+<button class="px-2 py-1.5 text-left border border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high font-label-ledger text-caption truncate" type="button">
+                  Security &amp; Auth
+                </button>
+<button class="px-2 py-1.5 text-left border border-outline-variant bg-surface-container text-on-surface hover:bg-surface-container-high font-label-ledger text-caption truncate" type="button">
+                  Marketing
+                </button>
+</div>
+</div>
+</div>
+<!-- SECTION 2: COST & CURRENCY DUAL-LEDGER -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">02. Outflow Amount &amp; Dual Currency</span>
+<span class="font-label-ledger text-caption text-outline">₦ Base Reconciled</span>
+</div>
+<div class="grid grid-cols-12 gap-space-sm items-start">
+<div class="col-span-4 flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Denomination</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface px-space-sm py-1.5 font-label-ledger text-caption focus:border-on-surface focus:outline-none">
+<option selected="">USD ($)</option>
+<option>NGN (₦)</option>
+<option>EUR (€)</option>
+<option>GBP (£)</option>
+</select>
+</div>
+<div class="col-span-8 flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-on-surface tracking-wider">Invoice Commitment *</label>
+<div class="relative">
+<span class="absolute left-2.5 top-1.5 font-label-ledger text-body-md text-outline">$</span>
+<input class="w-full bg-surface-container-lowest border border-outline text-on-surface pl-7 pr-space-sm py-1.5 font-ledger-amount-sm text-ledger-amount-sm focus:border-on-surface focus:outline-none" id="amount-input" type="text" value="180.00"/>
+<span class="absolute right-2.5 top-2 font-label-ledger text-caption text-outline">/ Month</span>
+</div>
+</div>
+</div>
+<!-- Actual NGN Settle Match -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low p-space-sm border border-outline-variant">
+<div class="flex items-center justify-between">
+<label class="font-label-ledger text-caption uppercase text-on-surface font-medium tracking-wider">Actual NGN Statement Settlement</label>
+<span class="font-label-ledger text-caption text-primary">Stanbic Card FX</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="absolute left-2.5 top-1.5 font-label-ledger text-body-sm text-outline">₦</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface pl-7 pr-space-sm py-1 font-ledger-amount-sm text-ledger-amount-sm focus:border-on-surface focus:outline-none" type="text" value="279,000.00"/>
+</div>
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider text-right">Fixed Debit</span>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/60 font-label-ledger text-caption text-outline">
+<span>Peg Rate: 1 USD ≈ ₦1,550.00</span>
+<span class="text-on-surface">Implied Rate: ₦1,550.00 / $</span>
+</div>
+</div>
+</div>
+<!-- SECTION 3: SCHEDULE & CRITICAL LIFECYCLE (Contains clear inline validation error state) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">03. Schedule, Terms &amp; Cut-off Dates</span>
+<span class="font-label-ledger text-caption text-secondary">Validation Active</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Billing Cadence</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface px-space-sm py-1.5 font-body-sm text-body-sm focus:border-on-surface focus:outline-none">
+<option selected="">Monthly (1-Month Interval)</option>
+<option>Quarterly (3 Months)</option>
+<option>Annual Folio (12 Months)</option>
+<option>Custom Interval...</option>
+</select>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Contract Start Date</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface px-space-sm py-1.5 font-label-ledger text-body-sm focus:border-on-surface focus:outline-none" type="text" value="15 Oct 2024"/>
+</div>
+</div>
+<!-- INLINE VALIDATION ERROR STATE (Exemplary error field with plain language) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-ledger text-caption uppercase text-secondary font-medium tracking-wider">Next Incurred Renewal Date *</label>
+<span class="font-label-ledger text-caption text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                  Invalid Folio Sequence
+                </span>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-secondary text-on-surface px-space-sm py-1.5 font-label-ledger text-body-sm focus:outline-none pr-10" type="text" value="15 Dec 2025"/>
+<span class="material-symbols-outlined absolute right-2.5 top-2 text-[18px] text-secondary">calendar_clock</span>
+</div>
+<!-- Clear plain-language error banner -->
+<div class="bg-error-container/40 border border-secondary px-space-sm py-1.5 flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px] shrink-0 mt-0.5">warning</span>
+<p class="font-body-sm text-caption text-on-secondary-fixed-variant leading-tight">
+<strong class="font-medium">Sequence conflict:</strong> Next renewal date cannot be prior to start date or in the past. Ensure cadence conforms to 2025/2026 fiscal cycle.
+                </p>
+</div>
+</div>
+<!-- Cancellation window computation -->
+<div class="bg-surface-container-low border border-outline-variant p-space-sm flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Notice Requirement</span>
+<span class="font-label-ledger text-caption text-on-surface font-medium">7 Days Written Notice</span>
+</div>
+<div class="flex items-center justify-between border-t border-outline-variant/60 pt-1.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">event_busy</span>
+<span class="font-label-ledger text-caption text-secondary uppercase font-semibold">Mandatory Cancel Deadline:</span>
+</div>
+<span class="font-label-ledger text-caption text-secondary font-bold">08 Dec 2025 (23:59 WAT)</span>
+</div>
+</div>
+</div>
+<!-- SECTION 4: PAYMENT INSTRUMENT & TAX ALLOCATION -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">04. Payment Card &amp; Folio Ledger Allocation</span>
+<span class="font-label-ledger text-caption text-outline">Internal Cost Center</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Assigned Payment Instrument</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface px-space-sm py-1.5 font-body-sm text-body-sm focus:border-on-surface focus:outline-none">
+<option selected="">Stanbic IBTC Visa ••4091 (EUR/USD Virtual Folio)</option>
+<option>FirstBank Nigeria Master ••8820 (Corporate Ops)</option>
+<option>Access Bank Visa Direct ••1149 (Engineering Reserve)</option>
+<option>+ Register New Instrument to Ledger...</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Folio Cost Center</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface px-space-sm py-1.5 font-body-sm text-body-sm focus:border-on-surface focus:outline-none" type="text" value="DevOps &amp; Core Systems"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">Accountable Operator</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface px-space-sm py-1.5 font-body-sm text-body-sm focus:border-on-surface focus:outline-none" type="text" value="Adebayo O. (Tech Lead)"/>
+</div>
+</div>
+<!-- VAT / Tax Invoice Toggle -->
+<div class="bg-surface-container p-space-sm border border-outline-variant flex items-center justify-between">
+<div class="flex flex-col pr-space-md">
+<span class="font-body-md text-body-sm font-medium text-on-surface">Nigerian FIRS VAT (7.5%) &amp; WHT Accrual</span>
+<span class="font-body-sm text-caption text-outline">Calculated NGN tax ledger breakdown automatically appended to monthly filing.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-none peer peer-checked:after:translate-x-full peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface after:border-outline after:border after:h-4 after:w-4 after:transition-all"></div>
+</label>
+</div>
+</div>
+<!-- SECTION 5: REMINDER DISPATCH PROTOCOL -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">05. Audit Notification Protocol</span>
+<span class="font-label-ledger text-caption text-primary">3 Steps Configured</span>
+</div>
+<div class="flex items-center gap-space-md">
+<label class="flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="accent-primary" name="protocol-choice" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Standard Folio Protocol</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer">
+<input class="accent-primary" name="protocol-choice" type="radio"/>
+<span class="font-body-sm text-body-sm text-outline">Custom Interval Override</span>
+</label>
+</div>
+<div class="grid grid-cols-3 gap-space-sm mt-1">
+<div class="border border-outline-variant bg-surface-container-low p-space-xs text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-ledger text-caption uppercase mt-1 text-on-surface font-medium">30 Days Prior</span>
+<span class="font-label-ledger text-[10px] text-outline">Email to Lead</span>
+</div>
+<div class="border border-outline-variant bg-surface-container-low p-space-xs text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-ledger text-caption uppercase mt-1 text-on-surface font-medium">7 Days Notice</span>
+<span class="font-label-ledger text-[10px] text-outline">Cut-off Alert</span>
+</div>
+<div class="border border-secondary bg-surface-container-low p-space-xs text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[18px]">notification_important</span>
+<span class="font-label-ledger text-caption uppercase mt-1 text-secondary font-medium">48h Critical</span>
+<span class="font-label-ledger text-[10px] text-secondary">Final Urgent Slack</span>
+</div>
+</div>
+</div>
+<!-- SECTION 6: ANNOTATIONS & CONTRACT NOTES -->
+<div class="flex flex-col gap-space-xs pb-space-md">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<label class="font-label-ledger text-caption uppercase text-outline tracking-wider">06. Ledger Annotations &amp; Legal Terms</label>
+<span class="font-label-ledger text-caption text-outline">Optional Clause</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface p-space-sm font-body-sm text-body-sm focus:border-on-surface focus:outline-none resize-none" placeholder="Enter specific contractual renewal conditions, auto-renewal stipulations, or procurement tags..." rows="3">Contract clause: 30-day written cancellation required before annual rollover. Tied to AWS production cluster monitoring. Primary contact: support@datadoghq.com</textarea>
+</div>
+</div>
+<!-- RIGHT RAIL: LIVE PREVIEW & RENEWAL PROJECTION (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg lg:sticky lg:top-0">
+<!-- Tactile Ruled Preview Card -->
+<div class="bg-surface-container-low border border-outline-variant p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-outline pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-ledger text-caption uppercase font-medium tracking-wider text-on-surface">Commitment Audit Preview</span>
+</div>
+<span class="font-label-ledger text-caption px-1.5 py-0.2 rounded border border-outline-variant text-outline">LIVE DRAFT</span>
+</div>
+<!-- Vendor Summary Box -->
+<div class="bg-surface-container-lowest border border-outline-variant p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Docket Entity</span>
+<span class="font-label-ledger text-caption text-primary">Monthly Recurrent</span>
+</div>
+<h3 class="font-display-sm text-display-sm text-on-surface">Datadog Infrastructure</h3>
+<div class="flex items-baseline justify-between mt-1 pt-space-xs border-t border-outline-variant/60">
+<div class="flex flex-col">
+<span class="font-ledger-amount-lg text-ledger-amount-lg text-primary">$180.00</span>
+<span class="font-label-ledger text-caption text-outline">Per Billing Cycle</span>
+</div>
+<div class="text-right">
+<span class="font-ledger-amount-sm text-ledger-amount-sm text-on-surface">≈ ₦279,000.00</span>
+<span class="font-label-ledger text-[10px] text-outline block">Bank FX Settlement</span>
+</div>
+</div>
+</div>
+<!-- Next 3 Renewal Events Projection -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Forward Outflow Projection</span>
+<div class="bg-surface-container-lowest border border-outline-variant divide-y divide-outline-variant">
+<div class="p-space-sm flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">1. Sun, 15 Dec 2025</span>
+<span class="font-ledger-amount-sm text-body-md text-on-surface">$180.00</span>
+</div>
+<div class="flex items-center justify-between font-label-ledger text-caption text-secondary">
+<span>Cancel Cut-off: 08 Dec 2025</span>
+<span>7 Days Left</span>
+</div>
+</div>
+<div class="p-space-sm flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">2. Thu, 15 Jan 2026</span>
+<span class="font-ledger-amount-sm text-body-md text-on-surface">$180.00</span>
+</div>
+<div class="flex items-center justify-between font-label-ledger text-caption text-outline">
+<span>Cancel Cut-off: 08 Jan 2026</span>
+<span>38 Days</span>
+</div>
+</div>
+<div class="p-space-sm flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">3. Sun, 15 Feb 2026</span>
+<span class="font-ledger-amount-sm text-body-md text-on-surface">$180.00</span>
+</div>
+<div class="flex items-center justify-between font-label-ledger text-caption text-outline">
+<span>Cancel Cut-off: 08 Feb 2026</span>
+<span>69 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Annual Outflow Impact Metric -->
+<div class="border-t border-outline-variant pt-space-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Annualized Commitment</span>
+<span class="font-ledger-amount-sm text-body-md text-primary font-semibold">$2,160.00 / yr</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-caption text-outline uppercase tracking-wider">Annual NGN Outflow</span>
+<span class="font-label-ledger text-caption text-on-surface font-medium">≈ ₦3,348,000.00</span>
+</div>
+</div>
+<!-- Archival Integrity Badge -->
+<div class="p-space-sm bg-surface-container border border-outline-variant flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">account_balance</span>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption font-medium uppercase text-on-surface">Double-Entry Ledger Verified</span>
+<span class="font-body-sm text-[11px] text-outline">Folio checksum validated. Ready for register commit.</span>
+</div>
+</div>
+</div>
+<!-- Secondary Operator Audit Leaf Note -->
+<div class="p-space-sm border border-outline-variant/80 bg-surface-container-lowest font-label-ledger text-caption text-outline flex flex-col gap-1">
+<div class="flex justify-between text-on-surface font-medium">
+<span>FISCAL AUDITOR</span>
+<span>LAGOS FOLIO #04</span>
+</div>
+<p class="leading-relaxed">
+              Recording this commitment will immediately update the fiscal cash flow horizon and dispatch reminder calendar triggers.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- DRAWER FIXED FOOTER (Command & Commit Bar) -->
+<div class="px-margin-desktop py-space-md bg-surface-container-high border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 border border-outline text-on-surface font-body-md text-body-sm hover:bg-surface-container transition-colors rounded-none" id="discard-btn" type="button">
+          Cancel / Discard
+        </button>
+<span class="hidden md:inline-block font-label-ledger text-caption text-outline">Draft uncommitted</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="hidden sm:inline-block font-label-ledger text-caption text-outline">Press <kbd class="border border-outline-variant px-1 rounded bg-surface text-on-surface">⌘ + Enter</kbd></span>
+<button class="px-space-lg py-2 bg-primary-container text-surface border border-primary-container font-body-md text-body-sm font-medium hover:bg-primary transition-colors flex items-center gap-space-xs rounded-none shadow-none" id="commit-btn" type="button">
+<span>Commit Entry to Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE VANILLA SCRIPT: Keyboard Shortcuts & Visual Feedback -->
+<script>
+    (function() {
+      const drawer = document.getElementById('slide-over-drawer');
+      const backdrop = document.getElementById('drawer-backdrop');
+      const closeBtn = document.getElementById('close-drawer-btn');
+      const discardBtn = document.getElementById('discard-btn');
+      const commitBtn = document.getElementById('commit-btn');
+
+      function closeDrawer() {
+        if (!drawer || !backdrop) return;
+        drawer.style.transform = 'translateX(100%)';
+        backdrop.style.opacity = '0';
+        setTimeout(() => {
+          drawer.classList.add('hidden');
+          backdrop.classList.add('hidden');
+        }, 250);
+      }
+
+      function handleCommit() {
+        if (!commitBtn) return;
+        commitBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[16px] animate-spin">refresh</span>
+          <span>Inscribing Folio...</span>
+        `;
+        commitBtn.disabled = true;
+        setTimeout(() => {
+          commitBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[16px]">check</span>
+            <span>Committed #0015</span>
+          `;
+          setTimeout(() => {
+            closeDrawer();
+          }, 600);
+        }, 800);
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (discardBtn) discardBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+      if (commitBtn) commitBtn.addEventListener('click', handleCommit);
+
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeDrawer();
+        }
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+          handleCommit();
+        }
+      });
+    })();
+  </script>
+</div></main></div></body></html>

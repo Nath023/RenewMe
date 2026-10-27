@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-low": "#f8f3ed", "inverse-primary": "#a1d1b8", "on-secondary-container": "#701004", "primary-fixed-dim": "#a1d1b8", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-surface": "#1c1b18", "primary-fixed": "#bceed3", "outline": "#717973", "tertiary": "#4c2121", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "surface-container": "#f2ede8", "surface-container-highest": "#e6e2dd", "secondary-container": "#fe7860", "on-error-container": "#93000a", "inverse-surface": "#32302d", "on-secondary-fixed-variant": "#862112", "on-tertiary-fixed-variant": "#693938", "surface": "#fdf9f3", "tertiary-fixed": "#ffdad8", "on-secondary-fixed": "#3f0300", "secondary": "#a73826", "primary-container": "#1f4d3a", "on-background": "#1c1b18", "surface-dim": "#ded9d4", "on-tertiary-fixed": "#350f0f", "secondary-fixed-dim": "#ffb4a6", "on-primary-container": "#8dbda4", "on-surface-variant": "#414944", "primary": "#023625", "surface-bright": "#fdf9f3", "error-container": "#ffdad6", "inverse-on-surface": "#f5f0eb", "tertiary-container": "#673736", "secondary-fixed": "#ffdad4", "on-error": "#ffffff", "surface-tint": "#3a6753", "on-primary-fixed": "#002114", "outline-variant": "#c0c9c2", "on-tertiary-container": "#e3a29f", "surface-container-high": "#ece7e2", "background": "#fdf9f3", "on-primary": "#ffffff", "on-primary-fixed-variant": "#214f3c", "tertiary-fixed-dim": "#fab5b3", "surface-variant": "#e6e2dd" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.25rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "margin-desktop": "2.5rem", "space-md": "0.875rem", "gutter": "1rem", "space-xs": "0.25rem", "margin": "1rem" }, "fontFamily": { "ledger-amount-lg": [ "Newsreader" ], "body-lg": [ "Inter" ], "display-lg": [ "Newsreader" ], "body-sm": [ "Inter" ], "caption": [ "Inter" ], "label-ledger": [ "JetBrains Mono" ], "display-lg-mobile": [ "Newsreader" ], "display-sm": [ "Newsreader" ], "ledger-amount-sm": [ "Newsreader" ], "display-md": [ "Newsreader" ], "body-md": [ "Inter" ] }, "fontSize": { "ledger-amount-lg": [ "28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "display-lg": [ "44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "caption": [ "11px", { "lineHeight": "14px", "fontWeight": "400" } ], "label-ledger": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "display-lg-mobile": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "display-sm": [ "22px", { "lineHeight": "28px", "fontWeight": "500" } ], "ledger-amount-sm": [ "17px", { "lineHeight": "22px", "fontWeight": "500" } ], "display-md": [ "30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low border-r border-outline-variant z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-14 px-margin flex items-center justify-between border-b border-outline-variant bg-surface-container"><div class="flex items-baseline gap-space-xs"><span class="font-display-sm text-display-sm text-primary tracking-tight font-medium">RenewMe</span><span class="font-label-ledger text-caption uppercase text-outline tracking-wider">FOLIO v2.4</span></div><div class="w-2 h-2 rounded-full bg-primary-container" title="System Active"></div></div><div class="px-margin py-space-sm border-b border-outline-variant/60 bg-surface-container-low"><div class="flex items-center justify-between font-label-ledger text-caption text-outline uppercase tracking-wider"><span>Ledger Register</span><span>#04</span></div></div><nav class="flex flex-col py-space-xs" data-active-classes="bg-surface text-primary border-l-2 border-primary font-medium shadow-none"><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center justify-between px-margin py-space-sm transition-colors bg-surface text-primary border-l-2 border-primary font-medium shadow-none" data-path="subscriptions" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>Subscriptions</span></div><span class="font-label-ledger text-caption px-1.5 py-0.5 rounded border border-outline-variant text-on-surface-variant">24</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="calendar" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span>Calendar</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Reports</span></a><a class="flex items-center justify-between px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reminders" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications</span><span>Reminders</span></div><span class="font-label-ledger text-caption px-1.5 py-0.5 rounded border border-secondary text-secondary">3 Due</span></a><a class="flex items-center gap-space-sm px-margin py-space-sm font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">tune</span><span>Settings</span></a></nav></div><div class="border-t border-outline-variant bg-surface-container-low"><div class="p-margin flex items-center justify-between hover:bg-surface-container-high transition-colors cursor-pointer"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-body-md text-body-md font-medium text-on-surface truncate">Studio Lagos Ltd</span><div class="flex items-center gap-space-xs mt-0.5"><span class="font-label-ledger text-caption text-outline uppercase tracking-wider">₦ Base Ledger</span><span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span><span class="font-label-ledger text-caption text-primary">Synced</span></div></div><button class="p-space-xs hover:bg-surface rounded text-on-surface-variant hover:text-on-surface transition-colors" title="Account Actions" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-14 bg-background border-b border-outline-variant z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-ledger text-body-sm text-outline uppercase tracking-wider"><span>Workspace</span><span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span><span class="text-on-surface font-medium">Register</span></div><div class="hidden md:flex items-center gap-space-xs bg-surface-container border border-outline-variant px-space-sm py-1 rounded w-64"><span class="material-symbols-outlined text-[16px] text-outline">search</span><span class="font-body-sm text-body-sm text-outline">Filter ledger records...</span><span class="ml-auto font-label-ledger text-caption text-outline-variant border border-outline-variant px-1 rounded">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs border-r border-outline-variant pr-space-md"><span class="font-label-ledger text-caption uppercase text-outline">Fiscal Period:</span><span class="font-label-ledger text-body-sm text-on-surface font-medium">Q2 2024</span></div><div class="flex items-center gap-space-sm"><button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors" title="Export Folio" type="button"><span class="material-symbols-outlined text-[20px]">download</span></button><button class="p-space-xs text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container transition-colors relative" title="Alerts" type="button"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-secondary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-14 bg-background px-gutter-desktop py-space-xl"><div class="flex flex-col w-full font-body-md text-on-surface">
+<!-- TOP LEDGER TITLE & FOLIO BAR -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pb-space-lg border-b border-outline-variant">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-ledger text-caption uppercase text-outline tracking-widest mb-1">
+<span>Register</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-medium">Folio 04</span>
+<span class="text-outline-variant">·</span>
+<span>14 Active Commitments</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight font-normal">
+        Subscription Obligations
+      </h1>
+<div class="flex flex-wrap items-center gap-x-space-lg gap-y-1 mt-space-xs font-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-ledger text-caption uppercase text-outline">Committed Outflow:</span>
+<span class="font-ledger-amount-sm text-ledger-amount-sm text-on-surface font-medium">$348.50 <span class="text-caption font-body-sm text-outline">/ mo</span></span>
+<span class="font-label-ledger text-caption text-outline">(≈ ₦540,175)</span>
+</div>
+<div class="hidden sm:inline text-outline-variant">|</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-ledger text-caption uppercase text-outline">Actionable Deadlines:</span>
+<span class="font-label-ledger text-caption text-secondary font-medium px-1.5 py-0.5 border border-secondary bg-surface">2 Cutoffs within 7 days</span>
+</div>
+</div>
+</div>
+<!-- UTILITY ACTIONS & NEW SUBSCRIPTION -->
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="flex items-center gap-1.5 px-3 h-[34px] bg-surface text-on-surface border border-outline-variant hover:bg-surface-container transition-colors text-body-sm font-medium" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 h-[34px] bg-surface text-on-surface border border-outline-variant hover:bg-surface-container transition-colors text-body-sm font-medium" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">checklist_rtl</span>
+<span>Batch Audit</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 h-[34px] bg-primary text-surface hover:bg-primary-container transition-colors text-body-sm font-medium" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Add subscription</span>
+</button>
+</div>
+</div>
+<!-- TOOLBAR & FILTERS -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm py-space-md border-b border-outline-variant">
+<!-- SEARCH & CHIPS -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm flex-1">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline">search</span>
+<input class="w-full h-[32px] pl-8 pr-10 text-body-sm bg-surface border border-outline-variant focus:border-on-surface focus:outline-none transition-colors placeholder:text-outline font-body-sm" placeholder="Filter by vendor, domain, seat, or tag..." type="text"/>
+<span class="absolute right-2 top-1/2 -translate-y-1/2 font-label-ledger text-caption text-outline px-1 border border-outline-variant bg-surface-container-low">/</span>
+</div>
+<!-- FILTER REGISTER TABS -->
+<div class="flex items-center overflow-x-auto gap-1 border-t sm:border-t-0 sm:border-l border-outline-variant pt-2 sm:pt-0 sm:pl-space-sm">
+<button class="px-2.5 py-1 text-caption font-label-ledger uppercase tracking-wider bg-surface-container text-primary border-b-2 border-primary font-medium" type="button">
+          All (14)
+        </button>
+<button class="px-2.5 py-1 text-caption font-label-ledger uppercase tracking-wider text-outline hover:text-on-surface transition-colors" type="button">
+          Active (10)
+        </button>
+<button class="px-2.5 py-1 text-caption font-label-ledger uppercase tracking-wider text-outline hover:text-on-surface transition-colors" type="button">
+          Trial (1)
+        </button>
+<button class="px-2.5 py-1 text-caption font-label-ledger uppercase tracking-wider text-secondary hover:text-on-surface transition-colors" type="button">
+          Needs review (2)
+        </button>
+<button class="px-2.5 py-1 text-caption font-label-ledger uppercase tracking-wider text-outline hover:text-on-surface transition-colors" type="button">
+          Archived (1)
+        </button>
+</div>
+</div>
+<!-- SORT & CURRENCY REFERENCE -->
+<div class="flex items-center justify-between sm:justify-end gap-space-md">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption text-outline">
+<span class="uppercase">Sort:</span>
+<select class="bg-surface border border-outline-variant text-on-surface text-caption font-label-ledger px-2 py-1 focus:outline-none focus:border-on-surface">
+<option>Renewal Date (Earliest first)</option>
+<option>Outflow (Highest first)</option>
+<option>Alphabetical (Vendor A-Z)</option>
+<option>Cancellation Deadline</option>
+</select>
+</div>
+<div class="flex items-center border border-outline-variant text-caption font-label-ledger">
+<button class="px-2 py-0.5 bg-surface-container-highest text-primary font-medium" type="button">USD ($)</button>
+<button class="px-2 py-0.5 text-outline hover:text-on-surface" type="button">NGN (₦)</button>
+</div>
+</div>
+</div>
+<!-- DENSE ARCHIVAL ACCOUNTING TABLE CONTAINER -->
+<div class="w-full overflow-x-auto border-x border-b border-outline-variant bg-surface">
+<table class="w-full text-left border-collapse border-spacing-0">
+<!-- TABLE HEADERS -->
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant text-outline font-label-ledger text-caption uppercase tracking-wider h-9">
+<th class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium">Service / Entity</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium hidden md:table-cell">Category</th>
+<th class="px-3 border-r border-outline-variant/70 text-right font-medium">Burden Amount</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium hidden sm:table-cell">Cycle</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium">Renewal Date</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium">Cancel By</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium hidden xl:table-cell">Payment Ledger Instrument</th>
+<th class="px-3 border-r border-outline-variant/70 font-medium">Status</th>
+<th class="px-3 text-right font-medium">Action Docket</th>
+</tr>
+</thead>
+<!-- LEDGER ROWS -->
+<tbody class="divide-y divide-outline-variant font-body-sm text-on-surface">
+<!-- ROW 1: Namecheap DNS (Urgent Deadline / Low Card Buffer) -->
+<tr class="group hover:bg-surface-container-high transition-colors bg-surface-container-low/40">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+                Namecheap DNS
+                <span class="text-caption font-label-ledger text-outline border border-outline-variant px-1">DNS-REG</span>
+</span>
+<span class="text-caption text-outline font-label-ledger">studio-lagos.co · Apex Domain</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Infrastructure</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$14.50 <span class="text-caption font-body-sm text-outline">/ yr</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦22,475</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Annual</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Sat 14 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<div class="inline-flex items-center gap-1 text-secondary font-medium px-1.5 py-0.5 border border-secondary bg-surface">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+<span>Thu 12 Nov (48h left)</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>FirstBank Master ••8820</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-secondary text-secondary font-label-ledger text-caption uppercase tracking-wider">
+              Needs review
+            </span>
+<span class="block text-[10px] font-label-ledger text-secondary mt-0.5">Card buffer low</span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="px-2 py-1 text-caption font-medium border border-secondary text-secondary hover:bg-secondary hover:text-surface transition-colors" type="button">Notice</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Google Workspace (Active Interactive Demonstration Row) -->
+<tr class="bg-surface-container-high border-l-2 border-l-primary">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input checked="" class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+                Google Workspace
+                <span class="text-caption font-label-ledger text-primary border border-primary px-1">INSPECTION FOCUS</span>
+</span>
+<span class="text-caption text-outline font-label-ledger">6 seats · Business Plus · studio-lagos.co</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Productivity &amp; Comms</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$36.00 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦55,800</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Thu 12 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<span class="text-on-surface-variant">Mon 10 Nov 2025</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption text-primary">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-caption uppercase tracking-wider">
+              Active
+            </span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-primary bg-primary text-surface hover:bg-primary-container transition-colors" type="button">Edit Docket</button>
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant bg-surface hover:border-on-surface text-on-surface" type="button">Notice Guide</button>
+<button class="px-1.5 py-1 text-caption border border-outline-variant bg-surface text-on-surface hover:bg-surface-container" title="Docket Menu" type="button">•••</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Figma Professional -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Figma Professional</span>
+<span class="text-caption text-outline font-label-ledger">3 editor seats · Design Org</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Design &amp; Creative</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$45.00 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦69,750</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Sun 22 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<span class="text-outline">Fri 20 Nov 2025</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-caption uppercase tracking-wider">
+              Active
+            </span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Vercel Pro -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Vercel Pro</span>
+<span class="text-caption text-outline font-label-ledger">Lagos Studio Edge · 2 Pipeline Seats</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Engineering &amp; Hosting</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$20.00 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦31,000</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Tue 17 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<span class="text-outline">Sun 15 Nov 2025</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-caption uppercase tracking-wider">
+              Active
+            </span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Canva Pro Teams -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Canva Pro Teams</span>
+<span class="text-caption text-outline font-label-ledger">5 seats · Marketing Kit Tier</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Design &amp; Marketing</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$12.99 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦20,135</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Fri 20 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<span class="text-outline">Wed 18 Nov 2025</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>GTBank Corp ••1104</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-caption uppercase tracking-wider">
+              Active
+            </span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 6: Zoom Workplace (Annual Retain / Check utility) -->
+<tr class="hover:bg-surface-container-high transition-colors bg-surface-container-low/40">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Zoom Workplace</span>
+<span class="text-caption text-outline font-label-ledger">Annual retain · Pro 1-license</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Productivity &amp; Comms</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$149.90 <span class="text-caption font-body-sm text-outline">/ yr</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦232,345</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Annual</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Sun 29 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<div class="flex flex-col">
+<span class="text-secondary font-medium">Mon 23 Nov 2025</span>
+<span class="text-[10px] text-outline">Window opens in 9d</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-secondary text-secondary font-label-ledger text-caption uppercase tracking-wider">
+              Needs review
+            </span>
+<span class="block text-[10px] font-label-ledger text-outline mt-0.5">Check annual utility</span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 7: Cursor AI Pro (Trial) -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Cursor AI Pro</span>
+<span class="text-caption text-outline font-label-ledger">Individual Engineer · Lead Seat</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Engineering</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$20.00 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦31,000</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Thu 26 Nov 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<span class="text-on-surface font-medium">Tue 24 Nov 2025</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>FirstBank Master ••8820</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-outline text-outline font-label-ledger text-caption uppercase tracking-wider bg-surface-container">
+              Trial
+            </span>
+<span class="block text-[10px] font-label-ledger text-outline mt-0.5">Ends 24 Nov</span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 8: Adobe Creative Cloud -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Adobe Creative Cloud</span>
+<span class="text-caption text-outline font-label-ledger">All Apps Plan · Single User</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-on-surface-variant">Design &amp; Creative</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$59.99 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦92,985</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+            Thu 03 Dec 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap">
+<span class="text-outline">Tue 01 Dec 2025</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption">
+<span class="material-symbols-outlined text-[14px] text-outline">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-primary text-primary font-label-ledger text-caption uppercase tracking-wider">
+              Active
+            </span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant hover:border-on-surface hover:bg-surface text-on-surface" type="button">Edit</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 9: Mailchimp Standard (Archived) -->
+<tr class="hover:bg-surface-container-high transition-colors opacity-70 bg-surface-container-low/20">
+<td class="w-10 px-3 text-center border-r border-outline-variant/70">
+<input class="w-3.5 h-3.5 rounded-none border border-outline bg-surface accent-primary cursor-pointer align-middle" type="checkbox"/>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface line-through">Mailchimp Standard</span>
+<span class="text-caption text-outline font-label-ledger">5k contacts · Replaced by Resend</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden md:table-cell">
+<span class="text-caption font-label-ledger text-outline">Marketing &amp; Sales</span>
+</td>
+<td class="px-3 py-2 text-right border-r border-outline-variant/70 font-variant-numeric tabular-nums">
+<div class="font-ledger-amount-sm text-ledger-amount-sm text-outline">$75.00 <span class="text-caption font-body-sm text-outline">/ mo</span></div>
+<div class="text-caption font-label-ledger text-outline">≈ ₦116,250</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden sm:table-cell">
+<span class="font-label-ledger text-caption uppercase text-outline">Monthly</span>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap text-outline">
+            Mon 08 Dec 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 font-label-ledger text-caption whitespace-nowrap text-outline">
+            Sat 06 Dec 2025
+          </td>
+<td class="px-3 py-2 border-r border-outline-variant/70 hidden xl:table-cell">
+<div class="flex items-center gap-1.5 font-label-ledger text-caption text-outline">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+<span>GTBank Corp ••1104</span>
+</div>
+</td>
+<td class="px-3 py-2 border-r border-outline-variant/70">
+<span class="inline-block px-1.5 py-0.5 border border-outline-variant text-outline font-label-ledger text-caption uppercase tracking-wider">
+              Archived
+            </span>
+</td>
+<td class="px-3 py-2 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="px-2 py-1 text-caption font-medium border border-outline-variant text-outline hover:text-on-surface" type="button">Restore</button>
+<button class="p-1 text-outline hover:text-on-surface" title="Options" type="button">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TABLE FOOTER & RECONCILIATION SUMMARY -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md py-space-sm px-space-md border-b border-x border-outline-variant bg-surface-container text-body-sm">
+<div class="flex items-center gap-space-md font-label-ledger text-caption text-outline">
+<span>Page 1 of 2</span>
+<span>·</span>
+<span>Showing 9 of 14 register rows</span>
+<span>·</span>
+<span class="text-on-surface">Filtered: 1 archived excluded</span>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-label-ledger text-caption">
+<span class="text-outline uppercase">Total Monthly Burden:</span>
+<span class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-primary">$348.50 / mo</span>
+<span class="text-outline">(≈ ₦540,175)</span>
+</div>
+<div class="flex items-center gap-1 border border-outline-variant bg-surface">
+<button class="px-2 py-1 text-caption font-label-ledger text-outline hover:text-on-surface border-r border-outline-variant" title="Previous Page" type="button">← Prev</button>
+<button class="px-2.5 py-1 text-caption font-label-ledger font-medium text-primary bg-surface-container" type="button">1</button>
+<button class="px-2.5 py-1 text-caption font-label-ledger text-outline hover:text-on-surface" type="button">2</button>
+<button class="px-2 py-1 text-caption font-label-ledger text-outline hover:text-on-surface border-l border-outline-variant" title="Next Page" type="button">Next →</button>
+</div>
+</div>
+</div>
+<!-- BENCHMARK & AUDIT FOOTNOTE -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm pt-space-md text-caption font-label-ledger text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-outline">account_balance</span>
+<span>Reference Exchange: CBN I&amp;E FX Indicative Benchmark Rate (₦1,550.00 / $1.00 USD). Updated hourly.</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span>Audit Trail Hash: <span class="text-on-surface-variant font-mono">#e8f4-0414-RNW</span></span>
+<span class="text-outline-variant">·</span>
+<span class="text-primary font-medium">Folio In-Sync</span>
+</div>
+</div>
+</div></main></div></body></html>

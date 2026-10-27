@@ -1,0 +1,331 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#fdf9f3;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed": "#3f0300", "outline-variant": "#c0c9c2", "background": "#fdf9f3", "error-container": "#ffdad6", "surface": "#fdf9f3", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "primary-fixed-dim": "#a1d1b8", "error": "#ba1a1a", "surface-container-low": "#f8f3ed", "surface-variant": "#e6e2dd", "on-surface-variant": "#414944", "surface-tint": "#3a6753", "surface-bright": "#fdf9f3", "on-tertiary-fixed-variant": "#693938", "on-tertiary-container": "#e3a29f", "primary": "#023625", "on-tertiary-fixed": "#350f0f", "on-background": "#1c1b18", "secondary": "#a73826", "inverse-primary": "#a1d1b8", "primary-fixed": "#bceed3", "surface-container-high": "#ece7e2", "inverse-on-surface": "#f5f0eb", "tertiary": "#4c2121", "surface-container-highest": "#e6e2dd", "on-error-container": "#93000a", "secondary-container": "#fe7860", "tertiary-container": "#673736", "surface-dim": "#ded9d4", "on-secondary-container": "#701004", "on-primary-container": "#8dbda4", "on-primary-fixed-variant": "#214f3c", "on-surface": "#1c1b18", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#fab5b3", "on-primary-fixed": "#002114", "on-secondary-fixed-variant": "#862112", "secondary-fixed": "#ffdad4", "tertiary-fixed": "#ffdad8", "primary-container": "#1f4d3a", "secondary-fixed-dim": "#ffb4a6", "on-error": "#ffffff", "outline": "#717973", "on-primary": "#ffffff", "inverse-surface": "#32302d", "surface-container": "#f2ede8" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1rem", "gutter": "1rem", "margin-desktop": "2.5rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-lg": "1.25rem", "space-xl": "2rem", "space-md": "0.875rem", "space-sm": "0.5rem" }, "fontFamily": { "body-md": ["Inter"], "body-lg": ["Inter"], "display-lg-mobile": ["Newsreader"], "display-lg": ["Newsreader"], "display-md": ["Newsreader"], "display-sm": ["Newsreader"], "body-sm": ["Inter"], "ledger-amount-sm": ["Newsreader"], "label-ledger": ["JetBrains Mono"], "ledger-amount-lg": ["Newsreader"], "caption": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "display-md": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "display-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "ledger-amount-sm": ["17px", { "lineHeight": "22px", "fontWeight": "500" }], "label-ledger": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }], "ledger-amount-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-background/90 backdrop-blur-xl pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="RenewMe Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V3dQ9rGqn6xb_Tj0jrab5OQn6wRmjycfel8VkTQiYQ2iuYm0GGFVArwo-vJaE7296gP2jjlo1Q4kfeiNs3pmQfvB2-z63lFDo1Fc3xSczS4uPAFnMjdu11sZvGqodgSL9RFwsODOxv2vyfPbdfTdX9QBhKjIODcLwNKgViZJ9bpcm8PTdnUMRnK27IQ-4bWnyIAP1Ed1NzLtI1TVaXdc8vLv4_2XaptcTp5bZk6boyKRHsur5_tdG5cq0"><div class="flex flex-col justify-center"><div class="flex items-baseline gap-space-xs"><span class="font-display-sm text-display-sm text-primary tracking-tight font-medium">RenewMe</span><span class="font-body-sm text-body-sm text-on-surface-variant">— Calendar</span></div><span class="font-label-ledger text-label-ledger uppercase tracking-wider text-outline">Ledger: Lagos Studio · FY25</span></div></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-background min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Top Summary Ledger Docket Header -->
+<div class="px-margin pt-space-md pb-space-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-ledger text-label-ledger uppercase tracking-wider text-outline">Fiscal Folio · Lagos Unit</span>
+<span class="font-label-ledger text-label-ledger px-space-xs py-0.5 rounded-sm bg-surface-container-high text-on-surface-variant">Q4 Ledger View</span>
+</div>
+<h1 class="font-display-sm text-display-sm text-primary tracking-tight font-medium">November 2025 Renewal Schedule</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">7 scheduled charges totaling <span class="font-medium text-on-surface">$243.39</span> (≈ ₦377,250)</p>
+</div>
+<!-- Accounting Metrics Bar Strip -->
+<div class="px-margin mb-space-md">
+<div class="grid grid-cols-3 bg-surface-container-lowest border border-outline-variant/60 rounded">
+<div class="p-space-sm border-r border-outline-variant/60 flex flex-col">
+<span class="font-label-ledger text-label-ledger text-outline uppercase">Settled (Mtd)</span>
+<span class="font-ledger-amount-sm text-ledger-amount-sm text-primary font-medium mt-0.5">$36.00</span>
+<span class="font-caption text-caption text-outline">1 transaction</span>
+</div>
+<div class="p-space-sm border-r border-outline-variant/60 flex flex-col bg-surface-container-low/40">
+<span class="font-label-ledger text-label-ledger text-secondary uppercase font-semibold">Action Due</span>
+<span class="font-ledger-amount-sm text-ledger-amount-sm text-secondary font-medium mt-0.5">$14.50</span>
+<span class="font-caption text-caption text-secondary">Card buffer low</span>
+</div>
+<div class="p-space-sm flex flex-col">
+<span class="font-label-ledger text-label-ledger text-outline uppercase">Upcoming</span>
+<span class="font-ledger-amount-sm text-ledger-amount-sm text-on-surface font-medium mt-0.5">$192.89</span>
+<span class="font-caption text-caption text-outline">5 commitments</span>
+</div>
+</div>
+</div>
+<!-- Mini Month-at-a-Glance Ledger Grid -->
+<div class="px-margin mb-space-lg">
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded p-space-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs border-b border-outline-variant/60">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[16px]">calendar_today</span>
+<span class="font-label-ledger text-label-ledger uppercase tracking-wider text-on-surface font-medium">November 2025 Calendar</span>
+</div>
+<div class="flex items-center gap-1 text-outline font-label-ledger text-label-ledger">
+<span>● Paid</span>
+<span class="text-secondary ml-1.5">■ Urgent</span>
+<span class="text-primary ml-1.5">○ Due</span>
+</div>
+</div>
+<!-- Days Header -->
+<div class="grid grid-cols-7 text-center font-label-ledger text-label-ledger text-outline py-1 border-b border-outline-variant/40 bg-surface-container-low/50">
+<div>M</div>
+<div>T</div>
+<div>W</div>
+<div>T</div>
+<div>F</div>
+<div>S</div>
+<div>S</div>
+</div>
+<!-- Days Grid (Nov 2025 starts on Saturday) -->
+<div class="grid grid-cols-7 text-center font-label-ledger text-label-ledger text-on-surface-variant divide-y divide-outline-variant/30">
+<!-- Row 1: Oct 27-31 placeholder + Nov 1, 2 -->
+<div class="py-1.5 text-outline-variant/60 font-caption">27</div>
+<div class="py-1.5 text-outline-variant/60 font-caption">28</div>
+<div class="py-1.5 text-outline-variant/60 font-caption">29</div>
+<div class="py-1.5 text-outline-variant/60 font-caption">30</div>
+<div class="py-1.5 text-outline-variant/60 font-caption">31</div>
+<div class="py-1.5">1</div>
+<div class="py-1.5">2</div>
+<!-- Row 2: Nov 3 - 9 -->
+<div class="py-1.5">3</div>
+<div class="py-1.5">4</div>
+<div class="py-1.5">5</div>
+<div class="py-1.5">6</div>
+<div class="py-1.5">7</div>
+<div class="py-1.5">8</div>
+<div class="py-1.5">9</div>
+<!-- Row 3: Nov 10 - 16 (includes 12, 14) -->
+<div class="py-1.5">10</div>
+<div class="py-1.5">11</div>
+<!-- 12 Nov: Today / Processed -->
+<div class="py-1 relative font-semibold text-primary bg-primary-fixed/20 border border-primary rounded-sm">
+<span>12</span>
+<span class="block text-[8px] leading-none text-primary mt-0.5">●</span>
+</div>
+<div class="py-1.5">13</div>
+<!-- 14 Nov: Urgent -->
+<div class="py-1 relative font-semibold text-secondary bg-error-container/40 border border-secondary rounded-sm">
+<span>14</span>
+<span class="block text-[8px] leading-none text-secondary mt-0.5">■</span>
+</div>
+<div class="py-1.5">15</div>
+<div class="py-1.5">16</div>
+<!-- Row 4: Nov 17 - 23 (includes 17, 20) -->
+<!-- 17 Nov -->
+<div class="py-1 relative font-medium text-on-surface bg-surface-container-high/60 border border-outline-variant rounded-sm">
+<span>17</span>
+<span class="block text-[8px] leading-none text-primary mt-0.5">○</span>
+</div>
+<div class="py-1.5">18</div>
+<div class="py-1.5">19</div>
+<!-- 20 Nov -->
+<div class="py-1 relative font-medium text-on-surface bg-surface-container-high/60 border border-outline-variant rounded-sm">
+<span>20</span>
+<span class="block text-[8px] leading-none text-primary mt-0.5">○</span>
+</div>
+<div class="py-1.5">21</div>
+<div class="py-1.5">22</div>
+<div class="py-1.5 text-outline">23*</div>
+<!-- Row 5: Nov 24 - 30 (includes 29) -->
+<div class="py-1.5">24</div>
+<div class="py-1.5">25</div>
+<div class="py-1.5">26</div>
+<div class="py-1.5">27</div>
+<div class="py-1.5">28</div>
+<!-- 29 Nov -->
+<div class="py-1 relative font-medium text-on-surface bg-surface-container-high/60 border border-outline-variant rounded-sm">
+<span>29</span>
+<span class="block text-[8px] leading-none text-primary mt-0.5">○</span>
+</div>
+<div class="py-1.5">30</div>
+</div>
+<div class="mt-space-xs pt-space-xs border-t border-outline-variant/40 flex items-center justify-between text-outline font-label-ledger text-caption">
+<span>* Nov 23: Zoom cancel window lock</span>
+<span>Folio 11 of 12</span>
+</div>
+</div>
+</div>
+<!-- Chronological Ledger Docket -->
+<div class="px-margin flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-ledger text-label-ledger uppercase tracking-wider text-outline">Chronological Register</span>
+<span class="font-label-ledger text-label-ledger text-outline">Tabular Order</span>
+</div>
+<!-- ENTRY 1: 12 Nov (Today) -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded">
+<!-- Date Bar -->
+<div class="px-space-sm py-1.5 bg-surface-container-low border-b border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-primary">check_circle</span>
+<span class="font-label-ledger text-label-ledger uppercase font-semibold text-primary">Thu 12 Nov</span>
+<span class="font-caption text-caption text-on-surface-variant font-medium">(Today)</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-primary px-1.5 py-0.2 rounded-sm border border-primary text-[10px]">Settled</span>
+</div>
+<!-- Content -->
+<div class="p-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0 flex-1">
+<h2 class="font-body-md text-body-md font-medium text-on-surface truncate">Google Workspace (Business Standard)</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-semibold text-primary">$36.00 <span class="font-caption text-caption text-outline font-normal">/ mo</span></div>
+<div class="font-label-ledger text-label-ledger text-on-surface-variant mt-0.5">≈ ₦55,800</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/40 flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Payment processed at 04:00 GMT+1</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-outline">Ref: GW-8834</span>
+</div>
+</div>
+</div>
+<!-- ENTRY 2: 14 Nov (Urgent - 2 days left) -->
+<div class="bg-surface-container-lowest border border-secondary rounded">
+<!-- Date Bar with Alert Accents -->
+<div class="px-space-sm py-1.5 bg-error-container/30 border-b border-secondary/40 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-secondary">warning</span>
+<span class="font-label-ledger text-label-ledger uppercase font-semibold text-secondary">Sat 14 Nov</span>
+<span class="font-caption text-caption text-secondary font-medium">(Urgent · 2 days left)</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-secondary px-1.5 py-0.2 rounded-sm border border-secondary text-[10px]">Action Required</span>
+</div>
+<!-- Content -->
+<div class="p-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0 flex-1">
+<h2 class="font-body-md text-body-md font-medium text-on-surface truncate">Namecheap (studio-lagos.co domain)</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+<span>FirstBank Master ••8820</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-semibold text-secondary">$14.50 <span class="font-caption text-caption text-outline font-normal">/ yr</span></div>
+<div class="font-label-ledger text-label-ledger text-on-surface-variant mt-0.5">≈ ₦22,475</div>
+</div>
+</div>
+<!-- Alert Box -->
+<div class="mt-space-sm p-space-xs bg-error-container/40 rounded-sm border border-secondary/40 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">error_outline</span>
+<div class="font-caption text-caption text-secondary leading-snug">
+<strong class="font-medium">Flagged:</strong> Insufficient USD card buffer. Renewal required to prevent DNS disruption.
+          </div>
+</div>
+<!-- Action Row -->
+<div class="mt-space-sm flex items-center justify-between">
+<button class="px-2 py-1 bg-secondary text-on-secondary rounded text-[12px] font-medium flex items-center gap-1" onclick="alert('Top-up memo generated for FirstBank USD buffer.')" type="button">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Authorize USD Switch</span>
+</button>
+<span class="font-label-ledger text-label-ledger text-outline">ICANN Grace: 48h</span>
+</div>
+</div>
+</div>
+<!-- ENTRY 3: 17 Nov (Next week) -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded">
+<div class="px-space-sm py-1.5 bg-surface-container-low border-b border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-outline">schedule</span>
+<span class="font-label-ledger text-label-ledger uppercase font-semibold text-on-surface">Tue 17 Nov</span>
+<span class="font-caption text-caption text-on-surface-variant">(Next week)</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-outline px-1.5 py-0.2 rounded-sm border border-outline-variant text-[10px]">Queued</span>
+</div>
+<div class="p-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0 flex-1">
+<h2 class="font-body-md text-body-md font-medium text-on-surface truncate">Vercel Pro (Frontend Hosting)</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$20.00 <span class="font-caption text-caption text-outline font-normal">/ mo</span></div>
+<div class="font-label-ledger text-label-ledger text-on-surface-variant mt-0.5">≈ ₦31,000</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/40 flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Automatic charge scheduled</span>
+<span class="font-label-ledger text-label-ledger text-outline">Limit: OK</span>
+</div>
+</div>
+</div>
+<!-- ENTRY 4: 20 Nov -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded">
+<div class="px-space-sm py-1.5 bg-surface-container-low border-b border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-outline">event</span>
+<span class="font-label-ledger text-label-ledger uppercase font-semibold text-on-surface">Fri 20 Nov</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-outline px-1.5 py-0.2 rounded-sm border border-outline-variant text-[10px]">Active Standby</span>
+</div>
+<div class="p-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0 flex-1">
+<h2 class="font-body-md text-body-md font-medium text-on-surface truncate">Canva Pro Teams</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="material-symbols-outlined text-[14px]">account_balance</span>
+<span>GTBank Corporate ••1104</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-medium text-on-surface">$12.99 <span class="font-caption text-caption text-outline font-normal">/ mo</span></div>
+<div class="font-label-ledger text-label-ledger text-on-surface-variant mt-0.5">≈ ₦20,135</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-outline-variant/40 flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Direct corporate card recurring debit</span>
+<span class="font-label-ledger text-label-ledger text-outline">Seats: 5</span>
+</div>
+</div>
+</div>
+<!-- ENTRY 5: 29 Nov -->
+<div class="bg-surface-container-lowest border border-outline-variant/80 rounded">
+<div class="px-space-sm py-1.5 bg-surface-container-low border-b border-outline-variant/60 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px] text-outline">history</span>
+<span class="font-label-ledger text-label-ledger uppercase font-semibold text-on-surface">Sun 29 Nov</span>
+<span class="font-caption text-caption text-outline">(Annual Cycle)</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-primary px-1.5 py-0.2 rounded-sm border border-primary text-[10px]">Major Retainer</span>
+</div>
+<div class="p-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="min-w-0 flex-1">
+<h2 class="font-body-md text-body-md font-medium text-on-surface truncate">Zoom Pro Annual</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="material-symbols-outlined text-[14px]">credit_card</span>
+<span>Stanbic IBTC Visa ••4091</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<div class="font-ledger-amount-sm text-ledger-amount-sm font-semibold text-primary">$149.90 <span class="font-caption text-caption text-outline font-normal">/ yr</span></div>
+<div class="font-label-ledger text-label-ledger text-on-surface-variant mt-0.5">≈ ₦232,345</div>
+</div>
+</div>
+<div class="mt-space-sm p-space-xs bg-surface-container-high/40 rounded-sm border border-outline-variant/60 flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant shrink-0 mt-0.5">info</span>
+<p class="font-caption text-caption text-on-surface leading-tight">
+            Annual contract auto-renews. Cancellation window closes <span class="font-semibold text-secondary">Mon 23 Nov</span>.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Diary Export Footnote & Utility Action Panel -->
+<div class="px-margin mt-space-lg">
+<div class="p-space-sm bg-surface-container-low border border-outline-variant/60 rounded flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">sync_saved_locally</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Accounting Export Available</span>
+</div>
+<span class="font-label-ledger text-label-ledger text-outline">RFC 5545 Compliance</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant leading-relaxed">
+        Export schedule as CSV or iCal diary feed to synchronize commitment milestones with your external accounting calendar and treasury notifications.
+      </p>
+<div class="flex items-center gap-space-xs pt-space-xs border-t border-outline-variant/40">
+<button class="flex-1 py-1.5 px-3 bg-surface-container-lowest border border-outline-variant rounded font-body-sm text-body-sm text-on-surface hover:bg-surface-container-high flex items-center justify-center gap-1.5" onclick="alert('Preparing CSV Ledger Export for November 2025...')" type="button">
+<span class="material-symbols-outlined text-[16px]">table_view</span>
+<span>Download CSV</span>
+</button>
+<button class="flex-1 py-1.5 px-3 bg-primary-container text-on-primary rounded font-body-sm text-body-sm hover:bg-primary flex items-center justify-center gap-1.5" onclick="alert('iCal calendar subscription URL copied to clipboard.')" type="button">
+<span class="material-symbols-outlined text-[16px]">event_repeat</span>
+<span>iCal Diary Feed</span>
+</button>
+</div>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-background/95 backdrop-blur-xl" data-active-classes="text-primary font-medium"><div class="grid grid-cols-4 h-16"><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant transition-colors group relative" data-path="ledger" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">menu_book</span><span class="font-body-sm text-body-sm tracking-tight">Ledger</span></a><a aria-current="page" class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] transition-colors group relative text-primary font-medium" data-path="calendar" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">calendar_month</span><span class="font-body-sm text-body-sm tracking-tight">Calendar</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant transition-colors group relative" data-path="add-record" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">edit_document</span><span class="font-body-sm text-body-sm tracking-tight">Add Record</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] min-w-[44px] text-on-surface-variant transition-colors group relative" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px] mb-0.5">query_stats</span><span class="font-body-sm text-body-sm tracking-tight">Reports</span></a></div></nav></body></html>

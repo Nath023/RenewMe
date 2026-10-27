@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#f8f3ed", "inverse-primary": "#a1d1b8", "on-secondary-container": "#701004", "primary-fixed-dim": "#a1d1b8", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-surface": "#1c1b18", "primary-fixed": "#bceed3", "outline": "#717973", "tertiary": "#4c2121", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "surface-container": "#f2ede8", "surface-container-highest": "#e6e2dd", "secondary-container": "#fe7860", "on-error-container": "#93000a", "inverse-surface": "#32302d", "on-secondary-fixed-variant": "#862112", "on-tertiary-fixed-variant": "#693938", "surface": "#fdf9f3", "tertiary-fixed": "#ffdad8", "on-secondary-fixed": "#3f0300", "secondary": "#a73826", "primary-container": "#1f4d3a", "on-background": "#1c1b18", "surface-dim": "#ded9d4", "on-tertiary-fixed": "#350f0f", "secondary-fixed-dim": "#ffb4a6", "on-primary-container": "#8dbda4", "on-surface-variant": "#414944", "primary": "#023625", "surface-bright": "#fdf9f3", "error-container": "#ffdad6", "inverse-on-surface": "#f5f0eb", "tertiary-container": "#673736", "secondary-fixed": "#ffdad4", "on-error": "#ffffff", "surface-tint": "#3a6753", "on-primary-fixed": "#002114", "outline-variant": "#c0c9c2", "on-tertiary-container": "#e3a29f", "surface-container-high": "#ece7e2", "background": "#fdf9f3", "on-primary": "#ffffff", "on-primary-fixed-variant": "#214f3c", "tertiary-fixed-dim": "#fab5b3", "surface-variant": "#e6e2dd" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-lg": "1.25rem", "space-sm": "0.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "margin-desktop": "2.5rem", "space-md": "0.875rem", "gutter": "1rem", "space-xs": "0.25rem", "margin": "1rem" }, fontFamily: { "ledger-amount-lg": ["Newsreader"], "body-lg": ["Inter"], "display-lg": ["Newsreader"], "body-sm": ["Inter"], "caption": ["Inter"], "label-ledger": ["JetBrains Mono"], "display-lg-mobile": ["Newsreader"], "display-sm": ["Newsreader"], "ledger-amount-sm": ["Newsreader"], "display-md": ["Newsreader"], "body-md": ["Inter"] }, fontSize: { "ledger-amount-lg": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "label-ledger": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }], "display-lg-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }], "ledger-amount-sm": ["17px", { "lineHeight": "22px", "fontWeight": "500" }], "display-md": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-background font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[24px]">menu_book</span></div><div class="flex flex-col"><div class="flex items-baseline gap-space-xs"><span class="font-display-sm text-display-sm font-medium tracking-tight text-on-surface">RenewMe</span></div><span class="font-label-ledger text-label-ledger uppercase tracking-wider text-on-surface-variant">Subscriptions</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search subscriptions" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="flex items-center pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Folio Header Banner & Tactile Ledger Margin -->
+<section class="px-gutter pt-space-md pb-space-sm bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-baseline justify-between">
+<div>
+<h1 class="font-display-sm text-display-sm text-on-surface tracking-tight">Subscription Folio</h1>
+<p class="font-label-ledger text-caption uppercase text-on-surface-variant tracking-wider">14 commitments registered · FY25</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ledger text-caption uppercase transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">file_download</span>
+          Export
+        </button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary-container text-on-primary font-body-sm font-medium hover:bg-primary transition-colors flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+          Record
+        </button>
+</div>
+</div>
+<!-- Monthly Metric Register -->
+<div class="mt-space-xs p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Monthly Folio Drain</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg text-on-surface font-semibold">$348.50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦540,175</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-2 py-1 rounded-lg bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-[16px] text-secondary">warning</span>
+<span class="font-label-ledger text-caption uppercase font-medium">2 urgent cutoffs</span>
+</div>
+</div>
+</section>
+<!-- Controls: Search & Horizontal Folio Filter Tabs -->
+<section class="px-gutter py-space-sm bg-surface flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-space-sm flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</div>
+<input class="w-full pl-8 pr-3 py-1.5 bg-surface-container-low rounded-lg text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container transition-all" placeholder="Search registered commitments..." type="text"/>
+</div>
+<button aria-label="Sort &amp; Filter" class="p-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Filter Register Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 no-scrollbar">
+<button class="px-2.5 py-1 rounded-lg bg-primary-container text-on-primary font-label-ledger text-caption uppercase whitespace-nowrap">
+        All (14)
+      </button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-ledger text-caption uppercase whitespace-nowrap">
+        Active (10)
+      </button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-ledger text-caption uppercase whitespace-nowrap">
+        Trial (1)
+      </button>
+<button class="px-2.5 py-1 rounded-lg bg-error-container text-on-error-container font-label-ledger text-caption uppercase whitespace-nowrap flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Review (2)
+      </button>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-ledger text-caption uppercase whitespace-nowrap">
+        Archived (1)
+      </button>
+</div>
+</section>
+<!-- Ledger Stack Cards (Mobile Stacked Folio Entries) -->
+<section class="px-gutter py-space-xs flex flex-col gap-space-sm">
+<!-- Entry 1: Namecheap DNS (Urgent Flag + Active Open Action Drawer) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<!-- Top Folio Head -->
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">dns</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Namecheap DNS</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">INFRASTRUCTURE · #NC-891</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-error-container text-secondary font-label-ledger text-caption uppercase font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Needs Review
+        </span>
+</div>
+<!-- Ledger Sum Row -->
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$14.50</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">/ yr</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦22,475</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Annual
+        </span>
+</div>
+<!-- Detail Folio Matrix -->
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Renewal Date</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Sat 14 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-secondary font-medium">Cancel Cut-Off</span>
+<div class="flex items-center gap-1">
+<span class="font-body-sm text-body-sm text-secondary font-semibold">Thu 12 Nov</span>
+<span class="text-caption font-label-ledger text-on-error-container bg-error-container px-1 rounded-sm">48h left!</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Charge Instrument</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">FirstBank MC ••8820</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Disarm Protocol</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">7d &amp; 48h ping set</span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-space-sm bg-surface-container flex items-center justify-between gap-space-xs">
+<button class="flex-1 py-1 px-2 rounded-lg bg-surface-container-lowest hover:bg-surface text-on-surface font-body-sm font-medium flex items-center justify-center gap-1 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">edit_note</span>
+          Edit Entry
+        </button>
+<button class="flex-1 py-1 px-2 rounded-lg bg-surface-container-lowest hover:bg-error-container text-secondary font-body-sm font-medium flex items-center justify-center gap-1 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">cancel</span>
+          Cancel Guide
+        </button>
+<button aria-label="Subscription Options" class="px-2 py-1 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+</article>
+<!-- Entry 2: Google Workspace (Active / Monthly) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Google Workspace</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">PRODUCTIVITY · 6 SEATS</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-primary-container font-label-ledger text-caption uppercase font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          Active
+        </span>
+</div>
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$36.00</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">/ mo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦55,800</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Monthly
+        </span>
+</div>
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Next Debit</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Thu 12 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Notice Window</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auto-renew active</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Card Ref</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Zenith Virtual ••3419</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Folio Tag</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Core Operations</span>
+</div>
+</div>
+</article>
+<!-- Entry 3: Cursor AI Pro (Trial Period Ending) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Cursor AI Pro</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">DEVELOPMENT · SEED TRIAL</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-ledger text-caption uppercase font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Trial (5d)
+        </span>
+</div>
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$20.00</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">post-trial</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦31,000</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Transitioning
+        </span>
+</div>
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Trial Expiry</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Mon 16 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-secondary font-medium">Cancel Free By</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Sun 15 Nov, 23:59</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Backup Card</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Access Visa ••1190</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Alert Trigger</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">SMS + Calendar note</span>
+</div>
+</div>
+</article>
+<!-- Entry 4: Vercel Pro (Active Paired Cloud Ledger) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">cloud</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Vercel Pro</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">HOSTING &amp; APIS</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-primary-container font-label-ledger text-caption uppercase font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          Active
+        </span>
+</div>
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$20.00</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">/ mo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦31,000</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Monthly
+        </span>
+</div>
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Next Cycle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Tue 17 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Billing Type</span>
+<span class="font-body-sm text-body-sm text-on-surface">Metered Tier 1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Default Card</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">FirstBank MC ••8820</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Bandwidth Log</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">42% threshold ok</span>
+</div>
+</div>
+</article>
+<!-- Entry 5: Zoom Workplace (Annual Review Flag) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Zoom Workplace</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">TELECOMMS · 1 PRO LICENSE</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-error-container text-secondary font-label-ledger text-caption uppercase font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Needs Review
+        </span>
+</div>
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$149.90</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">/ yr</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦232,345</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Annual
+        </span>
+</div>
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Anniversary Renewal</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Wed 26 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-secondary font-medium">Cancel Window</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Sun 23 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Settlement Card</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Zenith Virtual ••3419</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Usage Auditor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">14 hrs / month</span>
+</div>
+</div>
+</article>
+<!-- Entry 6: Canva Teams (Active Design Suite) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">draw</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Canva Teams</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">DESIGN &amp; CREATIVE</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-primary-container font-label-ledger text-caption uppercase font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          Active
+        </span>
+</div>
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$12.99</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">/ mo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦20,135</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Monthly
+        </span>
+</div>
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Next Debit</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Fri 20 Nov 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Subscription Tier</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3-Seat Brand Kit</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Instrument</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">FirstBank MC ••8820</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Tax Invoice</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Attached automatic</span>
+</div>
+</div>
+</article>
+<!-- Entry 7: Adobe Creative Cloud (Active Folio) -->
+<article class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<div class="p-space-sm bg-surface-container-low flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">brush</span>
+</div>
+<div>
+<h2 class="font-display-sm text-body-lg font-medium text-on-surface leading-tight">Adobe Creative Cloud</h2>
+<span class="font-label-ledger text-caption uppercase tracking-wider text-on-surface-variant">CREATIVE SUITE · ALL APPS</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-primary-container font-label-ledger text-caption uppercase font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+          Active
+        </span>
+</div>
+<div class="px-space-sm py-2 flex items-baseline justify-between bg-surface-container-lowest">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-ledger-amount-lg text-ledger-amount-lg font-semibold text-on-surface">$59.99</span>
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">/ mo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">≈ ₦92,985</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ledger text-caption uppercase">
+          Monthly
+        </span>
+</div>
+<div class="grid grid-cols-2 p-space-sm gap-y-2 gap-x-space-sm bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Next Debit</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Thu 03 Dec 2025</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Commitment Plan</span>
+<span class="font-body-sm text-body-sm text-on-surface">Annual billed monthly</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Card Ref</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Zenith Virtual ••3419</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">Cancellation Term</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">50% fee applies</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Bottom Archival Footer & Register Pagination -->
+<section class="px-gutter pt-space-md pb-space-lg flex flex-col items-center gap-space-sm bg-surface">
+<div class="w-full p-space-sm rounded-lg bg-surface-container flex flex-col items-center text-center gap-1">
+<span class="font-label-ledger text-caption uppercase text-on-surface-variant">
+        Showing 7 of 14 commitments registered
+      </span>
+<span class="font-caption text-caption text-outline">
+        Base ledger conversion peg: NGN ₦1,550.00 / USD
+      </span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-ledger text-caption uppercase tracking-wider transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">history_edu</span>
+      Load older ledger entries (7)
+    </button>
+</section>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary-container font-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] px-space-xs py-space-xs transition-colors text-primary-container font-medium" data-path="ledger" href="#"><span class="material-symbols-outlined text-[22px]">receipt_long</span><span class="font-label-ledger text-caption uppercase mt-0.5 tracking-wider">Ledger</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="calendar" href="#"><span class="material-symbols-outlined text-[22px]">calendar_today</span><span class="font-label-ledger text-caption uppercase mt-0.5 tracking-wider">Calendar</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="add-record" href="#"><div class="w-7 h-7 flex items-center justify-center bg-primary-container text-on-primary rounded"><span class="material-symbols-outlined text-[18px]">add</span></div><span class="font-label-ledger text-caption uppercase mt-0.5 tracking-wider">Record</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[22px]">analytics</span><span class="font-label-ledger text-caption uppercase mt-0.5 tracking-wider">Reports</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] px-space-xs py-space-xs text-on-surface-variant hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="font-label-ledger text-caption uppercase mt-0.5 tracking-wider">Settings</span></a></div></nav></body></html>

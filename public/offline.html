@@ -13,7 +13,7 @@
 <body>
   <main class="shell">
     <header class="top"><a class="brand" href="/">RenewMe</a><span class="state" id="connection">Offline</span></header>
-    <div class="banner"><strong>You’re offline</strong>Your saved ledger is stored on this device. Add, edit, or archive records here; queued changes sync to your account when you reconnect.</div>
+    <div class="banner"><strong>Offline folio</strong>Your saved ledger is stored on this device. Add, edit, or archive records here; permanent deletion requires a connection.</div>
     <section class="panel"><header class="panel-head"><div><h1>Your offline folio</h1><p id="snapshot-info">Loading this device’s saved ledger…</p></div></header><div aria-live="polite" class="list" id="records"></div><p class="muted" id="empty" hidden></p></section>
     <section class="panel"><header class="panel-head"><div><h2 id="form-title">Queue a subscription</h2><p id="form-hint">This entry stays on this device until it syncs.</p></div></header>
       <form class="form" id="new-record">
@@ -104,7 +104,7 @@
     const oldRows=[...ledger.rows],oldWrites=[...(ledger.pendingWrites||[])];
     if(oldRow) ledger.rows=ledger.rows.map(item=>item.id===row.id?row:item); else ledger.rows.unshift(row);
     ledger.pendingWrites=[...oldWrites.filter(item=>item.id!==row.id),row];
-    try { await saveLedger(); render(); formElement.reset(); setForm(null); $("message").className="message";$("message").textContent=navigator.onLine?"Changes queued. Syncing now�":"Changes queued on this device and will sync when you reconnect."; if(navigator.onLine) void syncQueue(); }
+    try { await saveLedger(); render(); formElement.reset(); setForm(null); $("message").className="message";$("message").textContent=navigator.onLine?"Changes queued. Syncing now…":"Changes queued on this device and will sync when you reconnect."; if(navigator.onLine) void syncQueue(); }
     catch { ledger.rows=oldRows;ledger.pendingWrites=oldWrites;render();$("message").className="message error";$("message").textContent="This browser could not save offline data. Check storage permissions."; }
   });
   $("records").addEventListener("click",async event=>{

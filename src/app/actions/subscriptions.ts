@@ -119,6 +119,44 @@ export async function archiveSubscription(formData: FormData) {
   revalidatePath("/subscriptions");
 }
 
+export async function deleteSubscription(formData: FormData) {
+  const supabase = await requireUser();
+  const id = stringValue(formData, "id");
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
+    redirect("/subscriptions?formError=Invalid%20subscription%20ID");
+  }
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) redirect("/subscriptions?authError=Sign%20in%20to%20delete%20subscriptions");
+
+  const { data: invoices, error: invoiceError } = await supabase
+    .from("renewme_subscription_invoices")
+    .select("file_path")
+    .eq("subscription_id", id)
+    .eq("user_id", user.id);
+  if (invoiceError) redirect("/subscriptions?formError=" + encodeURIComponent("Could not check attached invoices: " + invoiceError.message));
+
+  const invoicePaths = (invoices ?? []).map((invoice) => invoice.file_path);
+  if (invoicePaths.length) {
+    const { error: storageError } = await supabase.storage.from("renewme-invoices").remove(invoicePaths);
+    if (storageError) redirect("/subscriptions?formError=" + encodeURIComponent("Could not remove attached invoice files: " + storageError.message));
+  }
+
+  const { data, error } = await supabase
+    .from("subscriptions")
+    .delete()
+    .eq("id", id)
+    .eq("user_id", user.id)
+    .select("id")
+    .maybeSingle();
+  if (error) redirect("/subscriptions?formError=" + encodeURIComponent(error.message));
+  if (!data) redirect("/subscriptions?formError=Subscription%20not%20found%20or%20you%20do%20not%20have%20access");
+
+  for (const path of ["/subscriptions", "/dashboard", "/calendar", "/reminders", "/reports", "/settings", "/invoices"]) {
+    revalidatePath(path);
+  }
+  redirect("/subscriptions?authMessage=Subscription%2C%20invoice%20files%2C%20and%20renewal%20history%20deleted.%20Sent%20email%20history%20was%20kept.");
+}
+
 export async function batchAuditSubscriptions(formData: FormData) {
   const supabase = await requireUser();
   const ids = formData.getAll("id").map(String).filter(Boolean);

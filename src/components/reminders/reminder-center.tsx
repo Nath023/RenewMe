@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { AccountMenu } from "@/components/account/account-menu";
 import { signOutAction } from "@/app/actions/auth";
+import { deleteSentReminderHistory } from "@/app/actions/reminders";
 import type { Subscription } from "@/lib/subscriptions/types";
 import { useReminderHorizon } from "@/lib/preferences/currency";
 
@@ -138,7 +139,20 @@ function Sidebar({ accountName, count }: { accountName: string; count: number })
 
 export function ReminderCenter({ rows, accountName, today, preview = false, error, deliveryError, deliveries = [] }: { rows: Subscription[]; accountName: string; today: string; preview?: boolean; error?: string; deliveryError?: string; deliveries?: ReminderDelivery[] }) {
   const [filter, setFilter] = useState<"upcoming" | "seven_days" | "review" | "overdue">("upcoming");
+  const [deletedDeliveryIds, setDeletedDeliveryIds] = useState<string[]>([]);
+  const [deletingDeliveryId, setDeletingDeliveryId] = useState("");
+  const [deliveryActionError, setDeliveryActionError] = useState("");
   const [horizon] = useReminderHorizon();
+  const visibleDeliveries = deliveries.filter((delivery) => !deletedDeliveryIds.includes(delivery.id));
+  async function removeSentDelivery(delivery: ReminderDelivery) {
+    if (delivery.status !== "sent" || preview || !window.confirm("Delete this sent reminder from your delivery history?")) return;
+    setDeletingDeliveryId(delivery.id);
+    setDeliveryActionError("");
+    const result = await deleteSentReminderHistory(delivery.id);
+    if (result.success) setDeletedDeliveryIds((current) => [...current, delivery.id]);
+    else setDeliveryActionError(result.error);
+    setDeletingDeliveryId("");
+  }
   const activeRows = useMemo(() => rows.filter((row) => row.status !== "archived"), [rows]);
   const deadlines = useMemo(() => activeRows.map((subscription): Deadline => {
     const renewal = nextRenewal(subscription, today);
@@ -202,9 +216,10 @@ export function ReminderCenter({ rows, accountName, today, preview = false, erro
           </section>
 
           <section aria-label="Email delivery history" className="reminders-panel email-history-panel">
-            <div className="reminders-panel-heading"><div><span className="calendar-eyebrow">Email register</span><h2>Recent delivery history</h2></div><span className="delivery-history-count">Latest {deliveries.length} of 20</span></div>
+            <div className="reminders-panel-heading"><div><span className="calendar-eyebrow">Email register</span><h2>Recent delivery history</h2></div><span className="delivery-history-count">Latest {visibleDeliveries.length} of 20</span></div>
             {deliveryError && <p className="notice notice-error delivery-history-notice" role="alert">{deliveryError}</p>}
-            {!deliveryError && deliveries.length > 0 ? <div className="delivery-history-list">{deliveries.map((delivery) => {
+            {deliveryActionError && <p className="notice notice-error delivery-history-notice" role="alert">{deliveryActionError}</p>}
+            {!deliveryError && visibleDeliveries.length > 0 ? <div className="delivery-history-list">{visibleDeliveries.map((delivery) => {
               const vendor = rows.find((row) => row.id === delivery.subscription_id)?.vendor ?? "Saved subscription";
               const status = delivery.status === "sent" ? "Sent" : delivery.status === "failed" ? "Failed" : delivery.status === "processing" ? "Sending" : "Queued";
               const statusClass = delivery.status === "sent" ? "sent" : delivery.status === "failed" ? "failed" : "pending";
@@ -214,6 +229,7 @@ export function ReminderCenter({ rows, accountName, today, preview = false, erro
                 <div className="delivery-history-date"><small>Deadline</small><strong>{formatDate(delivery.due_date)}</strong></div>
                 <span className={`delivery-history-status delivery-history-status-${statusClass}`}><i />{status}</span>
                 <div className="delivery-history-time"><small>{delivery.sent_at ? "Sent" : delivery.last_attempt_at ? "Last attempt" : "Queued"}</small><span>{formatTimestamp(resultTime)}</span></div>
+                {delivery.status === "sent" && <button aria-label="Delete sent reminder from history" className="delivery-history-delete" disabled={deletingDeliveryId === delivery.id} onClick={() => void removeSentDelivery(delivery)} type="button"><Icon>delete</Icon><span>{deletingDeliveryId === delivery.id ? "Deleting" : "Delete"}</span></button>}
               </article>;
             })}</div> : !deliveryError ? <div className="delivery-history-empty"><Icon>mail</Icon><strong>No email deliveries yet</strong><span>When a scheduled email reminder is processed, its status will appear here.</span></div> : null}
           </section>

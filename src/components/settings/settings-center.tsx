@@ -5,7 +5,7 @@ import { AccountMenu } from "@/components/account/account-menu";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { importSubscriptions } from "@/app/actions/subscriptions";
-import { saveEmailReminderPreference, sendTestReminderEmail } from "@/app/actions/settings";
+import { createTelegramLink, saveEmailReminderPreference, sendTestReminderEmail, unlinkTelegram } from "@/app/actions/settings";
 import { signOutAction } from "@/app/actions/auth";
 import { useDisplayCurrency, useReminderHorizon, useUsdNgnRate, useWeekStart } from "@/lib/preferences/currency";
 import type { Subscription } from "@/lib/subscriptions/types";
@@ -50,7 +50,7 @@ function Sidebar({ accountName, isAdmin }: { accountName: string; isAdmin: boole
   );
 }
 
-export function SettingsCenter({ accountName, workspaceName = "Ledger Register", initialCurrency = "NGN", rows = [], preview = false, error, isAdmin = false, emailRemindersEnabled = false, preferenceError, settingsError, settingsMessage }: { accountName: string; workspaceName?: string; initialCurrency?: "USD" | "NGN"; rows?: Subscription[]; preview?: boolean; error?: string; isAdmin?: boolean; emailRemindersEnabled?: boolean; preferenceError?: string; settingsError?: string; settingsMessage?: string }) {
+export function SettingsCenter({ accountName, workspaceName = "Ledger Register", initialCurrency = "NGN", rows = [], preview = false, error, isAdmin = false, emailRemindersEnabled = false, telegramLinked = false, telegramBotUsername, pushEnabled: initialPushEnabled = false, pushPublicKey, preferenceError, settingsError, settingsMessage }: { accountName: string; workspaceName?: string; initialCurrency?: "USD" | "NGN"; rows?: Subscription[]; preview?: boolean; error?: string; isAdmin?: boolean; emailRemindersEnabled?: boolean; telegramLinked?: boolean; telegramBotUsername?: string; pushEnabled?: boolean; pushPublicKey?: string; preferenceError?: string; settingsError?: string; settingsMessage?: string }) {
   const restoreFileInput = useRef<HTMLInputElement>(null);
   const router = useRouter();
   const [restoreRows, setRestoreRows] = useState<Record<string, unknown>[] | null>(null);
@@ -65,6 +65,13 @@ export function SettingsCenter({ accountName, workspaceName = "Ledger Register",
   const [rateRefreshMessage, setRateRefreshMessage] = useState("");
   const [horizon, setHorizon] = useReminderHorizon();
   const [weekStart, setWeekStart] = useWeekStart();
+  const [telegramUrl, setTelegramUrl] = useState("");
+  const [telegramError, setTelegramError] = useState("");
+  const [telegramBusy, setTelegramBusy] = useState(false);
+  const [pushEnabled, setPushEnabled] = useState(initialPushEnabled);
+  const [pushBusy, setPushBusy] = useState(false);
+  const [pushError, setPushError] = useState("");
+  const [pushMessage, setPushMessage] = useState("");
 
   useEffect(() => {
     try {
@@ -153,6 +160,57 @@ export function SettingsCenter({ accountName, workspaceName = "Ledger Register",
     });
   }
 
+  async function connectTelegram() {
+    setTelegramBusy(true);
+    setTelegramError("");
+    const result = await createTelegramLink();
+    if (result.error) setTelegramError(result.error);
+    else if (result.url) setTelegramUrl(result.url);
+    setTelegramBusy(false);
+  }
+
+  function decodeApplicationServerKey(key: string) {
+    const padded = key.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - key.length % 4) % 4);
+    return Uint8Array.from(window.atob(padded), (character) => character.charCodeAt(0));
+  }
+
+  async function togglePushNotifications() {
+    setPushError("");
+    setPushMessage("");
+    setPushBusy(true);
+    try {
+      if (!pushPublicKey) throw new Error("Browser push is not configured yet. Add the VAPID keys to the server environment.");
+      if (!("serviceWorker" in navigator) || !("PushManager" in window) || !("Notification" in window)) throw new Error("This browser does not support push notifications.");
+      const registration = await navigator.serviceWorker.register("/sw.js");
+      if (pushEnabled) {
+        const subscription = await registration.pushManager.getSubscription();
+        if (subscription) {
+          const response = await fetch("/api/push/subscription", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ endpoint: subscription.endpoint }) });
+          if (!response.ok) throw new Error("Could not remove the saved push subscription.");
+          await subscription.unsubscribe();
+        }
+        setPushEnabled(false);
+        setPushMessage("Browser push reminders turned off for this browser.");
+        return;
+      }
+      const permission = await Notification.requestPermission();
+      if (permission !== "granted") throw new Error(permission === "denied" ? "Notifications are blocked in this browser. Allow them in browser site settings, then try again." : "Allow notifications to enable browser reminders.");
+      const subscription = await registration.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: decodeApplicationServerKey(pushPublicKey) as BufferSource });
+      const response = await fetch("/api/push/subscription", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(subscription.toJSON()) });
+      if (!response.ok) {
+        await subscription.unsubscribe();
+        const payload = await response.json().catch(() => null) as { error?: string } | null;
+        throw new Error(payload?.error ?? "Could not save the browser push subscription.");
+      }
+      setPushEnabled(true);
+      setPushMessage("Browser push reminders are enabled on this browser.");
+    } catch (cause) {
+      setPushError(cause instanceof Error ? cause.message : "Could not update browser notifications.");
+    } finally {
+      setPushBusy(false);
+    }
+  }
+
   return (
     <div className="ledger-app settings-app">
       <Sidebar accountName={accountName} isAdmin={isAdmin} />
@@ -188,7 +246,12 @@ export function SettingsCenter({ accountName, workspaceName = "Ledger Register",
               {!preview && <div className="settings-field-row"><div><strong>Email renewal reminders</strong><small>Two emails: 7 days and 1 day before renewal or cancellation deadlines.</small></div><form action={saveEmailReminderPreference}><input name="email_enabled" type="hidden" value={emailRemindersEnabled ? "false" : "true"} /><button className="settings-inline-action" disabled={Boolean(preferenceError)} type="submit">{emailRemindersEnabled ? "Turn off" : "Enable email"}</button></form></div>}
               {!preview && <div className="settings-field-row"><div><strong>Test delivery</strong><small>Send a test message to {accountName}.</small></div><form action={sendTestReminderEmail}><button className="settings-inline-action" type="submit">Send test email</button></form></div>}
               <div className="settings-reminder-horizons"><div><strong>{horizon} days</strong><span>Upcoming window</span></div><div><strong>7 days</strong><span>Review window</span></div><div><strong>1 day</strong><span>Final cutoff</span></div></div>
-              <p className="settings-capability-note"><Icon>info</Icon>Email sends after you enable it here and the sender service is configured. SMS and push delivery are not enabled.</p>
+              {!preview && <div className="settings-field-row"><div><strong>Telegram reminders</strong><small>{telegramLinked ? "Your Telegram chat is linked and will receive renewal and cancellation reminders." : "Link your Telegram account to receive reminders in chat."}</small></div>{telegramLinked ? <form action={unlinkTelegram}><button className="settings-inline-action" type="submit">Disconnect</button></form> : telegramUrl ? <div><a className="settings-inline-action" href={telegramUrl} rel="noreferrer" target="_blank">Open Telegram to connect</a><button className="settings-inline-action" onClick={() => router.refresh()} type="button">Check connection</button></div> : <button className="settings-inline-action" disabled={telegramBusy} onClick={() => void connectTelegram()} type="button">{telegramBusy ? "Preparing…" : "Connect Telegram"}</button>}</div>}
+              {telegramError && <p className="notice notice-error" role="alert">{telegramError}</p>}
+              {!preview && telegramBotUsername && !telegramLinked && !telegramUrl && <p className="settings-capability-note"><Icon>info</Icon>Telegram connection links expire after 15 minutes. Telegram delivery requires the bot webhook and server token to be configured.</p>}
+              {!preview && <div className="settings-field-row"><div><strong>Browser push notifications</strong><small>{pushEnabled ? "Enabled on this browser. Other browsers and devices must be connected separately." : "Receive reminders from this browser after granting notification permission."}</small></div><button className="settings-inline-action" disabled={pushBusy || !pushPublicKey} onClick={() => void togglePushNotifications()} type="button">{pushBusy ? "Updating…" : pushEnabled ? "Turn off" : "Enable browser push"}</button></div>}
+              {pushError && <p className="notice notice-error" role="alert">{pushError}</p>}{pushMessage && <p className="notice notice-success" role="status">{pushMessage}</p>}
+              {!preview && !pushPublicKey && <p className="settings-capability-note"><Icon>info</Icon>Browser push requires VAPID keys and an HTTPS site. Notification permission is saved separately for each browser.</p>}
               <Link className="settings-inline-link" href="/reminders">Open reminders <Icon>arrow_forward</Icon></Link>
             </section>
 

@@ -14,13 +14,15 @@
     "pdfjs-dist": "^6.4.299",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "tesseract.js": "^7.0.0"
+    "tesseract.js": "^7.0.0",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.14",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/web-push": "^3.6.4",
     "tailwindcss": "4.1.14",
     "typescript": "^5"
   }

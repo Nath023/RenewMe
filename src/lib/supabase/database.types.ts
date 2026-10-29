@@ -25,6 +25,24 @@ export type Database = {
         Update: { email_enabled?: boolean; updated_at?: string };
         Relationships: [];
       };
+      renewme_telegram_connections: {
+        Row: { user_id: string; chat_id: string; linked_at: string };
+        Insert: { user_id: string; chat_id: string; linked_at?: string };
+        Update: never;
+        Relationships: [];
+      };
+      renewme_telegram_link_codes: {
+        Row: { code: string; user_id: string; expires_at: string; created_at: string };
+        Insert: { code: string; user_id: string; expires_at: string; created_at?: string };
+        Update: never;
+        Relationships: [];
+      };
+      renewme_push_subscriptions: {
+        Row: { id: string; user_id: string; endpoint: string; p256dh: string; auth_secret: string; created_at: string };
+        Insert: { id?: string; user_id: string; endpoint: string; p256dh: string; auth_secret: string; created_at?: string };
+        Update: { endpoint?: string; p256dh?: string; auth_secret?: string };
+        Relationships: [];
+      };
       renewme_subscription_invoices: {
         Row: { id: string; user_id: string; subscription_id: string; renewal_id: string | null; file_path: string; file_name: string; content_type: string; file_size: number; created_at: string };
         Insert: { id?: string; user_id: string; subscription_id: string; renewal_id?: string | null; file_path: string; file_name: string; content_type: string; file_size: number; created_at?: string };
@@ -92,8 +110,12 @@ export type Database = {
       };
       renewme_claim_due_reminders: {
         Args: { p_today?: string };
-        Returns: { result_delivery_id: string; result_recipient_email: string | null; result_vendor: string; result_service_details: string | null; result_amount: number; result_currency: string; result_billing_cycle: string; result_reminder_type: string; result_due_date: string; result_attempt_count: number }[];
+        Returns: { result_delivery_id: string; result_recipient_email: string | null; result_vendor: string; result_service_details: string | null; result_amount: number; result_currency: string; result_billing_cycle: string; result_reminder_type: string; result_due_date: string; result_attempt_count: number; result_email_enabled: boolean; result_telegram_chat_id: string | null; result_user_id: string }[];
       };
+      renewme_create_telegram_link: { Args: { p_code: string }; Returns: boolean };
+      renewme_telegram_link_status: { Args: Record<string, never>; Returns: boolean };
+      renewme_unlink_telegram: { Args: Record<string, never>; Returns: boolean };
+      renewme_link_telegram_chat: { Args: { p_code: string; p_chat_id: string }; Returns: boolean };
       renewme_finish_reminder: {
         Args: { p_delivery_id: string; p_sent: boolean; p_provider_message_id?: string | null; p_error?: string | null };
         Returns: boolean;

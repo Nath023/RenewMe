@@ -4,6 +4,33 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { hasSupabaseConfig } from "@/lib/supabase/config";
+import { randomBytes } from "node:crypto";
+
+export async function createTelegramLink() {
+  if (!hasSupabaseConfig()) return { error: "Configure Supabase before connecting Telegram." };
+  const botUsername = process.env.TELEGRAM_BOT_USERNAME?.replace(/^@/, "");
+  if (!botUsername || !/^[A-Za-z0-9_]{5,32}$/.test(botUsername)) return { error: "Telegram reminders are not configured yet. Add TELEGRAM_BOT_USERNAME to the server environment." };
+  if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_WEBHOOK_SECRET) return { error: "Telegram bot delivery is not configured yet. Add TELEGRAM_BOT_TOKEN and TELEGRAM_WEBHOOK_SECRET to the server environment." };
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return { error: "Sign in to connect Telegram." };
+
+  const code = randomBytes(24).toString("hex");
+  const { error } = await supabase.rpc("renewme_create_telegram_link", { p_code: code });
+  if (error) return { error: error.message };
+  return { url: `https://t.me/${botUsername}?start=${code}` };
+}
+
+export async function unlinkTelegram() {
+  if (!hasSupabaseConfig()) redirect("/settings?settingsError=Configure%20Supabase%20before%20disconnecting%20Telegram");
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) redirect("/sign-in?error=Sign%20in%20to%20change%20reminder%20settings");
+  const { error } = await supabase.rpc("renewme_unlink_telegram");
+  if (error) redirect(`/settings?settingsError=${encodeURIComponent(error.message)}`);
+  revalidatePath("/settings");
+  redirect("/settings?settingsMessage=Telegram%20reminders%20disconnected.");
+}
 
 export async function saveEmailReminderPreference(formData: FormData) {
   if (!hasSupabaseConfig()) redirect("/subscriptions?formError=Configure%20Supabase%20before%20saving%20preferences");

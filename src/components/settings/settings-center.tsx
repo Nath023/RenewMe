@@ -16,7 +16,6 @@ function Icon({ children }: { children: string }) {
 
 type ExchangeRateMetadata = { source: "manual" | "provider"; updatedAt: string; refreshedAt?: string };
 const exchangeRateMetadataKey = "renewme.usdNgnRateMetadata";
-const exchangeRateAttemptKey = "renewme.usdNgnRateAttempt";
 const refreshInterval = 24 * 60 * 60 * 1000;
 
 function downloadRecords(rows: Subscription[], accountName: string) {
@@ -83,6 +82,12 @@ export function SettingsCenter({ accountName, workspaceName = "Ledger Register",
         }
       }
     } catch { /* Keep the active rate usable if browser storage is unavailable. */ }
+    const syncRateMetadata = (event: Event) => {
+      const metadata = (event as CustomEvent<ExchangeRateMetadata>).detail;
+      if (metadata && (metadata.source === "manual" || metadata.source === "provider") && typeof metadata.updatedAt === "string") setRateMetadata(metadata);
+    };
+    window.addEventListener("renewme:usdNgnRateMetadata", syncRateMetadata);
+    return () => window.removeEventListener("renewme:usdNgnRateMetadata", syncRateMetadata);
   }, []);
 
   function saveRateMetadata(metadata: ExchangeRateMetadata) {
@@ -95,28 +100,22 @@ export function SettingsCenter({ accountName, workspaceName = "Ledger Register",
     setRateRefreshMessage("");
     const now = Date.now();
     try {
-      const previousAttempt = Number(window.localStorage.getItem(exchangeRateAttemptKey));
-      if (Number.isFinite(previousAttempt) && now - previousAttempt < 60 * 60 * 1000) {
-        setRateRefreshError("A refresh was attempted within the last hour. Wait before trying again.");
-        return;
-      }
-      if (rateMetadata?.refreshedAt && now - Date.parse(rateMetadata.refreshedAt) < refreshInterval) {
+      if (rateMetadata?.source === "provider" && rateMetadata.refreshedAt && now - Date.parse(rateMetadata.refreshedAt) < refreshInterval) {
         setRateRefreshMessage("This provider updates once per day. The latest available reference rate is already saved.");
         return;
       }
-      window.localStorage.setItem(exchangeRateAttemptKey, String(now));
       setRateRefreshing(true);
-      const response = await fetch("https://open.er-api.com/v6/latest/USD", { cache: "no-store", signal: AbortSignal.timeout(12000) });
-      if (!response.ok) throw new Error(`The rate provider returned HTTP ${response.status}.`);
+      const response = await fetch("/api/exchange-rate/usd-ngn", { cache: "no-store", signal: AbortSignal.timeout(15000) });
       const result: unknown = await response.json();
       if (!result || typeof result !== "object") throw new Error("The rate provider returned an unreadable response.");
-      const payload = result as { result?: unknown; base_code?: unknown; rates?: { NGN?: unknown }; time_last_update_utc?: unknown };
-      const nextRate = Number(payload.rates?.NGN);
-      if (payload.result !== "success" || payload.base_code !== "USD" || !Number.isFinite(nextRate) || nextRate < 1 || nextRate > 1_000_000 || typeof payload.time_last_update_utc !== "string" || !Number.isFinite(Date.parse(payload.time_last_update_utc))) {
+      const payload = result as { error?: unknown; rate?: unknown; updatedAt?: unknown };
+      if (!response.ok) throw new Error(typeof payload.error === "string" ? payload.error : `The rate provider returned HTTP ${response.status}.`);
+      const nextRate = Number(payload.rate);
+      if (!Number.isFinite(nextRate) || nextRate < 1 || nextRate > 1_000_000 || typeof payload.updatedAt !== "string" || !Number.isFinite(Date.parse(payload.updatedAt))) {
         throw new Error("The provider response did not include a valid USD to NGN reference rate.");
       }
       setRate(nextRate);
-      saveRateMetadata({ source: "provider", updatedAt: payload.time_last_update_utc, refreshedAt: new Date().toISOString() });
+      saveRateMetadata({ source: "provider", updatedAt: payload.updatedAt, refreshedAt: new Date().toISOString() });
       setRateRefreshMessage("Daily reference rate updated. Estimates are still not a quote for a bank or card charge.");
     } catch (cause) {
       setRateRefreshError(cause instanceof Error ? cause.message : "Could not refresh the reference rate.");
@@ -232,7 +231,7 @@ export function SettingsCenter({ accountName, workspaceName = "Ledger Register",
             <section className="settings-panel">
               <div className="settings-panel-heading"><span className="settings-module">01</span><div><h2>Display &amp; calendar</h2><p>Set how currencies and renewal dates appear across RenewMe.</p></div></div>
               <div className="settings-field-row"><div><strong>Base display currency</strong><small>Used by the ledger, dashboard, and expenditure report.</small></div><label className="settings-select-label"><span className="sr-only">Base display currency</span><select onChange={(event) => setCurrency(event.target.value as "USD" | "NGN")} value={currency}><option value="NGN">NGN · Nigerian naira</option><option value="USD">USD · US dollar</option></select></label></div>
-              <div className="settings-field-row"><div><strong>USD to NGN estimate</strong><small>Daily reference rate or a manual rate for cross-currency estimates.</small></div><label className="settings-rate-input"><span className="sr-only">Naira per US dollar</span><span>₦</span><input aria-label="Naira per US dollar" min="1" max="1000000" onChange={(event) => { const next = Number(event.target.value); if (next >= 1 && next <= 1000000) { setRate(next); saveRateMetadata({ source: "manual", updatedAt: new Date().toISOString(), ...(rateMetadata?.refreshedAt ? { refreshedAt: rateMetadata.refreshedAt } : {}) }); setRateRefreshError(""); setRateRefreshMessage("Manual rate saved on this device."); } }} step="0.01" type="number" value={rate} /><span>/ $1</span></label></div>
+              <div className="settings-field-row"><div><strong>USD to NGN estimate</strong><small>RenewMe checks ExchangeRate-API daily. You can keep a manual estimate or refresh the provider rate.</small></div><label className="settings-rate-input"><span className="sr-only">Naira per US dollar</span><span>₦</span><input aria-label="Naira per US dollar" min="1" max="1000000" onChange={(event) => { const next = Number(event.target.value); if (next >= 1 && next <= 1000000) { setRate(next); saveRateMetadata({ source: "manual", updatedAt: new Date().toISOString(), ...(rateMetadata?.refreshedAt ? { refreshedAt: rateMetadata.refreshedAt } : {}) }); setRateRefreshError(""); setRateRefreshMessage("Manual rate saved on this device."); } }} step="0.01" type="number" value={rate} /><span>/ $1</span></label></div>
               <div aria-label="Exchange rate status" className="settings-fx-status"><div><span>Active estimate</span><strong>₦{rate.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} / $1</strong></div><span className={`settings-fx-badge${rateRefreshError ? " settings-fx-badge-error" : ""}`}><i />{rateRefreshError ? "REFRESH FAILED · SAVED RATE IN USE" : rateMetadata?.source === "provider" ? "DAILY REFERENCE · PROVIDER" : "MANUAL · THIS DEVICE"}</span><p>{rateMetadata?.source === "provider" ? `Provider rate timestamp: ${new Date(rateMetadata.updatedAt).toLocaleString("en-NG")}.` : "The active estimate is stored in this browser. Refresh a daily reference rate or enter your own estimate."} Actual bank and card rates may differ.</p><div className="settings-fx-actions"><button className="settings-inline-action" disabled={rateRefreshing} onClick={() => void refreshExchangeRate()} type="button"><Icon>{rateRefreshing ? "progress_activity" : "refresh"}</Icon>{rateRefreshing ? "Refreshing…" : "Refresh daily reference"}</button><a href="https://www.exchangerate-api.com" rel="noreferrer" target="_blank">Rates by ExchangeRate-API</a></div>{rateRefreshError && <p className="settings-fx-error" role="alert">{rateRefreshError} The last saved estimate remains active.</p>}{rateRefreshMessage && <p className="settings-fx-feedback" role="status">{rateRefreshMessage}</p>}</div>
               <p className="settings-saved-note"><Icon>devices</Icon>Currency and estimate rate are saved in this browser and shared across RenewMe screens on this device.</p>
               <div className="settings-benchmark"><span>Estimate only · actual settlement rates may differ</span></div>

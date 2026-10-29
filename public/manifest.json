@@ -8,6 +8,8 @@
   "background_color": "#f6f3ec",
   "theme_color": "#1f4d3a",
   "icons": [
-    { "src": "/renewme-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "/renewme-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/renewme-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/renewme-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

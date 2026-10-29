@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "RenewMe | Subscription Folio",
   description: "A clear ledger of your recurring subscriptions and renewals.",
   manifest: "/manifest.json",
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "RenewMe" },
+  icons: {
+    icon: [{ url: "/renewme-icon.svg", type: "image/svg+xml" }, { url: "/renewme-icon-192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export const viewport = { themeColor: "#1f4d3a" };

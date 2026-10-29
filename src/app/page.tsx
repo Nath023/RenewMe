@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InstallAppButton } from "@/components/install/install-app-button";
 
 const commitments = [
   { name: "Namecheap DNS", amount: "$14.50", cycle: "/yr", naira: "≈ ₦22,475", date: "Cancel by 14 Nov", urgent: true },
@@ -27,13 +28,14 @@ function Icon({ children }: { children: string }) {
 export default function HomePage() {
   return (
     <div className="landing-page">
-      <header className="landing-header">
+      <header className="landing-header" id="top">
         <Link className="landing-brand" href="/">RenewMe</Link>
         <nav aria-label="Main navigation" className="landing-nav">
           <a href="#how-it-works">How it works</a>
           <a href="#features">Features</a>
         </nav>
         <div className="landing-header-actions">
+          <InstallAppButton compact />
           <Link className="landing-signin" href="/sign-in">Sign in</Link>
           <Link className="landing-cta landing-cta-small" href="/sign-up">Start tracking</Link>
         </div>
@@ -94,7 +96,35 @@ export default function HomePage() {
         <section className="landing-final-cta"><span className="landing-eyebrow">Your subscription folio</span><h2>Start with a clearer view of what you pay for.</h2><p>Create an account or sign in to open your private ledger.</p><Link className="landing-cta" href="/sign-up">Create your account <Icon>arrow_forward</Icon></Link><Link className="landing-final-signin" href="/sign-in">Already have an account? Sign in</Link></section>
       </main>
 
-      <footer className="landing-footer"><Link className="landing-brand" href="/">RenewMe</Link><span>Subscription records, kept in one place.</span><Link href="/sign-in">Sign in</Link></footer>
+      <footer aria-label="Site footer" className="landing-footer">
+        <div className="landing-footer-main">
+          <div className="landing-footer-brand">
+            <Link className="landing-brand" href="/">RenewMe</Link>
+            <p>Keep every subscription, renewal date, and recurring cost in one clear place.</p>
+            <span><Icon>verified_user</Icon>Private records, tied to your account</span>
+          </div>
+          <nav aria-label="Product links" className="landing-footer-links">
+            <strong>Explore</strong>
+            <a href="#how-it-works">How it works</a>
+            <a href="#features">Features</a>
+            <a href="#top">Back to top <Icon>north</Icon></a>
+          </nav>
+          <nav aria-label="Account links" className="landing-footer-links">
+            <strong>Your account</strong>
+            <Link href="/sign-in">Sign in</Link>
+            <Link href="/sign-up">Create an account</Link>
+          </nav>
+          <div className="landing-footer-action">
+            <span>Ready to get organized?</span>
+            <Link className="landing-footer-cta" href="/sign-up">Start tracking <Icon>arrow_forward</Icon></Link>
+          </div>
+        </div>
+        <div className="landing-footer-bottom">
+          <span>© {new Date().getFullYear()} RenewMe</span>
+          <span>Subscription records, kept in one place.</span>
+          <a href="#top">Back to top <Icon>north</Icon></a>
+        </div>
+      </footer>
     </div>
   );
 }

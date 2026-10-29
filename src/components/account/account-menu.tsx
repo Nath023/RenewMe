@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { signOutAction } from "@/app/actions/auth";
+import { InstallAppButton } from "@/components/install/install-app-button";
 
 function Icon({ children }: { children: string }) {
   return <span aria-hidden="true" className="material-symbols-outlined">{children}</span>;
@@ -28,6 +29,7 @@ export function AccountMenu({ accountName, authenticated = true }: { accountName
 
   return (
     <div className="account-menu" ref={root}>
+      <InstallAppButton compact />
       <button aria-expanded={open} aria-haspopup="menu" aria-label="Open account menu" className="account-menu-trigger" onClick={() => setOpen((value) => !value)} ref={trigger} type="button">
         <Icon>person</Icon>
       </button>
